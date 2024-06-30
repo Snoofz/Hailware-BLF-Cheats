@@ -1,0 +1,362 @@
+[
+  {
+    "WeaponType": "None",
+    "hexId": "0",
+    "weaponId": 0
+  },
+  {
+    "WeaponType": "AK12",
+    "hexId": "1",
+    "weaponId": 1
+  },
+  {
+    "WeaponType": "RPG7",
+    "hexId": "2",
+    "weaponId": 2
+  },
+  {
+    "WeaponType": "Saiga12K",
+    "hexId": "3",
+    "weaponId": 3
+  },
+  {
+    "WeaponType": "M40A5",
+    "hexId": "4",
+    "weaponId": 4
+  },
+  {
+    "WeaponType": "MP412REX",
+    "hexId": "5",
+    "weaponId": 5
+  },
+  {
+    "WeaponType": "FAMAS",
+    "hexId": "6",
+    "weaponId": 6
+  },
+  {
+    "WeaponType": "SCARH",
+    "hexId": "7",
+    "weaponId": 7
+  },
+  {
+    "WeaponType": "MPX",
+    "hexId": "8",
+    "weaponId": 8
+  },
+  {
+    "WeaponType": "M67FRAG",
+    "hexId": "9",
+    "weaponId": 9
+  },
+  {
+    "WeaponType": "KNIFE",
+    "hexId": "A",
+    "weaponId": 10
+  },
+  {
+    "WeaponType": "M84FLASHBANG",
+    "hexId": "B",
+    "weaponId": 11
+  },
+  {
+    "WeaponType": "THROWINGKNIFE_DELETED",
+    "hexId": "C",
+    "weaponId": 12
+  },
+  {
+    "WeaponType": "M18SMOKEGRENADE",
+    "hexId": "D",
+    "weaponId": 13
+  },
+  {
+    "WeaponType": "M4A1",
+    "hexId": "E",
+    "weaponId": 14
+  },
+  {
+    "WeaponType": "MG4",
+    "hexId": "F",
+    "weaponId": 15
+  },
+  {
+    "WeaponType": "Compact45",
+    "hexId": "10",
+    "weaponId": 16
+  },
+  {
+    "WeaponType": "Nuke",
+    "hexId": "11",
+    "weaponId": 17
+  },
+  {
+    "WeaponType": "ButterflyKnife",
+    "hexId": "12",
+    "weaponId": 18
+  },
+  {
+    "WeaponType": "SRR61",
+    "hexId": "13",
+    "weaponId": 19
+  },
+  {
+    "WeaponType": "ASVAL",
+    "hexId": "14",
+    "weaponId": 20
+  },
+  {
+    "WeaponType": "G18",
+    "hexId": "15",
+    "weaponId": 21
+  },
+  {
+    "WeaponType": "M320HE",
+    "hexId": "16",
+    "weaponId": 22
+  },
+  {
+    "WeaponType": "M320DART",
+    "hexId": "17",
+    "weaponId": 23
+  },
+  {
+    "WeaponType": "MCS870",
+    "hexId": "18",
+    "weaponId": 24
+  },
+  {
+    "WeaponType": "Hand",
+    "hexId": "19",
+    "weaponId": 25
+  },
+  {
+    "WeaponType": "MP5",
+    "hexId": "1A",
+    "weaponId": 26
+  },
+  {
+    "WeaponType": "AK47",
+    "hexId": "1B",
+    "weaponId": 27
+  },
+  {
+    "WeaponType": "Vector",
+    "hexId": "1C",
+    "weaponId": 28
+  },
+  {
+    "WeaponType": "M60",
+    "hexId": "1D",
+    "weaponId": 29
+  },
+  {
+    "WeaponType": "DesertEagle",
+    "hexId": "1E",
+    "weaponId": 30
+  },
+  {
+    "WeaponType": "UMP",
+    "hexId": "1F",
+    "weaponId": 31
+  },
+  {
+    "WeaponType": "Shuriken_DELETED",
+    "hexId": "20",
+    "weaponId": 32
+  },
+  {
+    "WeaponType": "MK11",
+    "hexId": "21",
+    "weaponId": 33
+  },
+  {
+    "WeaponType": "P90",
+    "hexId": "22",
+    "weaponId": 34
+  },
+  {
+    "WeaponType": "AUG",
+    "hexId": "23",
+    "weaponId": 35
+  },
+  {
+    "WeaponType": "ShortySG",
+    "hexId": "24",
+    "weaponId": 36
+  },
+  {
+    "WeaponType": "CSLR4",
+    "hexId": "25",
+    "weaponId": 37
+  },
+  {
+    "WeaponType": "FAD",
+    "hexId": "26",
+    "weaponId": 38
+  },
+  {
+    "WeaponType": "TommyGun",
+    "hexId": "27",
+    "weaponId": 39
+  },
+  {
+    "WeaponType": "MP40",
+    "hexId": "28",
+    "weaponId": 40
+  },
+  {
+    "WeaponType": "CXScorpio",
+    "hexId": "29",
+    "weaponId": 41
+  },
+  {
+    "WeaponType": "Magnum44",
+    "hexId": "2A",
+    "weaponId": 42
+  },
+  {
+    "WeaponType": "M16",
+    "hexId": "2B",
+    "weaponId": 43
+  },
+  {
+    "WeaponType": "LEWIS",
+    "hexId": "2C",
+    "weaponId": 44
+  },
+  {
+    "WeaponType": "M1911",
+    "hexId": "2D",
+    "weaponId": 45
+  },
+  {
+    "WeaponType": "ACR",
+    "hexId": "2E",
+    "weaponId": 46
+  },
+  {
+    "WeaponType": "AK5C",
+    "hexId": "2F",
+    "weaponId": 47
+  },
+  {
+    "WeaponType": "M82A1",
+    "hexId": "30",
+    "weaponId": 48
+  },
+  {
+    "WeaponType": "L85",
+    "hexId": "31",
+    "weaponId": 49
+  },
+  {
+    "WeaponType": "TEC9",
+    "hexId": "32",
+    "weaponId": 50
+  },
+  {
+    "WeaponType": "AWP",
+    "hexId": "33",
+    "weaponId": 51
+  },
+  {
+    "WeaponType": "PM9",
+    "hexId": "34",
+    "weaponId": 52
+  },
+  {
+    "WeaponType": "HONEY_BADGER",
+    "hexId": "35",
+    "weaponId": 53
+  },
+  {
+    "WeaponType": "FAL",
+    "hexId": "36",
+    "weaponId": 54
+  },
+  {
+    "WeaponType": "MP7",
+    "hexId": "37",
+    "weaponId": 55
+  },
+  {
+    "WeaponType": "Spas12",
+    "hexId": "38",
+    "weaponId": 56
+  },
+  {
+    "WeaponType": "Karambit",
+    "hexId": "39",
+    "weaponId": 57
+  },
+  {
+    "WeaponType": "Hatchet",
+    "hexId": "3A",
+    "weaponId": 58
+  },
+  {
+    "WeaponType": "Crossbow",
+    "hexId": "3B",
+    "weaponId": 59
+  },
+  {
+    "WeaponType": "Minigun",
+    "hexId": "3C",
+    "weaponId": 60
+  },
+  {
+    "WeaponType": "VSS",
+    "hexId": "3D",
+    "weaponId": 61
+  },
+  {
+    "WeaponType": "G36",
+    "hexId": "3E",
+    "weaponId": 62
+  },
+  {
+    "WeaponType": "F2000",
+    "hexId": "3F",
+    "weaponId": 63
+  },
+  {
+    "WeaponType": "GalilAce23",
+    "hexId": "40",
+    "weaponId": 64
+  },
+  {
+    "WeaponType": "M240B",
+    "hexId": "41",
+    "weaponId": 65
+  },
+  {
+    "WeaponType": "Groza",
+    "hexId": "42",
+    "weaponId": 66
+  },
+  {
+    "WeaponType": "Kar98",
+    "hexId": "43",
+    "weaponId": 67
+  },
+  {
+    "WeaponType": "Roadkill",
+    "hexId": "44",
+    "weaponId": 68
+  },
+  {
+    "WeaponType": "MissileLauncher",
+    "hexId": "45",
+    "weaponId": 69
+  },
+  {
+    "WeaponType": "FiftyCal",
+    "hexId": "46",
+    "weaponId": 70
+  },
+  {
+    "WeaponType": "Cannon",
+    "hexId": "47",
+    "weaponId": 71
+  }
+]

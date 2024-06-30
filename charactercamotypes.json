@@ -1,0 +1,372 @@
+[
+  {
+    "camoName": "None",
+    "camoId": 0,
+    "camoHex": "0"
+  },
+  {
+    "camoName": "Woodland",
+    "camoId": 1,
+    "camoHex": "1"
+  },
+  {
+    "camoName": "SharpFlames",
+    "camoId": 2,
+    "camoHex": "2"
+  },
+  {
+    "camoName": "Mobcrush",
+    "camoId": 3,
+    "camoHex": "3"
+  },
+  {
+    "camoName": "EliteSnow",
+    "camoId": 4,
+    "camoHex": "4"
+  },
+  {
+    "camoName": "Patriot",
+    "camoId": 5,
+    "camoHex": "5"
+  },
+  {
+    "camoName": "Cosmic",
+    "camoId": 6,
+    "camoHex": "6"
+  },
+  {
+    "camoName": "Jungle",
+    "camoId": 7,
+    "camoHex": "7"
+  },
+  {
+    "camoName": "Pine",
+    "camoId": 8,
+    "camoHex": "8"
+  },
+  {
+    "camoName": "PurpleFire",
+    "camoId": 9,
+    "camoHex": "9"
+  },
+  {
+    "camoName": "Gore",
+    "camoId": 10,
+    "camoHex": "A"
+  },
+  {
+    "camoName": "Port",
+    "camoId": 11,
+    "camoHex": "B"
+  },
+  {
+    "camoName": "Bondage",
+    "camoId": 12,
+    "camoHex": "C"
+  },
+  {
+    "camoName": "Warning",
+    "camoId": 13,
+    "camoHex": "D"
+  },
+  {
+    "camoName": "Stained",
+    "camoId": 14,
+    "camoHex": "E"
+  },
+  {
+    "camoName": "Storm",
+    "camoId": 15,
+    "camoHex": "F"
+  },
+  {
+    "camoName": "Elect",
+    "camoId": 16,
+    "camoHex": "10"
+  },
+  {
+    "camoName": "Volcanic",
+    "camoId": 17,
+    "camoHex": "11"
+  },
+  {
+    "camoName": "Hotty",
+    "camoId": 18,
+    "camoHex": "12"
+  },
+  {
+    "camoName": "Infusion",
+    "camoId": 19,
+    "camoHex": "13"
+  },
+  {
+    "camoName": "Snake",
+    "camoId": 20,
+    "camoHex": "14"
+  },
+  {
+    "camoName": "Forest",
+    "camoId": 21,
+    "camoHex": "15"
+  },
+  {
+    "camoName": "Hex",
+    "camoId": 22,
+    "camoHex": "16"
+  },
+  {
+    "camoName": "Leopard",
+    "camoId": 23,
+    "camoHex": "17"
+  },
+  {
+    "camoName": "Nuke",
+    "camoId": 24,
+    "camoHex": "18"
+  },
+  {
+    "camoName": "Skull",
+    "camoId": 25,
+    "camoHex": "19"
+  },
+  {
+    "camoName": "Chemlight",
+    "camoId": 26,
+    "camoHex": "1A"
+  },
+  {
+    "camoName": "Ripped",
+    "camoId": 27,
+    "camoHex": "1B"
+  },
+  {
+    "camoName": "Digital",
+    "camoId": 28,
+    "camoHex": "1C"
+  },
+  {
+    "camoName": "Fiery",
+    "camoId": 29,
+    "camoHex": "1D"
+  },
+  {
+    "camoName": "Hunter",
+    "camoId": 30,
+    "camoHex": "1E"
+  },
+  {
+    "camoName": "Chaos",
+    "camoId": 31,
+    "camoHex": "1F"
+  },
+  {
+    "camoName": "Infinity",
+    "camoId": 32,
+    "camoHex": "20"
+  },
+  {
+    "camoName": "Nexus",
+    "camoId": 33,
+    "camoHex": "21"
+  },
+  {
+    "camoName": "Core",
+    "camoId": 34,
+    "camoHex": "22"
+  },
+  {
+    "camoName": "Chameleon",
+    "camoId": 35,
+    "camoHex": "23"
+  },
+  {
+    "camoName": "RelentlessSkulls",
+    "camoId": 36,
+    "camoHex": "24"
+  },
+  {
+    "camoName": "SkelletonFallout",
+    "camoId": 37,
+    "camoHex": "25"
+  },
+  {
+    "camoName": "MysteryHollow",
+    "camoId": 38,
+    "camoHex": "26"
+  },
+  {
+    "camoName": "MelancholyHill",
+    "camoId": 39,
+    "camoHex": "27"
+  },
+  {
+    "camoName": "Monocrome",
+    "camoId": 40,
+    "camoHex": "28"
+  },
+  {
+    "camoName": "Atlantic",
+    "camoId": 41,
+    "camoHex": "29"
+  },
+  {
+    "camoName": "Supersonic",
+    "camoId": 42,
+    "camoHex": "2A"
+  },
+  {
+    "camoName": "Biohazard",
+    "camoId": 43,
+    "camoHex": "2B"
+  },
+  {
+    "camoName": "MetallicSoldier",
+    "camoId": 44,
+    "camoHex": "2C"
+  },
+  {
+    "camoName": "Reptilian",
+    "camoId": 45,
+    "camoHex": "2D"
+  },
+  {
+    "camoName": "Interstellar",
+    "camoId": 46,
+    "camoHex": "2E"
+  },
+  {
+    "camoName": "Mondrian",
+    "camoId": 47,
+    "camoHex": "2F"
+  },
+  {
+    "camoName": "Flow",
+    "camoId": 48,
+    "camoHex": "30"
+  },
+  {
+    "camoName": "Zion",
+    "camoId": 49,
+    "camoHex": "31"
+  },
+  {
+    "camoName": "Stinger",
+    "camoId": 50,
+    "camoHex": "32"
+  },
+  {
+    "camoName": "Fracture",
+    "camoId": 51,
+    "camoHex": "33"
+  },
+  {
+    "camoName": "BlackHive",
+    "camoId": 52,
+    "camoHex": "34"
+  },
+  {
+    "camoName": "RedEye",
+    "camoId": 53,
+    "camoHex": "35"
+  },
+  {
+    "camoName": "Picasso",
+    "camoId": 54,
+    "camoHex": "36"
+  },
+  {
+    "camoName": "Relic",
+    "camoId": 55,
+    "camoHex": "37"
+  },
+  {
+    "camoName": "TheWatcher",
+    "camoId": 56,
+    "camoHex": "38"
+  },
+  {
+    "camoName": "BloodyDuck",
+    "camoId": 57,
+    "camoHex": "39"
+  },
+  {
+    "camoName": "Blayze02",
+    "camoId": 58,
+    "camoHex": "3A"
+  },
+  {
+    "camoName": "NewYork",
+    "camoId": 59,
+    "camoHex": "3B"
+  },
+  {
+    "camoName": "Harmony",
+    "camoId": 60,
+    "camoHex": "3C"
+  },
+  {
+    "camoName": "Flakes",
+    "camoId": 61,
+    "camoHex": "3D"
+  },
+  {
+    "camoName": "Holliday",
+    "camoId": 62,
+    "camoHex": "3E"
+  },
+  {
+    "camoName": "Retro",
+    "camoId": 63,
+    "camoHex": "3F"
+  },
+  {
+    "camoName": "Bullion",
+    "camoId": 64,
+    "camoHex": "40"
+  },
+  {
+    "camoName": "Vitral",
+    "camoId": 65,
+    "camoHex": "41"
+  },
+  {
+    "camoName": "Social",
+    "camoId": 66,
+    "camoHex": "42"
+  },
+  {
+    "camoName": "Mainframe",
+    "camoId": 67,
+    "camoHex": "43"
+  },
+  {
+    "camoName": "Cubic",
+    "camoId": 68,
+    "camoHex": "44"
+  },
+  {
+    "camoName": "Biometric",
+    "camoId": 69,
+    "camoHex": "45"
+  },
+  {
+    "camoName": "NewYear2020",
+    "camoId": 70,
+    "camoHex": "46"
+  },
+  {
+    "camoName": "Prayer",
+    "camoId": 71,
+    "camoHex": "47"
+  },
+  {
+    "camoName": "Sher",
+    "camoId": 72,
+    "camoHex": "48"
+  },
+  {
+    "camoName": "Volcold",
+    "camoId": 73,
+    "camoHex": "49"
+  }
+]

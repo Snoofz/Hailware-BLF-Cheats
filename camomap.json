@@ -1,0 +1,1337 @@
+[
+  {
+    "camoName": "None",
+    "camoId": 0,
+    "camoHex": "0"
+  },
+  {
+    "camoName": "Tiger",
+    "camoId": 1,
+    "camoHex": "1"
+  },
+  {
+    "camoName": "Woodland",
+    "camoId": 2,
+    "camoHex": "2"
+  },
+  {
+    "camoName": "Predator",
+    "camoId": 3,
+    "camoHex": "3"
+  },
+  {
+    "camoName": "BlackIce",
+    "camoId": 4,
+    "camoHex": "4"
+  },
+  {
+    "camoName": "EliteSnow",
+    "camoId": 5,
+    "camoHex": "5"
+  },
+  {
+    "camoName": "BlackEmerald",
+    "camoId": 6,
+    "camoHex": "6"
+  },
+  {
+    "camoName": "SweatyNerd",
+    "camoId": 7,
+    "camoHex": "7"
+  },
+  {
+    "camoName": "PurpleDragon",
+    "camoId": 8,
+    "camoHex": "8"
+  },
+  {
+    "camoName": "Blood",
+    "camoId": 9,
+    "camoHex": "9"
+  },
+  {
+    "camoName": "SharpFlames",
+    "camoId": 10,
+    "camoHex": "A"
+  },
+  {
+    "camoName": "GoldLightning",
+    "camoId": 11,
+    "camoHex": "B"
+  },
+  {
+    "camoName": "Gold",
+    "camoId": 12,
+    "camoHex": "C"
+  },
+  {
+    "camoName": "Lime",
+    "camoId": 13,
+    "camoHex": "D"
+  },
+  {
+    "camoName": "Sky",
+    "camoId": 14,
+    "camoHex": "E"
+  },
+  {
+    "camoName": "Ruby",
+    "camoId": 15,
+    "camoHex": "F"
+  },
+  {
+    "camoName": "GlossyPink",
+    "camoId": 16,
+    "camoHex": "10"
+  },
+  {
+    "camoName": "Fruity",
+    "camoId": 17,
+    "camoHex": "11"
+  },
+  {
+    "camoName": "Patriot",
+    "camoId": 18,
+    "camoHex": "12"
+  },
+  {
+    "camoName": "Splattered",
+    "camoId": 19,
+    "camoHex": "13"
+  },
+  {
+    "camoName": "Gecko",
+    "camoId": 20,
+    "camoHex": "14"
+  },
+  {
+    "camoName": "Ocean",
+    "camoId": 21,
+    "camoHex": "15"
+  },
+  {
+    "camoName": "Busy",
+    "camoId": 22,
+    "camoHex": "16"
+  },
+  {
+    "camoName": "Gore",
+    "camoId": 23,
+    "camoHex": "17"
+  },
+  {
+    "camoName": "Beard",
+    "camoId": 24,
+    "camoHex": "18"
+  },
+  {
+    "camoName": "Mobcrush",
+    "camoId": 25,
+    "camoHex": "19"
+  },
+  {
+    "camoName": "Submerged",
+    "camoId": 26,
+    "camoHex": "1A"
+  },
+  {
+    "camoName": "BlackSapphire",
+    "camoId": 27,
+    "camoHex": "1B"
+  },
+  {
+    "camoName": "SxC",
+    "camoId": 28,
+    "camoHex": "1C"
+  },
+  {
+    "camoName": "Spectre",
+    "camoId": 29,
+    "camoHex": "1D"
+  },
+  {
+    "camoName": "Ghost",
+    "camoId": 30,
+    "camoHex": "1E"
+  },
+  {
+    "camoName": "Chameleon",
+    "camoId": 31,
+    "camoHex": "1F"
+  },
+  {
+    "camoName": "Magma",
+    "camoId": 32,
+    "camoHex": "20"
+  },
+  {
+    "camoName": "Dragon",
+    "camoId": 33,
+    "camoHex": "21"
+  },
+  {
+    "camoName": "Sport",
+    "camoId": 34,
+    "camoHex": "22"
+  },
+  {
+    "camoName": "Quick",
+    "camoId": 35,
+    "camoHex": "23"
+  },
+  {
+    "camoName": "Electric",
+    "camoId": 36,
+    "camoHex": "24"
+  },
+  {
+    "camoName": "Beat",
+    "camoId": 37,
+    "camoHex": "25"
+  },
+  {
+    "camoName": "Arctic",
+    "camoId": 38,
+    "camoHex": "26"
+  },
+  {
+    "camoName": "Cosmic",
+    "camoId": 39,
+    "camoHex": "27"
+  },
+  {
+    "camoName": "Volcanic",
+    "camoId": 40,
+    "camoHex": "28"
+  },
+  {
+    "camoName": "Scarred",
+    "camoId": 41,
+    "camoHex": "29"
+  },
+  {
+    "camoName": "Synth",
+    "camoId": 42,
+    "camoHex": "2A"
+  },
+  {
+    "camoName": "Nemesis",
+    "camoId": 43,
+    "camoHex": "2B"
+  },
+  {
+    "camoName": "Infusion",
+    "camoId": 44,
+    "camoHex": "2C"
+  },
+  {
+    "camoName": "Bricks",
+    "camoId": 45,
+    "camoHex": "2D"
+  },
+  {
+    "camoName": "Core",
+    "camoId": 46,
+    "camoHex": "2E"
+  },
+  {
+    "camoName": "Nuke",
+    "camoId": 47,
+    "camoHex": "2F"
+  },
+  {
+    "camoName": "Christmas",
+    "camoId": 48,
+    "camoHex": "30"
+  },
+  {
+    "camoName": "City",
+    "camoId": 49,
+    "camoHex": "31"
+  },
+  {
+    "camoName": "Leaves",
+    "camoId": 50,
+    "camoHex": "32"
+  },
+  {
+    "camoName": "Leopard",
+    "camoId": 51,
+    "camoHex": "33"
+  },
+  {
+    "camoName": "Roses",
+    "camoId": 52,
+    "camoHex": "34"
+  },
+  {
+    "camoName": "Skull",
+    "camoId": 53,
+    "camoHex": "35"
+  },
+  {
+    "camoName": "Rhythm",
+    "camoId": 54,
+    "camoHex": "36"
+  },
+  {
+    "camoName": "Ripped",
+    "camoId": 55,
+    "camoHex": "37"
+  },
+  {
+    "camoName": "Dynamic",
+    "camoId": 56,
+    "camoHex": "38"
+  },
+  {
+    "camoName": "Surge",
+    "camoId": 57,
+    "camoHex": "39"
+  },
+  {
+    "camoName": "Noble",
+    "camoId": 58,
+    "camoHex": "3A"
+  },
+  {
+    "camoName": "ESport",
+    "camoId": 59,
+    "camoHex": "3B"
+  },
+  {
+    "camoName": "Comic",
+    "camoId": 60,
+    "camoHex": "3C"
+  },
+  {
+    "camoName": "Pirate",
+    "camoId": 61,
+    "camoHex": "3D"
+  },
+  {
+    "camoName": "USFlag",
+    "camoId": 62,
+    "camoHex": "3E"
+  },
+  {
+    "camoName": "ChinaFlag",
+    "camoId": 63,
+    "camoHex": "3F"
+  },
+  {
+    "camoName": "BrazilFlag",
+    "camoId": 64,
+    "camoHex": "40"
+  },
+  {
+    "camoName": "JapanFlag",
+    "camoId": 65,
+    "camoHex": "41"
+  },
+  {
+    "camoName": "Sultan",
+    "camoId": 66,
+    "camoHex": "42"
+  },
+  {
+    "camoName": "Nexus",
+    "camoId": 67,
+    "camoHex": "43"
+  },
+  {
+    "camoName": "Maze",
+    "camoId": 68,
+    "camoHex": "44"
+  },
+  {
+    "camoName": "Royalty",
+    "camoId": 69,
+    "camoHex": "45"
+  },
+  {
+    "camoName": "Prism",
+    "camoId": 70,
+    "camoHex": "46"
+  },
+  {
+    "camoName": "RelentlessSkulls",
+    "camoId": 71,
+    "camoHex": "47"
+  },
+  {
+    "camoName": "SkelletonFallout",
+    "camoId": 72,
+    "camoHex": "48"
+  },
+  {
+    "camoName": "MysteryHollow",
+    "camoId": 73,
+    "camoHex": "49"
+  },
+  {
+    "camoName": "MelancholyHill",
+    "camoId": 74,
+    "camoHex": "4A"
+  },
+  {
+    "camoName": "Monocrome",
+    "camoId": 75,
+    "camoHex": "4B"
+  },
+  {
+    "camoName": "Atlantic",
+    "camoId": 76,
+    "camoHex": "4C"
+  },
+  {
+    "camoName": "Supersonic",
+    "camoId": 77,
+    "camoHex": "4D"
+  },
+  {
+    "camoName": "Biohazard",
+    "camoId": 78,
+    "camoHex": "4E"
+  },
+  {
+    "camoName": "MetallicSoldier",
+    "camoId": 79,
+    "camoHex": "4F"
+  },
+  {
+    "camoName": "Reptilian",
+    "camoId": 80,
+    "camoHex": "50"
+  },
+  {
+    "camoName": "Interstellar",
+    "camoId": 81,
+    "camoHex": "51"
+  },
+  {
+    "camoName": "Mondrian",
+    "camoId": 82,
+    "camoHex": "52"
+  },
+  {
+    "camoName": "Flow",
+    "camoId": 83,
+    "camoHex": "53"
+  },
+  {
+    "camoName": "Zion",
+    "camoId": 84,
+    "camoHex": "54"
+  },
+  {
+    "camoName": "Stinger",
+    "camoId": 85,
+    "camoHex": "55"
+  },
+  {
+    "camoName": "Fracture",
+    "camoId": 86,
+    "camoHex": "56"
+  },
+  {
+    "camoName": "BlackHive",
+    "camoId": 87,
+    "camoHex": "57"
+  },
+  {
+    "camoName": "RedEye",
+    "camoId": 88,
+    "camoHex": "58"
+  },
+  {
+    "camoName": "Picasso",
+    "camoId": 89,
+    "camoHex": "59"
+  },
+  {
+    "camoName": "Relic",
+    "camoId": 90,
+    "camoHex": "5A"
+  },
+  {
+    "camoName": "TheWatcher",
+    "camoId": 91,
+    "camoHex": "5B"
+  },
+  {
+    "camoName": "BloodyDuck",
+    "camoId": 92,
+    "camoHex": "5C"
+  },
+  {
+    "camoName": "Blayze02",
+    "camoId": 93,
+    "camoHex": "5D"
+  },
+  {
+    "camoName": "NewYork",
+    "camoId": 94,
+    "camoHex": "5E"
+  },
+  {
+    "camoName": "Harmony",
+    "camoId": 95,
+    "camoHex": "5F"
+  },
+  {
+    "camoName": "Flakes",
+    "camoId": 96,
+    "camoHex": "60"
+  },
+  {
+    "camoName": "Holliday",
+    "camoId": 97,
+    "camoHex": "61"
+  },
+  {
+    "camoName": "Retro",
+    "camoId": 98,
+    "camoHex": "62"
+  },
+  {
+    "camoName": "Bullion",
+    "camoId": 99,
+    "camoHex": "63"
+  },
+  {
+    "camoName": "Vitral",
+    "camoId": 100,
+    "camoHex": "64"
+  },
+  {
+    "camoName": "Social",
+    "camoId": 101,
+    "camoHex": "65"
+  },
+  {
+    "camoName": "Mainframe",
+    "camoId": 102,
+    "camoHex": "66"
+  },
+  {
+    "camoName": "Cubic",
+    "camoId": 103,
+    "camoHex": "67"
+  },
+  {
+    "camoName": "Biometric",
+    "camoId": 104,
+    "camoHex": "68"
+  },
+  {
+    "camoName": "NewYear2020",
+    "camoId": 105,
+    "camoHex": "69"
+  },
+  {
+    "camoName": "Prayer",
+    "camoId": 106,
+    "camoHex": "6A"
+  },
+  {
+    "camoName": "Explorer",
+    "camoId": 107,
+    "camoHex": "6B"
+  },
+  {
+    "camoName": "MoneyMoney",
+    "camoId": 108,
+    "camoHex": "6C"
+  },
+  {
+    "camoName": "NightStorm",
+    "camoId": 109,
+    "camoHex": "6D"
+  },
+  {
+    "camoName": "OneShot",
+    "camoId": 110,
+    "camoHex": "6E"
+  },
+  {
+    "camoName": "Sher",
+    "camoId": 111,
+    "camoHex": "6F"
+  },
+  {
+    "camoName": "Splat",
+    "camoId": 112,
+    "camoHex": "70"
+  },
+  {
+    "camoName": "Odin",
+    "camoId": 113,
+    "camoHex": "71"
+  },
+  {
+    "camoName": "Spectrum",
+    "camoId": 114,
+    "camoHex": "72"
+  },
+  {
+    "camoName": "Lightning",
+    "camoId": 115,
+    "camoHex": "73"
+  },
+  {
+    "camoName": "Frosty",
+    "camoId": 116,
+    "camoHex": "74"
+  },
+  {
+    "camoName": "Claw",
+    "camoId": 117,
+    "camoHex": "75"
+  },
+  {
+    "camoName": "Rapped",
+    "camoId": 118,
+    "camoHex": "76"
+  },
+  {
+    "camoName": "Control",
+    "camoId": 119,
+    "camoHex": "77"
+  },
+  {
+    "camoName": "Crystal",
+    "camoId": 120,
+    "camoHex": "78"
+  },
+  {
+    "camoName": "Toxic",
+    "camoId": 121,
+    "camoHex": "79"
+  },
+  {
+    "camoName": "Olympus",
+    "camoId": 122,
+    "camoHex": "7A"
+  },
+  {
+    "camoName": "DemonSlayer",
+    "camoId": 123,
+    "camoHex": "7B"
+  },
+  {
+    "camoName": "NightWeb",
+    "camoId": 124,
+    "camoHex": "7C"
+  },
+  {
+    "camoName": "Pump",
+    "camoId": 125,
+    "camoHex": "7D"
+  },
+  {
+    "camoName": "Thirsty",
+    "camoId": 126,
+    "camoHex": "7E"
+  },
+  {
+    "camoName": "DarkSoul",
+    "camoId": 127,
+    "camoHex": "7F"
+  },
+  {
+    "camoName": "Zilla",
+    "camoId": 128,
+    "camoHex": "80"
+  },
+  {
+    "camoName": "SoloMode",
+    "camoId": 129,
+    "camoHex": "81"
+  },
+  {
+    "camoName": "IceCold",
+    "camoId": 130,
+    "camoHex": "82"
+  },
+  {
+    "camoName": "Eudialyte",
+    "camoId": 131,
+    "camoHex": "83"
+  },
+  {
+    "camoName": "InfernoAura",
+    "camoId": 132,
+    "camoHex": "84"
+  },
+  {
+    "camoName": "Python",
+    "camoId": 133,
+    "camoHex": "85"
+  },
+  {
+    "camoName": "Solve",
+    "camoId": 134,
+    "camoHex": "86"
+  },
+  {
+    "camoName": "RattleSnake",
+    "camoId": 135,
+    "camoHex": "87"
+  },
+  {
+    "camoName": "Dragoni",
+    "camoId": 136,
+    "camoHex": "88"
+  },
+  {
+    "camoName": "Magnanite",
+    "camoId": 137,
+    "camoHex": "89"
+  },
+  {
+    "camoName": "SoulSeeker",
+    "camoId": 138,
+    "camoHex": "8A"
+  },
+  {
+    "camoName": "Vectorious",
+    "camoId": 139,
+    "camoHex": "8B"
+  },
+  {
+    "camoName": "Wave",
+    "camoId": 140,
+    "camoHex": "8C"
+  },
+  {
+    "camoName": "Informal",
+    "camoId": 141,
+    "camoHex": "8D"
+  },
+  {
+    "camoName": "Fury",
+    "camoId": 142,
+    "camoHex": "8E"
+  },
+  {
+    "camoName": "Mystic",
+    "camoId": 143,
+    "camoHex": "8F"
+  },
+  {
+    "camoName": "RIP",
+    "camoId": 144,
+    "camoHex": "90"
+  },
+  {
+    "camoName": "Cyber",
+    "camoId": 145,
+    "camoHex": "91"
+  },
+  {
+    "camoName": "Pharaoh",
+    "camoId": 146,
+    "camoHex": "92"
+  },
+  {
+    "camoName": "Fortune",
+    "camoId": 147,
+    "camoHex": "93"
+  },
+  {
+    "camoName": "Moss",
+    "camoId": 148,
+    "camoHex": "94"
+  },
+  {
+    "camoName": "Amethyst",
+    "camoId": 149,
+    "camoHex": "95"
+  },
+  {
+    "camoName": "Honeycomb",
+    "camoId": 150,
+    "camoHex": "96"
+  },
+  {
+    "camoName": "Poison",
+    "camoId": 151,
+    "camoHex": "97"
+  },
+  {
+    "camoName": "Luxury",
+    "camoId": 152,
+    "camoHex": "98"
+  },
+  {
+    "camoName": "Fragment",
+    "camoId": 153,
+    "camoHex": "99"
+  },
+  {
+    "camoName": "Printed",
+    "camoId": 154,
+    "camoHex": "9A"
+  },
+  {
+    "camoName": "MadSkull Vector",
+    "camoId": 155,
+    "camoHex": "9B"
+  },
+  {
+    "camoName": "Bear AWP",
+    "camoId": 156,
+    "camoHex": "9C"
+  },
+  {
+    "camoName": "Liquid AK47",
+    "camoId": 157,
+    "camoHex": "9D"
+  },
+  {
+    "camoName": "Liquid Karambit",
+    "camoId": 158,
+    "camoHex": "9E"
+  },
+  {
+    "camoName": "Rektores AK47",
+    "camoId": 159,
+    "camoHex": "9F"
+  },
+  {
+    "camoName": "BloodMoon AWP",
+    "camoId": 160,
+    "camoHex": "A0"
+  },
+  {
+    "camoName": "BloodMoon Deagle",
+    "camoId": 161,
+    "camoHex": "A1"
+  },
+  {
+    "camoName": "BloodMoon Karambit",
+    "camoId": 162,
+    "camoHex": "A2"
+  },
+  {
+    "camoName": "GraveDigger AK47",
+    "camoId": 163,
+    "camoHex": "A3"
+  },
+  {
+    "camoName": "GraveDigger Hatchet",
+    "camoId": 164,
+    "camoHex": "A4"
+  },
+  {
+    "camoName": "Cloudy",
+    "camoId": 165,
+    "camoHex": "A5"
+  },
+  {
+    "camoName": "Rustle",
+    "camoId": 166,
+    "camoHex": "A6"
+  },
+  {
+    "camoName": "Folio",
+    "camoId": 167,
+    "camoHex": "A7"
+  },
+  {
+    "camoName": "Illusory",
+    "camoId": 168,
+    "camoHex": "A8"
+  },
+  {
+    "camoName": "Silhouette",
+    "camoId": 169,
+    "camoHex": "A9"
+  },
+  {
+    "camoName": "Foil",
+    "camoId": 170,
+    "camoHex": "AA"
+  },
+  {
+    "camoName": "Daydream",
+    "camoId": 171,
+    "camoHex": "AB"
+  },
+  {
+    "camoName": "Porcelain",
+    "camoId": 172,
+    "camoHex": "AC"
+  },
+  {
+    "camoName": "Fantasy",
+    "camoId": 173,
+    "camoHex": "AD"
+  },
+  {
+    "camoName": "Abyss",
+    "camoId": 174,
+    "camoHex": "AE"
+  },
+  {
+    "camoName": "Graffiti",
+    "camoId": 175,
+    "camoHex": "AF"
+  },
+  {
+    "camoName": "Marble",
+    "camoId": 176,
+    "camoHex": "B0"
+  },
+  {
+    "camoName": "Explosion",
+    "camoId": 177,
+    "camoHex": "B1"
+  },
+  {
+    "camoName": "Jaguaflage",
+    "camoId": 178,
+    "camoHex": "B2"
+  },
+  {
+    "camoName": "Conceal",
+    "camoId": 179,
+    "camoHex": "B3"
+  },
+  {
+    "camoName": "Vivid",
+    "camoId": 180,
+    "camoHex": "B4"
+  },
+  {
+    "camoName": "Diamond",
+    "camoId": 181,
+    "camoHex": "B5"
+  },
+  {
+    "camoName": "Rekt",
+    "camoId": 182,
+    "camoHex": "B6"
+  },
+  {
+    "camoName": "Frostbite M40A5",
+    "camoId": 183,
+    "camoHex": "B7"
+  },
+  {
+    "camoName": "Frostbite Deagle",
+    "camoId": 184,
+    "camoHex": "B8"
+  },
+  {
+    "camoName": "Icy MP7",
+    "camoId": 185,
+    "camoHex": "B9"
+  },
+  {
+    "camoName": "Icy Karambit",
+    "camoId": 186,
+    "camoHex": "BA"
+  },
+  {
+    "camoName": "Prime M4A1",
+    "camoId": 187,
+    "camoHex": "BB"
+  },
+  {
+    "camoName": "Prime Tec9",
+    "camoId": 188,
+    "camoHex": "BC"
+  },
+  {
+    "camoName": "Prime ButterflyKnife",
+    "camoId": 189,
+    "camoHex": "BD"
+  },
+  {
+    "camoName": "Kea P90",
+    "camoId": 190,
+    "camoHex": "BE"
+  },
+  {
+    "camoName": "Kea Deagle",
+    "camoId": 191,
+    "camoHex": "BF"
+  },
+  {
+    "camoName": "Kea Hatchet",
+    "camoId": 192,
+    "camoHex": "C0"
+  },
+  {
+    "camoName": "Hitman Famas",
+    "camoId": 193,
+    "camoHex": "C1"
+  },
+  {
+    "camoName": "Hitman Deagle",
+    "camoId": 194,
+    "camoHex": "C2"
+  },
+  {
+    "camoName": "Hitman Hatchet",
+    "camoId": 195,
+    "camoHex": "C3"
+  },
+  {
+    "camoName": "Shards",
+    "camoId": 196,
+    "camoHex": "C4"
+  },
+  {
+    "camoName": "Virus",
+    "camoId": 197,
+    "camoHex": "C5"
+  },
+  {
+    "camoName": "Smartness",
+    "camoId": 198,
+    "camoHex": "C6"
+  },
+  {
+    "camoName": "Snake",
+    "camoId": 199,
+    "camoHex": "C7"
+  },
+  {
+    "camoName": "CrystalSurface",
+    "camoId": 200,
+    "camoHex": "C8"
+  },
+  {
+    "camoName": "Tyred",
+    "camoId": 201,
+    "camoHex": "C9"
+  },
+  {
+    "camoName": "RelentlessStare",
+    "camoId": 202,
+    "camoHex": "CA"
+  },
+  {
+    "camoName": "Machinarium",
+    "camoId": 203,
+    "camoHex": "CB"
+  },
+  {
+    "camoName": "Surprise",
+    "camoId": 204,
+    "camoHex": "CC"
+  },
+  {
+    "camoName": "CosmicCloud",
+    "camoId": 205,
+    "camoHex": "CD"
+  },
+  {
+    "camoName": "Isaamov FAL",
+    "camoId": 206,
+    "camoHex": "CE"
+  },
+  {
+    "camoName": "Basilisk AK47",
+    "camoId": 207,
+    "camoHex": "CF"
+  },
+  {
+    "camoName": "Blayze AUG",
+    "camoId": 208,
+    "camoHex": "D0"
+  },
+  {
+    "camoName": "Blayze AK47",
+    "camoId": 209,
+    "camoHex": "D1"
+  },
+  {
+    "camoName": "Pixequa Deagle",
+    "camoId": 210,
+    "camoHex": "D2"
+  },
+  {
+    "camoName": "Pixequa Honey_Badger",
+    "camoId": 211,
+    "camoHex": "D3"
+  },
+  {
+    "camoName": "Pixequa Kar98",
+    "camoId": 212,
+    "camoHex": "D4"
+  },
+  {
+    "camoName": "Pixequa Karambit",
+    "camoId": 213,
+    "camoHex": "D5"
+  },
+  {
+    "camoName": "Sakura AK47",
+    "camoId": 214,
+    "camoHex": "D6"
+  },
+  {
+    "camoName": "Sakura Hatchet",
+    "camoId": 215,
+    "camoHex": "D7"
+  },
+  {
+    "camoName": "Sakura m240b",
+    "camoId": 216,
+    "camoHex": "D8"
+  },
+  {
+    "camoName": "Sakura p90",
+    "camoId": 217,
+    "camoHex": "D9"
+  },
+  {
+    "camoName": "Venomous ACR",
+    "camoId": 218,
+    "camoHex": "DA"
+  },
+  {
+    "camoName": "Venomous AWP",
+    "camoId": 219,
+    "camoHex": "DB"
+  },
+  {
+    "camoName": "Venomous Fal",
+    "camoId": 220,
+    "camoHex": "DC"
+  },
+  {
+    "camoName": "Venomous t_Deagle",
+    "camoId": 221,
+    "camoHex": "DD"
+  },
+  {
+    "camoName": "Eighties",
+    "camoId": 222,
+    "camoHex": "DE"
+  },
+  {
+    "camoName": "Elect",
+    "camoId": 223,
+    "camoHex": "DF"
+  },
+  {
+    "camoName": "Eruption",
+    "camoId": 224,
+    "camoHex": "E0"
+  },
+  {
+    "camoName": "Icecube",
+    "camoId": 225,
+    "camoHex": "E1"
+  },
+  {
+    "camoName": "Kingly",
+    "camoId": 226,
+    "camoHex": "E2"
+  },
+  {
+    "camoName": "Particles",
+    "camoId": 227,
+    "camoHex": "E3"
+  },
+  {
+    "camoName": "Pieces",
+    "camoId": 228,
+    "camoHex": "E4"
+  },
+  {
+    "camoName": "Zombheads",
+    "camoId": 229,
+    "camoHex": "E5"
+  },
+  {
+    "camoName": "Illusion",
+    "camoId": 230,
+    "camoHex": "E6"
+  },
+  {
+    "camoName": "Storm",
+    "camoId": 231,
+    "camoHex": "E7"
+  },
+  {
+    "camoName": "Feathers",
+    "camoId": 232,
+    "camoHex": "E8"
+  },
+  {
+    "camoName": "Colorpop",
+    "camoId": 233,
+    "camoHex": "E9"
+  },
+  {
+    "camoName": "Solidcarbine",
+    "camoId": 234,
+    "camoHex": "EA"
+  },
+  {
+    "camoName": "Arcade",
+    "camoId": 235,
+    "camoHex": "EB"
+  },
+  {
+    "camoName": "Goldoutte",
+    "camoId": 236,
+    "camoHex": "EC"
+  },
+  {
+    "camoName": "Marouflage",
+    "camoId": 237,
+    "camoHex": "ED"
+  },
+  {
+    "camoName": "Instruments",
+    "camoId": 238,
+    "camoHex": "EE"
+  },
+  {
+    "camoName": "RedLight",
+    "camoId": 239,
+    "camoHex": "EF"
+  },
+  {
+    "camoName": "Seaside TommyGun",
+    "camoId": 240,
+    "camoHex": "F0"
+  },
+  {
+    "camoName": "Seaside AWP",
+    "camoId": 241,
+    "camoHex": "F1"
+  },
+  {
+    "camoName": "Seaside AK47",
+    "camoId": 242,
+    "camoHex": "F2"
+  },
+  {
+    "camoName": "Seaside AUG",
+    "camoId": 243,
+    "camoHex": "F3"
+  },
+  {
+    "camoName": "Greenwidow M240B",
+    "camoId": 244,
+    "camoHex": "F4"
+  },
+  {
+    "camoName": "Greenwidow AWP",
+    "camoId": 245,
+    "camoHex": "F5"
+  },
+  {
+    "camoName": "Greenwidow L85",
+    "camoId": 246,
+    "camoHex": "F6"
+  },
+  {
+    "camoName": "Greenwidow Deagle",
+    "camoId": 247,
+    "camoHex": "F7"
+  },
+  {
+    "camoName": "Odyssey FAL",
+    "camoId": 248,
+    "camoHex": "F8"
+  },
+  {
+    "camoName": "Odyssey AWP",
+    "camoId": 249,
+    "camoHex": "F9"
+  },
+  {
+    "camoName": "Odyssey AK47",
+    "camoId": 250,
+    "camoHex": "FA"
+  },
+  {
+    "camoName": "Odyssey AUG",
+    "camoId": 251,
+    "camoHex": "FB"
+  },
+  {
+    "camoName": "Odyssey Karambit",
+    "camoId": 252,
+    "camoHex": "FC"
+  },
+  {
+    "camoName": "Octamos Vector",
+    "camoId": 253,
+    "camoHex": "FD"
+  },
+  {
+    "camoName": "Octamos G36",
+    "camoId": 254,
+    "camoHex": "FE"
+  },
+  {
+    "camoName": "Octamos Groza",
+    "camoId": 255,
+    "camoHex": "FF"
+  },
+  {
+    "camoName": "Octamos CSLR4",
+    "camoId": 256,
+    "camoHex": "100"
+  },
+  {
+    "camoName": "Joker Honey_Badger",
+    "camoId": 257,
+    "camoHex": "101"
+  },
+  {
+    "camoName": "Joker Spas12",
+    "camoId": 258,
+    "camoHex": "102"
+  },
+  {
+    "camoName": "Joker M82A1",
+    "camoId": 259,
+    "camoHex": "103"
+  },
+  {
+    "camoName": "Joker Famas",
+    "camoId": 260,
+    "camoHex": "104"
+  },
+  {
+    "camoName": "Joker Hatchet",
+    "camoId": 261,
+    "camoHex": "105"
+  },
+  {
+    "camoName": "Jali SRR61",
+    "camoId": 262,
+    "camoHex": "106"
+  },
+  {
+    "camoName": "Jali Magnum44",
+    "camoId": 263,
+    "camoHex": "107"
+  },
+  {
+    "camoName": "Jali AK47",
+    "camoId": 264,
+    "camoHex": "108"
+  },
+  {
+    "camoName": "Jali MP7",
+    "camoId": 265,
+    "camoHex": "109"
+  },
+  {
+    "camoName": "Jali CXScorpio",
+    "camoId": 266,
+    "camoHex": "10A"
+  }
+]
