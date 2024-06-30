@@ -1,5 +1,7 @@
 # Hacks and Cheats for Bullet Force because fuck that game
-## There are a couple reasons why these are here
+## Your problem, not mine
+
+# There are a couple reasons why these are here
 - Lucas can use these to visualize fixes for the game
 - I dislike the game because the moderators are dicks and snowflakes
 - Anyone can do this which shouldn't be a thing in general
