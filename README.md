@@ -23,7 +23,8 @@ let sexinterval = setInterval(() => {
 
 # Time Scale
 ```js
-Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.3);```
+Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.3);
+```
 
 # Spam / Auto Knife
 ```js
@@ -32,7 +33,8 @@ setInterval(() => { Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)
 
 # End Game
 ```js
-Crazygames.getUnityInstance().SendMessage('Match Manager(Clone)', 'EndMatch');```
+Crazygames.getUnityInstance().SendMessage('Match Manager(Clone)', 'EndMatch');
+```
 
 # (H) Restart Match (Host Only)
 ```js
@@ -66,29 +68,36 @@ GetWeapon = function(partialName) {
 // Send DropGun to the unityInstance with GetWeapon which grabs the weapon ID with part of the weapon name
 Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DropGun', GetWeapon("AK").weaponId);
 
-// It should drop this weapon for you, you just have to press "F" to pick up the weapon```
+// It should drop this weapon for you, you just have to press "F" to pick up the weapon
+```
 
 # Set deaths in MP lobby to 0
 ```js
-Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'UpdateMPDeaths', 0);```
+Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'UpdateMPDeaths', 0);
+```
 
 # Respawn
 ```js
-Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Respawn');```
+Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Respawn');
+```
 
 # Add kill to killstreak
 ```js
-Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'AddKillToStreak');```
+Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'AddKillToStreak');
+```
 
 # Kick player / Disable their chat
 ```js
-Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'KickPlayerAsMaster', "PC-AwesomeUsernameIDK");```
+Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'KickPlayerAsMaster', "PC-AwesomeUsernameIDK");
+```
 
 # Time Scale
 ```js
-Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.3);```
+Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.3);
+```
 
 # Respawn All
+```js
 var Module = Crazygames.getUnityInstance().Module;
 var GameObject = "Match Manager(Clone)";
 var Function = "RespawnHardcoreModePlayers";
@@ -114,7 +123,7 @@ var Module = gameModule;
             spam = setInterval(function () {
                 var Response = Module.ccall("SendMessage", null, ["string", "string", ArgumentTypes], Arguments);
             }, 100);
-
+```
 
 
 # There are a couple reasons why these are here
