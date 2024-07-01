@@ -111,8 +111,10 @@ var Function = "RespawnHardcoreModePlayers";
 var Arguments = [GameObject, Function];
 var Response = Module.ccall("SendMessage", null, ["string", "string"], Arguments);
 console.log(Response);
+```
 
 # Grenade Spam
+```js
 var Module = gameModule;
             var GameObject = "PlayerBody(Clone)";
             var Function = "createGrenade";
