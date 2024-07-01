@@ -2,22 +2,6 @@
 // Paste this script and you'll see the menu come up in the GAME
 // Enjoy
 
-// ==UserScript==
-// @name         Hailware Web
-// @namespace    http://tampermonkey.net/
-// @version      2024-06-10
-// @description  Made by Foonix and Yellowberry
-// @author       You
-// @grant        GM_info
-// @grant        GM_getResourceText
-// @grant        GM_getResourceURL
-// @match        https://www.crazygames.com/game/bullet-force-multiplayer
-// @match        https://www.multiplayerpiano.dev/*
-// @match        http://localhost:48897/game
-// @icon         https://cdn.discordapp.com/attachments/1239924845425332264/1249953925692395520/snowly-icon.png?ex=66692dce&is=6667dc4e&hm=b9a9c1b99612ad93c2b97c05d8e1c58426ba2ecaeddf26ea09cbe9e9f3053402&
-// @grant        unsafeWindow
-// ==/UserScript==
-
 let clientWs = new WebSocket("ws://localhost:8080");
 
 
