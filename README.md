@@ -1,5 +1,5 @@
 # Hacks and Cheats for Bullet Force because fuck that game
-### (Why I'm doing this)[https://www.youtube.com/watch?v=fN4-UGsHvww]
+### [Why I'm doing this](https://www.youtube.com/watch?v=fN4-UGsHvww)
 ## Your problem, not mine
 
 # There are a couple reasons why these are here
