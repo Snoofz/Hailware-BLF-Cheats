@@ -14,9 +14,6 @@
 // @grant        unsafeWindow
 // ==/UserScript==
 
-let clientWs = new WebSocket("ws://localhost:8080");
-
-
 class Log {
     static info(message) {
         console.log(`%c${message.toUpperCase()}`, 'font-size: 18px; color: #7289da;');
@@ -50,6 +47,8 @@ let creditOpenCaseLoop = false;
 
 let tmpInterval = null;
 let tmpInterval2 = null;
+
+let _049932x39B2388x3992A = atob;
 
 class UIManager {
     constructor() {
@@ -167,6 +166,8 @@ class UIManager {
         title.style.fontSize = '22px';
         title.style.textAlign = 'center';
         title.style.marginTop = '0px';
+        title.classList.add('rainbow-animation');
+
         container.appendChild(title);
 
         document.body.appendChild(container);
@@ -225,7 +226,6 @@ class UIManager {
 
     addButton(buttonText, buttonAction) {
         const button = document.createElement('button');
-        button.textContent = buttonText;
         button.style.width = '100%';
         button.style.padding = '10px';
         button.style.backgroundColor = '#1c1c1c'; // Bright red background
@@ -238,6 +238,10 @@ class UIManager {
         button.style.fontSize = '16px';
         button.addEventListener('click', buttonAction);
         button.classList.add('rainbow-animation'); // Add rainbow animation class
+
+        const buttonTextSpan = document.createElement('span');
+        buttonTextSpan.textContent = buttonText;
+        button.appendChild(buttonTextSpan);
 
         this.UIContext.appendChild(button);
 
@@ -254,6 +258,8 @@ class UIManager {
         label.classList.add('rainbow-animation'); // Add rainbow animation class
 
         this.UIContext.appendChild(label);
+
+        return label;
     }
 
     addSpacer(height) {
@@ -263,6 +269,8 @@ class UIManager {
         spacer.style.marginBottom = `${height}px`;
 
         this.UIContext.appendChild(spacer);
+
+        return spacer;
     }
 
     addTextInput(placeholderText, valueChangeAction) {
@@ -276,29 +284,92 @@ class UIManager {
         input.addEventListener('input', valueChangeAction);
         input.style.backgroundColor = '#0e0e0e'; // White text color
         input.classList.add('rainbow-animation'); // Add rainbow animation class
+        input.focus();
 
         this.UIContext.appendChild(input);
+        input.focus();
+
         return input;
     }
 
-    addSlider(min, max, step, valueChangeAction) {
+    addSlider(min, max, step, currentValue, customText, valueChangeAction) {
+        let textBubble = undefined;
+        let hideTimeout = null;
+
         const sliderContainer = document.createElement('div');
-        sliderContainer.style.width = 'calc(100% - 20px)';
+        sliderContainer.style.width = 'calc(100% - 1px)';
         sliderContainer.style.marginBottom = '20px';
+        sliderContainer.style.position = 'relative';
 
         const slider = document.createElement('input');
         slider.type = 'range';
         slider.min = min;
         slider.max = max;
+        slider.value = currentValue;
         slider.step = step;
         slider.style.width = '100%';
         slider.style.borderRadius = '5px';
-        slider.addEventListener('input', valueChangeAction);
 
+        const showBubble = () => {
+            clearTimeout(hideTimeout);
+            textBubble.style.opacity = 1;
+            hideTimeout = setTimeout(() => {
+                textBubble.style.opacity = 0;
+            }, 3000);
+        };
+
+        slider.addEventListener('input', () => {
+            valueChangeAction(slider.value);
+            textBubble.textContent = `${customText}: ${slider.value}`;
+            const sliderWidth = slider.offsetWidth;
+            const bubbleWidth = textBubble.offsetWidth;
+            const sliderValue = slider.value;
+            const newPosition = (sliderValue / (max - min)) * sliderWidth;
+            const adjustedPosition = Math.min(Math.max(newPosition, bubbleWidth / 2), sliderWidth - bubbleWidth / 2);
+            textBubble.style.left = `${adjustedPosition}px`;
+            showBubble();
+        });
+
+        slider.addEventListener('mousedown', showBubble);
+        slider.addEventListener('touchstart', showBubble);
+
+        slider.classList.add('rainbow-animation');
+
+        const bubble = document.createElement('div');
+        bubble.style.position = 'absolute';
+        bubble.style.top = 'calc(100% + 10px)';
+        bubble.style.left = '50%';
+        bubble.style.transform = 'translateX(-50%)';
+        bubble.style.backgroundColor = '#f0f0f0';
+        bubble.style.padding = '5px 10px';
+        bubble.style.borderRadius = '5px';
+        bubble.style.backgroundColor = '#181818';
+        bubble.style.whiteSpace = 'nowrap';
+        bubble.style.minWidth = '100px';
+        bubble.style.transition = 'opacity 0.5s'; // Add transition for fade effect
+        bubble.style.opacity = 0; // Initially hidden
+        bubble.textContent = `${customText}: ${currentValue}`;
+        textBubble = bubble;
+
+        sliderContainer.appendChild(bubble);
         sliderContainer.appendChild(slider);
-        this.UIContext.appendChild(sliderContainer);
+
+        this.contentContainer.appendChild(sliderContainer);
 
         return slider;
+    }
+
+    addLogo() {
+        const logo = document.createElement('img');
+        logo.src = 'https://github.com/Snoofz/Hailware-Assets/blob/main/snowly-icon.png?raw=true';
+        logo.className = 'logo';
+        logo.alt = 'Logo';
+        logo.style.marginLeft = '35%';
+        logo.classList.add('hue-shift-animation');
+
+        this.UIContext.insertBefore(logo, this.UIContext.firstChild);
+
+        return logo;
     }
 
     createTabMenu(tabs) {
@@ -426,7 +497,6 @@ class UITab {
 
     addButton(buttonText, buttonAction) {
         const button = document.createElement('button');
-        button.textContent = buttonText;
         button.style.width = '100%';
         button.style.padding = '10px';
         button.style.backgroundColor = '#1c1c1c'; // Bright red background
@@ -440,7 +510,12 @@ class UITab {
         button.addEventListener('click', buttonAction);
         button.classList.add('rainbow-animation'); // Add rainbow animation class
 
+        const buttonTextSpan = document.createElement('span');
+        buttonTextSpan.textContent = buttonText;
+        button.appendChild(buttonTextSpan);
+
         this.contentContainer.appendChild(button);
+
         return button;
     }
 
@@ -469,8 +544,9 @@ class UITab {
         input.addEventListener('input', valueChangeAction);
         input.style.backgroundColor = '#0e0e0e'; // White text color
         input.classList.add('rainbow-animation'); // Add rainbow animation class
-
+        input.focus();
         this.contentContainer.appendChild(input);
+        input.focus();
         return input;
     }
 
@@ -481,23 +557,72 @@ class UITab {
         spacer.style.marginBottom = `${height}px`;
 
         this.contentContainer.appendChild(spacer);
+
+        return spacer;
     }
 
-    addSlider(min, max, step, valueChangeAction) {
+    addSlider(min, max, step, currentValue, customText, valueChangeAction) {
+        let textBubble = undefined;
+        let hideTimeout = null;
+
         const sliderContainer = document.createElement('div');
-        sliderContainer.style.width = 'calc(100% - 20px)';
+        sliderContainer.style.width = 'calc(100% - 1px)';
         sliderContainer.style.marginBottom = '20px';
+        sliderContainer.style.position = 'relative';
 
         const slider = document.createElement('input');
         slider.type = 'range';
         slider.min = min;
         slider.max = max;
+        slider.value = currentValue;
         slider.step = step;
         slider.style.width = '100%';
         slider.style.borderRadius = '5px';
-        slider.addEventListener('input', valueChangeAction);
 
+        const showBubble = () => {
+            clearTimeout(hideTimeout);
+            textBubble.style.opacity = 1;
+            hideTimeout = setTimeout(() => {
+                textBubble.style.opacity = 0;
+            }, 3000);
+        };
+
+        slider.addEventListener('input', () => {
+            valueChangeAction(slider.value);
+            textBubble.textContent = `${customText}: ${slider.value}`;
+            const sliderWidth = slider.offsetWidth;
+            const bubbleWidth = textBubble.offsetWidth;
+            const sliderValue = slider.value;
+            const newPosition = (sliderValue / (max - min)) * sliderWidth;
+            const adjustedPosition = Math.min(Math.max(newPosition, bubbleWidth / 2), sliderWidth - bubbleWidth / 2);
+            textBubble.style.left = `${adjustedPosition}px`;
+            showBubble();
+        });
+
+        slider.addEventListener('mousedown', showBubble);
+        slider.addEventListener('touchstart', showBubble);
+
+        slider.classList.add('rainbow-animation');
+
+        const bubble = document.createElement('div');
+        bubble.style.position = 'absolute';
+        bubble.style.top = 'calc(100% + 10px)';
+        bubble.style.left = '50%';
+        bubble.style.transform = 'translateX(-50%)';
+        bubble.style.backgroundColor = '#f0f0f0';
+        bubble.style.padding = '5px 10px';
+        bubble.style.borderRadius = '5px';
+        bubble.style.backgroundColor = '#181818';
+        bubble.style.whiteSpace = 'nowrap';
+        bubble.style.minWidth = '100px';
+        bubble.style.transition = 'opacity 0.5s'; // Add transition for fade effect
+        bubble.style.opacity = 0; // Initially hidden
+        bubble.textContent = `${customText}: ${currentValue}`;
+        textBubble = bubble;
+
+        sliderContainer.appendChild(bubble);
         sliderContainer.appendChild(slider);
+
         this.contentContainer.appendChild(sliderContainer);
 
         return slider;
@@ -513,6 +638,113 @@ class UITab {
             this.contentContainer.style.display = 'block';
             this.isHidden = false;
         }
+    }
+}
+
+fetch("https://cors-anywhere.herokuapp.com/corsdemo?accessRequest=1cc95954b082f05548e37ba148ab65b8355fec9ca6bd91dd58a3723cc564690d", {
+  "headers": {
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    "accept-language": "en-US,en;q=0.9",
+    "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "document",
+    "sec-fetch-mode": "navigate",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-user": "?1",
+    "upgrade-insecure-requests": "1",
+    "Referer": "https://cors-anywhere.herokuapp.com/corsdemo",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  },
+  "body": null,
+  "method": "GET"
+});
+
+let _0x399859299B = "zr9zLy5zbWg6aGhycM61Lc6/ec6/dy4vzrVyY2twcGPOsc61cnTPhc6xdG58MSwzMCwyNywzLDIzLDAsMTIsMjksMTcsMzQsMTUsNCwxMSwyMiw5LDE5LDI1LDE4LDEzLDI4LDE2LDEwLDIsOCw1LDMxLDI2LDIxLDE0LDI0LDMyLDcsNiwzMywyMA=="
+let _0x88492D2994 = "4pGl4pGg4pGiL+KRoOKRoeKRpuKRpOKRpi4uaOKRqC/ikaHikah0OnDikaDikaDikaXikacudDp8MCwxMSw2LDIwLDcsMTMsMSw1LDIsMTIsMTYsMjUsMTgsMTksMTQsMTcsMjQsNCwyMiwxMCwxNSw5LDMsOCwyMywyMQ==";
+function _0x88492D2993(_0x99500038856) {
+  const decoded = decodeURIComponent(escape(atob(_0x99500038856)));
+  const [randomized, positionsString] = decoded.split('|');
+  const randomizedPositions = positionsString.split(',').map(Number);
+  const array = randomized.split('');
+  const originalArray = [];
+  randomizedPositions.forEach((pos, index) => {
+    originalArray[pos] = array[index];
+  });
+  const derandomized = originalArray.join('');
+  const unicodeMap = {
+    '\u03b1': 'a', '\u03b5': 'e', '\u03b9': 'i', '\u03bf': 'o', '\u03c5': 'u',
+    '\u0391': 'A', '\u0395': 'E', '\u0399': 'I', '\u039f': 'O', '\u03a5': 'U',
+    '\u24EA': '0', '\u2460': '1', '\u2461': '2', '\u2462': '3', '\u2463': '4',
+    '\u2464': '5', '\u2465': '6', '\u2466': '7', '\u2467': '8', '\u2468': '9'
+  };
+  const unicodeReversed = derandomized.split('').map(char => unicodeMap[char] || char).join('');
+  const original = unicodeReversed.split('').reverse().join('');
+  return original;
+}
+
+async function HailwareRegister(username, password) {
+    try {
+        const response = await fetch(_0x88492D2993(_0x399859299B) + "/" + _0x88492D2993(_0x88492D2994) + '/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password })
+        });
+        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(data.error);
+        }
+        console.log('Registration successful:', data);
+        localStorage.setItem('blfUsername', username);
+        localStorage.setItem('blfPasswordRaw', password);
+    } catch (error) {
+        console.error('Error during registration:', error);
+        throw error;
+    }
+}
+
+
+async function HailwareLogin(username, password) {
+
+}
+
+function waitForUnityInstance(callback) {
+    const interval = setInterval(() => {
+        const unityInstance = Crazygames.getUnityInstance();
+        if (unityInstance && unityInstance.SendMessage) {
+            clearInterval(interval);
+            setTimeout(() => {
+                callback();
+            }, 3500);
+        }
+    }, 1000);
+}
+
+
+class ConfigManager {
+    constructor() {
+        this.config = {};
+    }
+
+    save(config) {
+        this.config = config;
+        Log.tool(`Config saved: ${JSON.stringify(this.config)}!`);
+        localStorage.setItem('hailwareConfig', JSON.stringify(this.config));
+    }
+
+    clear() {
+        localStorage.removeItem('hailwareConfig');
+        Log.tool("Config cleared!");
+    }
+
+    get() {
+        const configString = localStorage.getItem('hailwareConfig');
+        if (configString) {
+            this.config = JSON.parse(configString);
+            Log.tool(`Config found: ${JSON.stringify(this.config)}!`);
+            return this.config;
+        }
+        return null;
     }
 }
 
@@ -787,6 +1019,16 @@ function SHA512(str) {
     return binb2hex(binarray);
 }
 
+                function stripUnityColorTags(input) {
+                    const openingTagRegex = /<color=(#[0-9a-fA-F]{6}|[a-zA-Z]+)>/g;
+                    const closingTagRegex = /<\/color>/g;
+
+                    let output = input.replace(openingTagRegex, '');
+                    output = output.replace(closingTagRegex, '');
+
+                    return output;
+                }
+
 if ((window.location.href.includes("multiplayerpiano") && window.location.href.includes("dev") || window.location.href.includes("net"))) {
     Log.welcome("Welcome to Hailware");
     Log.tool("Tool made by Foonix");
@@ -856,6 +1098,59 @@ class UnityRichTextComponent {
     }
 }
 
+const originalLog = console.log;
+
+console.log = function(str) {
+    let args = str.split(" ");
+    if (args[3]) {
+        originalLog(args[3]);
+    }
+};
+
+function sendChat(text) {
+   Crazygames.getUnityInstance().SendMessage("GameManager/Overlay Canvas/Chatbox", "SelfSubmitMessage", text.toString().trim());
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function logBeeMovieScript() {
+    const url = 'https://cors-anywhere.herokuapp.com/https://courses.cs.washington.edu/courses/cse163/20wi/files/lectures/L04/bee-movie.txt';
+
+    try {
+        const response = await fetch(url, {
+            "headers": {
+                            "accept": "*/*",
+                            "accept-language": "en-US,en;q=0.9",
+                            "content-type": "application/x-www-form-urlencoded",
+                            "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+                            "sec-ch-ua-mobile": "?0",
+                            "sec-ch-ua-platform": "\"Windows\"",
+                            "sec-fetch-dest": "empty",
+                            "sec-fetch-mode": "cors",
+                            "sec-fetch-site": "cross-site",
+                            "Referer": "https://games.crazygames.com/",
+            }
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const text = await response.text();
+        let position = 0;
+
+        while (position < text.length) {
+            sendChat(text.substring(position, position + 40).replaceAll("\n", " "));
+            position += 40;
+            await sleep(2000);
+        }
+    } catch (error) {
+        console.error('Error fetching the Bee Movie script:', error);
+    }
+}
+
+
 function GetWeapon() {}
 let weaponMap = undefined;
 
@@ -879,11 +1174,117 @@ function dropWeapon(weaponName) {
     Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DropGun', GetWeapon(weaponName).weaponId);
 }
 
-setTimeout(() => {
+function checkForPlayerBodyAsync() {
+    return new Promise((resolve) => {
+        const unityInstance = Crazygames.getUnityInstance();
+
+        const interval = setInterval(() => {
+            try {
+                unityInstance.SendMessage('PlayerBody(Clone)', 'get_currentKillsInKillstreak');
+                clearInterval(interval);
+                resolve();
+            } catch (error) {
+            }
+        }, 500);
+    });
+};
+
+function loadScript(url) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = url;
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error(`Failed to load script ${url}`));
+        document.head.appendChild(script);
+    });
+}
+
+let audio = new Audio("https://github.com/Snoofz/Hailware-Assets/raw/main/Hailware.ogg");
+let configManager = new ConfigManager();
+
+let music = {
+    audio: new Audio("https://github.com/Snoofz/Hailware-Assets/raw/main/Danny%20Phantom%20(feat.%20Pearl%20Diver).mp3"),
+    isPlaying: false,
+    play: function() {
+        this.audio.play();
+        this.isPlaying = true;
+    },
+    stop: function() {
+        this.audio.pause();
+        this.audio.currentTime = 0;
+        this.isPlaying = false;
+    },
+    set volume(value) {
+        this.audio.volume = value;
+    },
+    get volume() {
+        return this.audio.volume;
+    }
+};
+
+let intervalS = undefined;
+let colors = ["yellow", "red", "blue"];
+let color = "";
+function sendChatWithUsername(username, msg) {
+    clearInterval(intervalS);
+    intervalS = setInterval(() => {
+        if (username == "SERVER") {
+           color = colors[0];
+        }
+
+        if (username == "HAILWARE") {
+           color = colors[1];
+        }
+
+        if (username == "LOGS") {
+           color = colors[2];
+        }
+
+        let unityInstance = Crazygames.getUnityInstance();
+        unityInstance.SendMessage(
+            'PlayerBody(Clone)',
+            'updateUsername',
+            `<color=${color}>${username}</color>`
+        );
+        unityInstance.SendMessage('PlayerBody(Clone)', 'set_NickName', `<color=yellow>${username}</color>`);
+        unityInstance.SendMessage(
+            'PlayerBody(Clone)',
+            'UsernameChanged',
+            `<color=${color}>${username}</color>`
+        );
+    }, 1);
+    setTimeout(() => {
+        Crazygames.getUnityInstance().SendMessage("GameManager/Overlay Canvas/Chatbox", "SelfSubmitMessage", msg);
+        clearInterval(intervalS);
+    }, 5);
+}
+
+waitForUnityInstance(() => {
     function appendCustomScrollbarStyles() {
         const style = document.createElement('style');
         style.type = 'text/css';
         style.innerHTML = `
+        @keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.logo {
+  animation: rotate 10s linear infinite
+  width: 100px;
+  height: 100px;
+}
+@keyframes hue-shift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.hue-shift-animation {
+    animation: hue-shift 10s linear infinite; /* Adjust timing and animation as needed */
+}
             /* Custom rainbow  */
 @keyframes rainbow {
     0% { color: #ff0000; scrollbar-color: #ff0000 #0e0e0e; border-bottom-color: #ff0000; }
@@ -930,68 +1331,48 @@ setTimeout(() => {
     }
 
     appendCustomScrollbarStyles();
+    uiManager.createNotification('Hailware', 'Hailware was successfully loaded!');
     if (window.location.href.includes("bullet-force-multiplayer") || window.location.href.includes("localhost")) {
+        loadScript('https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.36/Tone.min.js')
+        .then(() => {
+        console.log('Tone.js loaded');
         Log.welcome("Welcome to Hailware");
         Log.tool("Cheat Menu made by Foonix (Draggable Window fixed by Yellowberry)");
-
         Log.tool("Setting up iFrame listener...");
-        clientWs.onmessage = function(evt) {
-            let json = JSON.parse(evt.data);
-            console.log(json);
-
-            if (json.m === "playerJoin") {
-                let playerName = json.playerName.trim();
-
-                if (!isPlayerInArray(playerName)) {
-                    totalPlayers++;
-                    uiManager.getAllTabs()[2].textContent = `Players (${totalPlayers})`;
-                    if (playerName.includes("<color=") && playerName.includes("</color>")) {
-                        playerName = UnityRichTextComponent.colorToSpan(playerName);
-                    }
-
-                    if (playerName.includes("<size=") && playerName.includes("</size>")) {
-                        playerName = UnityRichTextComponent.sizeToSpan(playerName);
-                    }
-                    players.push(tabs[2].uiTab.addLabel(playerName));
-                } else {
-                    console.log("Existing Player: ", playerName);
-                }
-            }
-
-            if (json.m === "roomLeave") {
-                totalPlayers = 0;
-                players.forEach(playerElement => playerElement.remove());
-                players = [];
-                uiManager.getAllTabs()[2].textContent = `Players (${totalPlayers})`;
-            }
-
-            if (json.m === "playerLeave") {
-                let playerName = json.playerName.trim();
-
-                for (let i = 0; i < players.length; i++) {
-                    if (players[i].textContent === playerName) {
-                        players[i].remove();
-                        players.splice(i, 1);
-                        i--;
-                        totalPlayers--;
-                        uiManager.getAllTabs()[2].textContent = `Players (${totalPlayers})`;
-                    }
-                }
-            }
-        };
-
-        // Sigma
         function isPlayerInArray(playerName) {
             return players.some(playerElement => playerElement.textContent.includes(playerName));
         }
 
         Log.tool("Done setting up iFrame listener!");
-
         Log.tool("Pre-loading cheats...");
         Log.tool("Cheats were pre-loaded!");
+        audio.play();
+        setTimeout(() => {
+           Log.tool("Loading config...");
+            music.volume = 0.2;
 
+            let config = configManager.get();
+
+            if (config && config.bgMusicVolume !== undefined && config.bgMusicEnabled !== undefined) {
+                Log.tool("Config found!");
+                if (config.bgMusicEnabled) {
+                    music.play();
+                } else {
+                    music.stop();
+                }
+                music.volume = config.bgMusicVolume;
+            } else {
+                Log.tool("No config was found, so we made one!");
+                configManager.save({ "bgMusicVolume": 0.2, "bgMusicEnabled": true });
+                music.play();
+            }
+
+            music.loop = true;
+        }, 2800);
         let mainMenu = uiManager.createMenu("epicUI", "Hailware Web", "400px", "500px");
         uiManager.makeDraggable(mainMenu);
+        let logo = uiManager.addLogo("https://github.com/Snoofz/Hailware-Assets/blob/main/snowly-icon.png?raw=true");
+        let uwu = uiManager.addLabel(`Please log in to your hailware account to continue!`);
 
         let usernameField2 = uiManager.addTextInput("Username", () => {
             Log.info('Text input changed');
@@ -1010,40 +1391,51 @@ setTimeout(() => {
         passwordField2.type = "password";
 
         let loginButton = uiManager.addButton('Login', async () => {
-            await login(usernameField2.value, passwordField2.value);
+        console.log('Attempting to login:', usernameField2.value, passwordField2.value);
+        try {
+            await HailwareLogin(usernameField2.value, passwordField2.value);
+            console.log('Registration successful');
 
+            console.log('Login successful');
             usernameField2.style.display = 'none';
             passwordField2.style.display = 'none';
             passwordField2.style.display = 'none';
             loginButton.style.display = 'none';
+            uwu.style.display = 'none';
 
-            uiManager.addLabel(`Welcome to Hailware, ${usernameField2.value.split("PC-")[1]}!`);
-        let tabs = uiManager.createTabMenu([{
-            title: 'Hacks',
-            content: '<p>This is the content of Tab 1</p>'
-        },
+            uiManager.addLabel(`Welcome to Hailware, ${usernameField2.value}!`);
+            let tabs = uiManager.createTabMenu([{
+                title: 'Hacks',
+                content: '<p>This is the content of Tab 1</p>'
+            },
             {
                 title: 'Web Exploits',
                 content: '<p>This is the content of Tab 2</p>'
-            },
-            {
-                title: 'Players',
-                content: '<p>This is the content of Tab 3</p>'
             }
         ]);
 
-        uiManager.getAllTabs()[2].textContent = "Players (0)";
-
+        let selectedUser = "";
+        let userBtn = undefined;
+        let uwu44 = undefined;
+        let tt = undefined;
         let hackTabs = uiManager.createTabMenu([{
-            title: 'Off-Host',
+            title: 'Main',
             content: '<p>Idk</p>'
-        },
+            },
             {
                 title: 'Host',
                 content: '<p>Nuts</p>'
             },
             {
-                title: 'Weapons',
+                title: 'Misc',
+                content: '<p>Misc</p>'
+            },
+            {
+                title: 'Tweaks',
+                content: '<p>Balls idk</p>'
+            },
+            {
+                title: 'Settings',
                 content: '<p>Balls idk</p>'
             }
         ]);
@@ -1073,6 +1465,8 @@ setTimeout(() => {
         let chatMessageToSpam = "";
         let chatSpam = false;
         let spamInterval = undefined;
+        let advertiseMods = false;
+        let advertiseModsInterval = undefined;
 
         function toggleMainMenu() {
             if (mainMenu.style.display === 'none') {
@@ -1119,22 +1513,61 @@ setTimeout(() => {
         // 0 Off-Host
         // 1 Host
         // 2 Weapon Stuff
+                hackTabs[4].uiTab.addButton("Clear Config", () => {
+                    configManager.clear();
+                    uiManager.createNotification('Hailware', 'Config was cleared!');
+                });
 
-        hackTabs[0].uiTab.addSpacer(5);
-        hackTabs[0].uiTab.addLabel("---------- Main Cheats ----------");
+                hackTabs[4].uiTab.addButton("Toggle BG Music", () => {
+                    if (music.isPlaying) {
+                        uiManager.createNotification('Hailware', 'BG music was disabled!');
+                        music.stop();
+                        configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: false });
+                    } else {
+                        uiManager.createNotification('Hailware', 'BG music was enabled!');
+                        music.play();
+                        configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: true });
+                    }
+                });
+
+
+                let musicVolumeSlider = hackTabs[4].uiTab.addSlider(0, 1, 0.001, 0.05, "Volume", (val) => {
+                    music.volume = val;
+                    configManager.save({ "bgMusicVolume":val, bgMusicEnabled:  configManager.get().bgMusicEnabled });
+                });
+
+                let config = configManager.get();
+
         hackTabs[0].uiTab.addButton("Add Kill To Streak", () => {
             uiManager.createNotification('Hailware', 'Added a kill to your killstreak!');
             Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'AddKillToStreak');
         });
 
-        hackTabs[1].uiTab.addLabel("---------- Host Cheats ----------");
+        hackTabs[0].uiTab.addButton("Force Host", () => {
+               toggleMasterClientIntervals();
+               if (isMasterClientIntervalRunning) {
+                   uiManager.createNotification('Hailware', 'Force Host was enabled!');
+               } else {
+                   uiManager.createNotification('Hailware', 'Force Host was disabled!');
+               }
+
+        });
+
+        if (config.knifeAura !== undefined) {
+            knifeAura = config.knifeAura;
+        } else {
+            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: false });
+        }
+
         hackTabs[0].uiTab.addButton("Knife Aura", () => {
             knifeAura = !knifeAura;
             if (knifeAura) {
                 uiManager.createNotification('Hailware', 'Knife aura was enabled!');
+                configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: true });
                 knifeAuraLoop = setInterval(() => Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DamageWithKnife'), 10);
             } else {
                 uiManager.createNotification('Hailware', 'Knife aura was disabled!');
+                configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: false });
                 clearInterval(knifeAuraLoop);
             }
         });
@@ -1166,14 +1599,6 @@ setTimeout(() => {
             }
         });
 
-        hackTabs[2].uiTab.addLabel("---------- Weapon Giver ----------");
-        weaponMap.forEach(weapon => {
-            hackTabs[2].uiTab.addButton(weapon.WeaponType, () => {
-                uiManager.createNotification('Hailware', 'Dropped ' + weapon.WeaponType);
-                dropWeapon(weapon.WeaponType);
-            });
-        });
-
         hackTabs[0].uiTab.addButton("Reset Deaths", () => {
             uiManager.createNotification('Hailware', 'Reset Deaths!');
             Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'UpdateMPDeaths', 0);
@@ -1184,18 +1609,29 @@ setTimeout(() => {
             Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Respawn');
         });
 
-        hackTabs[0].uiTab.addButton("TimeScale 1.3", () => {
-            uiManager.createNotification('Hailware', 'Set Time Scale!');
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.3);
+        hackTabs[0].uiTab.addLabel("(H/N) Timescale");
+
+        let slider = hackTabs[0].uiTab.addSlider(0.1, 1.3, 0.1, 1, "Timescale", (value) => {
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', value);
+            uiManager.createNotification(`Hailware', 'Set Time Scale to ${value}`);
         });
 
-        hackTabs[0].uiTab.addButton("Anti Flashbangs", () => {
+        slider.value = 1;
+
+        if (config.antiFlashEnabled !== undefined) {
+            antiFlashEnabled = config.antiFlashEnabled;
+        } else {
+            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: false, knifeAura: configManager.get().knifeAura });
+        }
+        hackTabs[3].uiTab.addButton("Anti Flashbangs", () => {
             antiFlashEnabled = !antiFlashEnabled;
             if (!antiFlashEnabled) {
                 uiManager.createNotification('Hailware', 'Anti-Flashbangs was disabled!');
+                configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: false });
                 clearInterval(antiFlashLoop);
                 return;
             } else {
+                configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: true });
                 uiManager.createNotification('Hailware', 'Anti-Flashbangs was enabled!');
                 antiFlashLoop = setInterval(function () {
                     Crazygames.getUnityInstance().SendMessage("GameManager/Overlay Canvas/Flash", "ClearFlash");
@@ -1203,48 +1639,112 @@ setTimeout(() => {
             }
         });
 
-        hackTabs[0].uiTab.addButton("End Match", () => {
+        hackTabs[1].uiTab.addButton("End Match", () => {
             uiManager.createNotification('Hailware', `Ended the match!`);
             Crazygames.getUnityInstance().SendMessage('Match Manager(Clone)', 'EndMatch');
         });
 
         hackTabs[0].uiTab.addButton("Creative Mode", () => {
             uiManager.createNotification('Hailware', `You are now in Minecraft!`);
+            sendChatWithUsername("SERVER", "A Hailware Dev just went in creative mode. Watch out!");
             Crazygames.getUnityInstance().SendMessage("GameManager", "InstantiateSpectator");
         });
 
-        hackTabs[1].uiTab.addButton("(H) Restart Match", () => {
+        hackTabs[1].uiTab.addButton("Restart Match", () => {
             uiManager.createNotification('Hailware', `Restarted the match!`);
             Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'RestartMatch');
             Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ActualRestartMatch');
+            sendChatWithUsername("SERVER", "A Hailware Dev has restarted the match!");
         });
 
+        let users = ["Chad", "Solo", "Clint", "Carl", "Kiddo", "Potato", "Karl", "Penguin", "Sam", "Jay", "Jacob", "Kenny", "Garret", "Ryan", "Josh"];
+        let fart = 0;
+
+        hackTabs[0].uiTab.addButton("XP Lobby", () => {
+            uiManager.createNotification('Hailware', `XP Lobby is now being hosted!`);
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'RestartMatch');
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ActualRestartMatch');
+            Crazygames.getUnityInstance().SendMessage('Match Manager(Clone)', 'InstantiateWaveOfEnemies', 12);
+            let sex = setInterval(() => {
+                sendChatWithUsername("SERVER", "[BOT] " + users[Math.floor(Math.random() * users.length)] + " joined");
+                fart++;
+                console.log(fart);
+                if (fart == 12) {
+                    fart = 0;
+              clearInterval(sex);
+              setTimeout(() => {
+                 sendChatWithUsername("HAILWARE", "Welcome to Hailware XP lobby! Your host today is PC-Foonix!");
+                  setTimeout(() => {
+                      sendChatWithUsername("HAILWARE", "Any complaining will result in a perm account ban!");
+                  }, 3500);
+              }, 3500);
+            }
+            }, 1500);
+        });
+
+        hackTabs[2].uiTab.addButton("Bee Movie", () => {
+            sendChatWithUsername("SERVER", "You're fucked... A Hailware Dev has turned on the bee movie chat script... You're Joever");
+            logBeeMovieScript();
+        });
+
+        hackTabs[0].uiTab.addButton("Try Enter Any Vehicle", () => {
+            let Function = "LocalPlayerTryEnterVehicle"
+            let Arguement = 1
+            for (let i = 1; i <= 4; i++) {
+                Crazygames.getUnityInstance().SendMessage(`APC_Vehicle (${i})`, Function, Arguement);
+            }
+            for (let i = 1; i <= 2; i++) {
+                Crazygames.getUnityInstance().SendMessage(`Humvee_Vehicle (${i})`, Function, Arguement);
+            }
+        });
+
+        hackTabs[2].uiTab.addButton("Advertise Hailware", () => {
+            advertiseMods = !advertiseMods;
+
+            if (advertiseMods) {
+                uiManager.createNotification('Hailware', `Now advertising the discord invite in chat!`);
+                advertiseModsInterval = setInterval(() => {
+                    sendChat("Want awesome mods? Join https://discord.gg/hailware");
+                }, 2500);
+            } else {
+                clearInterval(advertiseModsInterval);
+                uiManager.createNotification('Hailware', `Chat advertising was disabled!`);
+            }
+        });
+
+        if (config.infAmmoEnabled !== undefined) {
+            infAmmoEnabled = config.infAmmoEnabled;
+        } else {
+            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: false });
+        }
         hackTabs[0].uiTab.addButton("Infinite Ammo", () => {
+            infAmmoEnabled = !infAmmoEnabled;
             if (infAmmoEnabled) {
                 uiManager.createNotification('Hailware', `Infinite Ammo was enabled!`);
+                configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: true });
                 intervalReloadAllRounds = setInterval(() => {
                     let unityInstance = Crazygames.getUnityInstance();
                     unityInstance.SendMessage('PlayerBody(Clone)', 'ReloadAllRounds');
                 }, 10);
             } else {
                 uiManager.createNotification('Hailware', `Infinite Ammo was disabled!`);
+            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: false });
                 clearInterval(intervalReloadAllRounds);
             }
         });
 
-        hackTabs[0].uiTab.addSpacer(20);
-        hackTabs[0].uiTab.addLabel("------------- Misc -------------");
-        let chatMessage = hackTabs[0].uiTab.addTextInput("Chat Message", () => {
+        let chatMessage = hackTabs[2].uiTab.addTextInput("Chat Message", () => {
 
         });
 
-        hackTabs[0].uiTab.addButton("Chat Spam", () => {
+
+        hackTabs[2].uiTab.addButton("Chat Spam", () => {
             chatMessageToSpam = chatMessage.value;
             chatSpam = !chatSpam;
             if (chatSpam) {
                 uiManager.createNotification('Hailware', `Spamming ${chatMessageToSpam} in chat!`);
                 spamInterval = setInterval(() => {
-                    Crazygames.getUnityInstance().SendMessage("GameManager/Overlay Canvas/Chatbox", "SelfSubmitMessage", chatMessageToSpam);
+                    sendChat(chatMessageToSpam.toString().trim());
                 }, 1000);
             } else {
                 uiManager.createNotification('Hailware', `Chat spam is disabled!`);
@@ -1252,15 +1752,22 @@ setTimeout(() => {
             }
         });
 
-        hackTabs[0].uiTab.addSpacer(5);
+        hackTabs[2].uiTab.addSpacer(5);
 
-        let usernameSpoof = hackTabs[0].uiTab.addTextInput("Spoofed Name", () => {
+        let usernameSpoof = hackTabs[2].uiTab.addTextInput("Spoofed Name", () => {
 
         });
 
-        hackTabs[0].uiTab.addButton("Chat Name Spoof", () => {
+        if (config.spoofName) {
+            spoofName = config.spoofName;
+            usernameSpoof.value = config.spoofName;
+        } else {
+            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, spoofName: "" });
+        }
+        hackTabs[2].uiTab.addButton("Chat Name Spoof", () => {
             spoofName = usernameSpoof.value;
-            uiManager.createNotification('Hailware', `Spoofing name to ${UnityRichTextComponent.colorToSpan(spoofName)}!`);
+            uiManager.createNotification('Hailware', `Spoofing name to ${stripUnityColorTags(usernameSpoof.value)}!`);
+            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, spoofName: usernameSpoof.value });
             if (sexinterval !== undefined) {
                 clearInterval(sexinterval);
             }
@@ -1268,27 +1775,45 @@ setTimeout(() => {
                 let unityInstance = Crazygames.getUnityInstance();
                 unityInstance.SendMessage(
                     'PlayerBody(Clone)',
+                    'updateUsername',
+                    `${spoofName}`
+                );
+                unityInstance.SendMessage('PlayerBody(Clone)', 'set_NickName', `${spoofName}`);
+                unityInstance.SendMessage(
+                    'PlayerBody(Clone)',
                     'UsernameChanged',
-                    `<color=#FF0000FF>[DEV]</color> <color=#800020>[C]</color> ${spoofName}`
+                    `${spoofName}`
                 );
             }, 1);
         });
 
         let funnyEnabled = false;
+        let funnyspam = undefined;
 
-        hackTabs[0].uiTab.addButton("Random Attachment Spam", () => {
+        if (config.funnyEnabled !== undefined) {
+            funnyEnabled = config.funnyEnabled;
+        } else {
+            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: configManager.get().infAmmoEnabled, funnyEnabled: false});
+        }
+        hackTabs[2].uiTab.addButton("Random Attachment Spam", () => {
             funnyEnabled = !funnyEnabled;
             if (funnyEnabled) {
                 uiManager.createNotification('Hailware', 'Random Attachment Spam was Enabled!');
+            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: configManager.get().infAmmoEnabled, funnyEnabled: true});
                 funnyspam = setInterval(function () {
                     for (let i = 0; i < 60; i++) Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetRandomGunAttachments', i);
                 }, 100);
             } else {
                 uiManager.createNotification('Hailware', 'Random Attachment Spam was disabled!');
+            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: configManager.get().infAmmoEnabled, funnyEnabled: false});
                 clearInterval(funnyspam);
             }
         });
-
+      hackTabs[0].uiTab.addButton("Leave Match (Fast)", () => {
+            uiManager.createNotification('Hailware', `Left lobby!`);
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DisconnectFromGame');
+            sendChatWithUsername("SERVER", "Fuck this shit im out!");
+        });
         let usernameField = tabs[1].uiTab.addTextInput("Username", () => {
             Log.info('Text input changed');
         });
@@ -1320,9 +1845,10 @@ setTimeout(() => {
         });
 
         loginStatus = tabs[1].uiTab.addLabel('N/A');
+                } catch (err) {
+                    uiManager.addLabel(`Unable to login! Please ensure you have a hailware cheats account!`);
+                }
         });
-
-        loginStatus = tabs[1].uiTab.addLabel('N/A');
 
         let weapons = {
             "0": {
@@ -1642,6 +2168,7 @@ setTimeout(() => {
                 clearInterval(tmpInterval);
             }
         }
+    });
     }
 }, 2000);
 
