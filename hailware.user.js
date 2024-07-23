@@ -1222,6 +1222,56 @@ let music = {
     }
 };
 
+function setTimeScale(scale) {
+    switch (scale) {
+        case "0":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 0);
+            break;
+        case "0.1":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 0.1);
+            break;
+        case "0.2":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 0.2);
+            break;
+        case "0.3":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 0.3);
+            break;
+        case "0.4":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 0.4);
+            break;
+        case "0.5":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 0.5);
+            break;
+        case "0.6":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 0.6);
+            break;
+        case "0.7":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 0.7);
+            break;
+        case "0.8":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 0.8);
+            break;
+        case "0.9":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 0.9);
+            break;
+        case "1.0":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.0);
+            break;
+        case "1.1":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.1);
+            break;
+        case "1.2":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.2);
+            break;
+        case "1.3":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.3);
+            break;
+        default:
+            console.log("Invalid time scale");
+            break;
+    }
+}
+
 let intervalS = undefined;
 let colors = ["yellow", "red", "blue"];
 let color = "";
@@ -1612,7 +1662,7 @@ waitForUnityInstance(() => {
         hackTabs[0].uiTab.addLabel("(H/N) Timescale");
 
         let slider = hackTabs[0].uiTab.addSlider(0.1, 1.3, 0.1, 1, "Timescale", (value) => {
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', value);
+            setTimeScale(value.toString());
             uiManager.createNotification(`Hailware', 'Set Time Scale to ${value}`);
         });
 
