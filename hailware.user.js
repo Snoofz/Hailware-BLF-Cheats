@@ -1266,6 +1266,267 @@ function setTimeScale(scale) {
         case "1.3":
             Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.3);
             break;
+        case "1.4":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.4);
+            break;
+        case "1.5":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.5);
+            break;
+        case "1.6":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.6);
+            break;
+        case "1.7":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.7);
+            break;
+        case "1.8":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.8);
+            break;
+        case "1.9":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 1.9);
+            break;
+        case "2.0":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 2.0);
+            break;
+        case "2.1":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 2.1);
+            break;
+        case "2.2":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 2.2);
+            break;
+        case "2.3":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 2.3);
+            break;
+        case "2.4":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 2.4);
+            break;
+        case "2.5":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 2.5);
+            break;
+        case "2.6":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 2.6);
+            break;
+        case "2.7":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 2.7);
+            break;
+        case "2.8":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 2.8);
+            break;
+        case "2.9":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 2.9);
+            break;
+        case "3.0":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 3.0);
+            break;
+        case "3.1":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 3.1);
+            break;
+        case "3.2":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 3.2);
+            break;
+        case "3.3":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 3.3);
+            break;
+        case "3.4":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 3.4);
+            break;
+        case "3.5":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 3.5);
+            break;
+        case "3.6":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 3.6);
+            break;
+        case "3.7":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 3.7);
+            break;
+        case "3.8":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 3.8);
+            break;
+        case "3.9":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 3.9);
+            break;
+        case "4.0":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 4.0);
+            break;
+        case "4.1":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 4.1);
+            break;
+        case "4.2":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 4.2);
+            break;
+        case "4.3":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 4.3);
+            break;
+        case "4.4":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 4.4);
+            break;
+        case "4.5":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 4.5);
+            break;
+        case "4.6":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 4.6);
+            break;
+        case "4.7":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 4.7);
+            break;
+        case "4.8":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 4.8);
+            break;
+        case "4.9":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 4.9);
+            break;
+        case "5.0":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 5.0);
+            break;
+        case "5.1":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 5.1);
+            break;
+        case "5.2":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 5.2);
+            break;
+        case "5.3":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 5.3);
+            break;
+        case "5.4":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 5.4);
+            break;
+        case "5.5":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 5.5);
+            break;
+        case "5.6":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 5.6);
+            break;
+        case "5.7":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 5.7);
+            break;
+        case "5.8":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 5.8);
+            break;
+        case "5.9":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 5.9);
+            break;
+        case "6.0":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 6.0);
+            break;
+        case "6.1":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 6.1);
+            break;
+        case "6.2":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 6.2);
+            break;
+        case "6.3":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 6.3);
+            break;
+        case "6.4":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 6.4);
+            break;
+        case "6.5":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 6.5);
+            break;
+        case "6.6":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 6.6);
+            break;
+        case "6.7":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 6.7);
+            break;
+        case "6.8":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 6.8);
+            break;
+        case "6.9":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 6.9);
+            break;
+        case "7.0":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 7.0);
+            break;
+        case "7.1":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 7.1);
+            break;
+        case "7.2":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 7.2);
+            break;
+        case "7.3":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 7.3);
+            break;
+        case "7.4":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 7.4);
+            break;
+        case "7.5":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 7.5);
+            break;
+        case "7.6":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 7.6);
+            break;
+        case "7.7":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 7.7);
+            break;
+        case "7.8":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 7.8);
+            break;
+        case "7.9":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 7.9);
+            break;
+        case "8.0":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 8.0);
+            break;
+        case "8.1":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 8.1);
+            break;
+        case "8.2":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 8.2);
+            break;
+        case "8.3":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 8.3);
+            break;
+        case "8.4":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 8.4);
+            break;
+        case "8.5":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 8.5);
+            break;
+        case "8.6":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 8.6);
+            break;
+        case "8.7":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 8.7);
+            break;
+        case "8.8":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 8.8);
+            break;
+        case "8.9":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 8.9);
+            break;
+        case "9.0":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 9.0);
+            break;
+        case "9.1":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 9.1);
+            break;
+        case "9.2":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 9.2);
+            break;
+        case "9.3":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 9.3);
+            break;
+        case "9.4":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 9.4);
+            break;
+        case "9.5":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 9.5);
+            break;
+        case "9.6":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 9.6);
+            break;
+        case "9.7":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 9.7);
+            break;
+        case "9.8":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 9.8);
+            break;
+        case "9.9":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 9.9);
+            break;
+        case "10.0":
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetTimeScale', 10.0);
+            break;
         default:
             console.log("Invalid time scale");
             break;
@@ -1654,6 +1915,42 @@ waitForUnityInstance(() => {
             Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'UpdateMPDeaths', 0);
         });
 
+        hackTabs[1].uiTab.addButton("Instant Nuke", () => {
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Nuke');
+        });
+
+        hackTabs[0].uiTab.addButton("Give All Perks", () => {
+            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'LoadPerks');
+            uiManager.createNotification('Hailware', 'LocalPlayer was given all perks!');
+        });
+
+        let killfeedSpamInterval = undefined;
+        let killfeedSpamEnabled = false;
+
+        hackTabs[2].uiTab.addButton("Killfeed Spam", () => {
+            killfeedSpamEnabled = !killfeedSpamEnabled;
+            if (killfeedSpamEnabled) {
+                uiManager.createNotification('Hailware', 'Killfeed trolling was enabled!');
+                killfeedSpamInterval = setInterval(() => {
+                    for (var i = 0; i < 10; i++) {
+                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SpectateNextPlayerOnTeam');
+                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'throwGrenade');
+                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Nuke');
+
+                        setTimeout(() => {
+                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Respawn');
+                            setTimeout(() => {
+                                Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SwitchTeams');
+                            }, 100);
+                        }, 100);
+                    }
+                }, 300);
+            } else {
+                clearInterval(killfeedSpamInterval);
+                uiManager.createNotification('Hailware', 'Killfeed trolling was disabled!');
+            }
+        });
+
         hackTabs[0].uiTab.addButton("Respawn", () => {
             uiManager.createNotification('Hailware', 'Respawned!');
             Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Respawn');
@@ -1661,7 +1958,7 @@ waitForUnityInstance(() => {
 
         hackTabs[0].uiTab.addLabel("(H/N) Timescale");
 
-        let slider = hackTabs[0].uiTab.addSlider(0.1, 1.3, 0.1, 1, "Timescale", (value) => {
+        let slider = hackTabs[0].uiTab.addSlider(0.1, 10, 0.1, 1, "Timescale", (value) => {
             setTimeScale(value.toString());
             uiManager.createNotification(`Hailware', 'Set Time Scale to ${value}`);
         });
