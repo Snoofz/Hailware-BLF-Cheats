@@ -1926,6 +1926,24 @@ waitForUnityInstance(() => {
 
         let killfeedSpamInterval = undefined;
         let killfeedSpamEnabled = false;
+        let deathSoundSpamInterval = undefined;
+        let deathSoundSpamEnabled = false;
+            function getRandomAngle() {
+                return Math.random() * 360;
+            }
+       hackTabs[2].uiTab.addButton("RPG Spam", () => {
+            deathSoundSpamEnabled = !deathSoundSpamEnabled;
+            if (deathSoundSpamEnabled) {
+                uiManager.createNotification('Hailware', 'RPG Spam was enabled!');
+                deathSoundSpamInterval = setInterval(() => {
+                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ProcessBulletFired');
+                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'fixAngle', getRandomAngle());
+                }, 10);
+            } else {
+                clearInterval(deathSoundSpamInterval);
+                uiManager.createNotification('Hailware', 'RPG Spam was disabled!');
+            }
+        });
 
         hackTabs[2].uiTab.addButton("Killfeed Spam", () => {
             killfeedSpamEnabled = !killfeedSpamEnabled;
