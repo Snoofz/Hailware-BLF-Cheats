@@ -422,7 +422,10 @@ class UIManager {
             contentContainers[0].style.display = 'block';
         }
 
-        return { UITabs: tabs, Containers: contentContainers };
+        return {
+            UITabs: tabs,
+            Containers: contentContainers
+        };
     }
 
     addTabsToTabMenu(existingTabs, newTabs) {
@@ -642,53 +645,75 @@ class UITab {
 }
 
 fetch("https://cors-anywhere.herokuapp.com/corsdemo?accessRequest=1cc95954b082f05548e37ba148ab65b8355fec9ca6bd91dd58a3723cc564690d", {
-  "headers": {
-    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-    "accept-language": "en-US,en;q=0.9",
-    "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": "\"Windows\"",
-    "sec-fetch-dest": "document",
-    "sec-fetch-mode": "navigate",
-    "sec-fetch-site": "same-origin",
-    "sec-fetch-user": "?1",
-    "upgrade-insecure-requests": "1",
-    "Referer": "https://cors-anywhere.herokuapp.com/corsdemo",
-    "Referrer-Policy": "strict-origin-when-cross-origin"
-  },
-  "body": null,
-  "method": "GET"
+    "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "Referer": "https://cors-anywhere.herokuapp.com/corsdemo",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+    },
+    "body": null,
+    "method": "GET"
 });
 
 let _0x399859299B = "zr9zLy5zbWg6aGhycM61Lc6/ec6/dy4vzrVyY2twcGPOsc61cnTPhc6xdG58MSwzMCwyNywzLDIzLDAsMTIsMjksMTcsMzQsMTUsNCwxMSwyMiw5LDE5LDI1LDE4LDEzLDI4LDE2LDEwLDIsOCw1LDMxLDI2LDIxLDE0LDI0LDMyLDcsNiwzMywyMA=="
 let _0x88492D2994 = "4pGl4pGg4pGiL+KRoOKRoeKRpuKRpOKRpi4uaOKRqC/ikaHikah0OnDikaDikaDikaXikacudDp8MCwxMSw2LDIwLDcsMTMsMSw1LDIsMTIsMTYsMjUsMTgsMTksMTQsMTcsMjQsNCwyMiwxMCwxNSw5LDMsOCwyMywyMQ==";
+
 function _0x88492D2993(_0x99500038856) {
-  const decoded = decodeURIComponent(escape(atob(_0x99500038856)));
-  const [randomized, positionsString] = decoded.split('|');
-  const randomizedPositions = positionsString.split(',').map(Number);
-  const array = randomized.split('');
-  const originalArray = [];
-  randomizedPositions.forEach((pos, index) => {
-    originalArray[pos] = array[index];
-  });
-  const derandomized = originalArray.join('');
-  const unicodeMap = {
-    '\u03b1': 'a', '\u03b5': 'e', '\u03b9': 'i', '\u03bf': 'o', '\u03c5': 'u',
-    '\u0391': 'A', '\u0395': 'E', '\u0399': 'I', '\u039f': 'O', '\u03a5': 'U',
-    '\u24EA': '0', '\u2460': '1', '\u2461': '2', '\u2462': '3', '\u2463': '4',
-    '\u2464': '5', '\u2465': '6', '\u2466': '7', '\u2467': '8', '\u2468': '9'
-  };
-  const unicodeReversed = derandomized.split('').map(char => unicodeMap[char] || char).join('');
-  const original = unicodeReversed.split('').reverse().join('');
-  return original;
+    const decoded = decodeURIComponent(escape(atob(_0x99500038856)));
+    const [randomized, positionsString] = decoded.split('|');
+    const randomizedPositions = positionsString.split(',').map(Number);
+    const array = randomized.split('');
+    const originalArray = [];
+    randomizedPositions.forEach((pos, index) => {
+        originalArray[pos] = array[index];
+    });
+    const derandomized = originalArray.join('');
+    const unicodeMap = {
+        '\u03b1': 'a',
+        '\u03b5': 'e',
+        '\u03b9': 'i',
+        '\u03bf': 'o',
+        '\u03c5': 'u',
+        '\u0391': 'A',
+        '\u0395': 'E',
+        '\u0399': 'I',
+        '\u039f': 'O',
+        '\u03a5': 'U',
+        '\u24EA': '0',
+        '\u2460': '1',
+        '\u2461': '2',
+        '\u2462': '3',
+        '\u2463': '4',
+        '\u2464': '5',
+        '\u2465': '6',
+        '\u2466': '7',
+        '\u2467': '8',
+        '\u2468': '9'
+    };
+    const unicodeReversed = derandomized.split('').map(char => unicodeMap[char] || char).join('');
+    const original = unicodeReversed.split('').reverse().join('');
+    return original;
 }
 
 async function HailwareRegister(username, password) {
     try {
         const response = await fetch(_0x88492D2993(_0x399859299B) + "/" + _0x88492D2993(_0x88492D2994) + '/register', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username, password })
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username,
+                password
+            })
         });
         const data = await response.json();
         if (!response.ok) {
@@ -1019,15 +1044,15 @@ function SHA512(str) {
     return binb2hex(binarray);
 }
 
-                function stripUnityColorTags(input) {
-                    const openingTagRegex = /<color=(#[0-9a-fA-F]{6}|[a-zA-Z]+)>/g;
-                    const closingTagRegex = /<\/color>/g;
+function stripUnityColorTags(input) {
+    const openingTagRegex = /<color=(#[0-9a-fA-F]{6}|[a-zA-Z]+)>/g;
+    const closingTagRegex = /<\/color>/g;
 
-                    let output = input.replace(openingTagRegex, '');
-                    output = output.replace(closingTagRegex, '');
+    let output = input.replace(openingTagRegex, '');
+    output = output.replace(closingTagRegex, '');
 
-                    return output;
-                }
+    return output;
+}
 
 if ((window.location.href.includes("multiplayerpiano") && window.location.href.includes("dev") || window.location.href.includes("net"))) {
     Log.welcome("Welcome to Hailware");
@@ -1038,9 +1063,9 @@ if ((window.location.href.includes("multiplayerpiano") && window.location.href.i
 
 
     let tabs = uiManager.createTabMenu([{
-        title: 'Scripts',
-        content: '<p>This is the content of Tab 1</p>'
-    },
+            title: 'Scripts',
+            content: '<p>This is the content of Tab 1</p>'
+        },
         {
             title: 'Themes',
             content: '<p>This is the content of Tab 2</p>'
@@ -1108,7 +1133,7 @@ console.log = function(str) {
 };
 
 function sendChat(text) {
-   Crazygames.getUnityInstance().SendMessage("GameManager/Overlay Canvas/Chatbox", "SelfSubmitMessage", text.toString().trim());
+    Crazygames.getUnityInstance().SendMessage("GameManager/Overlay Canvas/Chatbox", "SelfSubmitMessage", text.toString().trim());
 }
 
 function sleep(ms) {
@@ -1121,16 +1146,16 @@ async function logBeeMovieScript() {
     try {
         const response = await fetch(url, {
             "headers": {
-                            "accept": "*/*",
-                            "accept-language": "en-US,en;q=0.9",
-                            "content-type": "application/x-www-form-urlencoded",
-                            "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
-                            "sec-ch-ua-mobile": "?0",
-                            "sec-ch-ua-platform": "\"Windows\"",
-                            "sec-fetch-dest": "empty",
-                            "sec-fetch-mode": "cors",
-                            "sec-fetch-site": "cross-site",
-                            "Referer": "https://games.crazygames.com/",
+                "accept": "*/*",
+                "accept-language": "en-US,en;q=0.9",
+                "content-type": "application/x-www-form-urlencoded",
+                "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+                "sec-ch-ua-mobile": "?0",
+                "sec-ch-ua-platform": "\"Windows\"",
+                "sec-fetch-dest": "empty",
+                "sec-fetch-mode": "cors",
+                "sec-fetch-site": "cross-site",
+                "Referer": "https://games.crazygames.com/",
             }
         });
         if (!response.ok) {
@@ -1183,8 +1208,7 @@ function checkForPlayerBodyAsync() {
                 unityInstance.SendMessage('PlayerBody(Clone)', 'get_currentKillsInKillstreak');
                 clearInterval(interval);
                 resolve();
-            } catch (error) {
-            }
+            } catch (error) {}
         }, 500);
     });
 };
@@ -1536,19 +1560,20 @@ function setTimeScale(scale) {
 let intervalS = undefined;
 let colors = ["yellow", "red", "blue"];
 let color = "";
+
 function sendChatWithUsername(username, msg) {
     clearInterval(intervalS);
     intervalS = setInterval(() => {
         if (username == "SERVER") {
-           color = colors[0];
+            color = colors[0];
         }
 
         if (username == "HAILWARE") {
-           color = colors[1];
+            color = colors[1];
         }
 
         if (username == "LOGS") {
-           color = colors[2];
+            color = colors[2];
         }
 
         let unityInstance = Crazygames.getUnityInstance();
@@ -1645,895 +1670,1059 @@ waitForUnityInstance(() => {
     uiManager.createNotification('Hailware', 'Hailware was successfully loaded!');
     if (window.location.href.includes("bullet-force-multiplayer") || window.location.href.includes("localhost")) {
         loadScript('https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.36/Tone.min.js')
-        .then(() => {
-        console.log('Tone.js loaded');
-        Log.welcome("Welcome to Hailware");
-        Log.tool("Cheat Menu made by Foonix (Draggable Window fixed by Yellowberry)");
-        Log.tool("Setting up iFrame listener...");
-        function isPlayerInArray(playerName) {
-            return players.some(playerElement => playerElement.textContent.includes(playerName));
-        }
+            .then(() => {
+                console.log('Tone.js loaded');
+                Log.welcome("Welcome to Hailware");
+                Log.tool("Cheat Menu made by Foonix (Draggable Window fixed by Yellowberry)");
+                Log.tool("Setting up iFrame listener...");
 
-        Log.tool("Done setting up iFrame listener!");
-        Log.tool("Pre-loading cheats...");
-        Log.tool("Cheats were pre-loaded!");
-        audio.play();
-        setTimeout(() => {
-           Log.tool("Loading config...");
-            music.volume = 0.2;
-
-            let config = configManager.get();
-
-            if (config && config.bgMusicVolume !== undefined && config.bgMusicEnabled !== undefined) {
-                Log.tool("Config found!");
-                if (config.bgMusicEnabled) {
-                    music.play();
-                } else {
-                    music.stop();
+                function isPlayerInArray(playerName) {
+                    return players.some(playerElement => playerElement.textContent.includes(playerName));
                 }
-                music.volume = config.bgMusicVolume;
-            } else {
-                Log.tool("No config was found, so we made one!");
-                configManager.save({ "bgMusicVolume": 0.2, "bgMusicEnabled": true });
-                music.play();
-            }
 
-            music.loop = true;
-        }, 2800);
-        let mainMenu = uiManager.createMenu("epicUI", "Hailware Web", "400px", "500px");
-        uiManager.makeDraggable(mainMenu);
-        let logo = uiManager.addLogo("https://github.com/Snoofz/Hailware-Assets/blob/main/snowly-icon.png?raw=true");
-        let uwu = uiManager.addLabel(`Please log in to your hailware account to continue!`);
+                Log.tool("Done setting up iFrame listener!");
+                Log.tool("Pre-loading cheats...");
+                Log.tool("Cheats were pre-loaded!");
+                setTimeout(() => {
+                    Log.tool("Loading config...");
+                    music.volume = 0.2;
 
-        let usernameField2 = uiManager.addTextInput("Username", () => {
-            Log.info('Text input changed');
-        });
+                    let config = configManager.get();
 
-
-        let passwordField2 = uiManager.addTextInput("Password", () => {
-            Log.info('Text input changed');
-        });
-
-        if (localStorage.blfUsername && localStorage.blfPasswordHash && localStorage.blfPasswordRaw) {
-            usernameField2.value = localStorage.blfUsername;
-            passwordField2.value = localStorage.blfPasswordRaw;
-        }
-
-        passwordField2.type = "password";
-
-        let loginButton = uiManager.addButton('Login', async () => {
-        console.log('Attempting to login:', usernameField2.value, passwordField2.value);
-        try {
-            await HailwareLogin(usernameField2.value, passwordField2.value);
-            console.log('Registration successful');
-
-            console.log('Login successful');
-            usernameField2.style.display = 'none';
-            passwordField2.style.display = 'none';
-            passwordField2.style.display = 'none';
-            loginButton.style.display = 'none';
-            uwu.style.display = 'none';
-
-            uiManager.addLabel(`Welcome to Hailware, ${usernameField2.value}!`);
-            let tabs = uiManager.createTabMenu([{
-                title: 'Hacks',
-                content: '<p>This is the content of Tab 1</p>'
-            },
-            {
-                title: 'Web Exploits',
-                content: '<p>This is the content of Tab 2</p>'
-            }
-        ]);
-
-        let selectedUser = "";
-        let userBtn = undefined;
-        let uwu44 = undefined;
-        let tt = undefined;
-        let hackTabs = uiManager.createTabMenu([{
-            title: 'Main',
-            content: '<p>Idk</p>'
-            },
-            {
-                title: 'Host',
-                content: '<p>Nuts</p>'
-            },
-            {
-                title: 'Misc',
-                content: '<p>Misc</p>'
-            },
-            {
-                title: 'Tweaks',
-                content: '<p>Balls idk</p>'
-            },
-            {
-                title: 'Settings',
-                content: '<p>Balls idk</p>'
-            }
-        ]);
-
-        // Initiate an empty function
-
-        // It should drop this weapon for you, you just have to press "F" to pick up the weapon
-
-        let spoofName = "";
-        let contentContainer = tabs.Containers;
-        tabs = tabs.UITabs;
-        let idkContainer = hackTabs.Containers;
-        hackTabs = hackTabs.UITabs;
-        let knifeAura = false;
-        let knifeAuraLoop = undefined;
-        let spamEnabled = false;
-        let spam = undefined;
-        let antiFlashEnabled = false;
-        let antiFlashLoop = undefined;
-        let infAmmoEnabled = false;
-        let intervalReloadAllRounds = undefined;
-
-        let isMasterClientIntervalRunning = false;
-        let intervalFindNewMasterClient = undefined;
-        let intervalBecomeMasterClient = undefined;
-        let sexinterval = undefined;
-        let chatMessageToSpam = "";
-        let chatSpam = false;
-        let spamInterval = undefined;
-        let advertiseMods = false;
-        let advertiseModsInterval = undefined;
-
-        function toggleMainMenu() {
-            if (mainMenu.style.display === 'none') {
-                mainMenu.style.display = 'block';
-            } else {
-                mainMenu.style.display = 'none';
-            }
-        }
-
-        function resetMenuPosition() {
-            mainMenu.style.top = `calc(50% - (${mainMenu.style.height} / 2))`;
-            mainMenu.style.left = `calc(50% - (${mainMenu.style.width} / 2))`;
-        }
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Insert') {
-                toggleMainMenu();
-            } else if (event.key === 'Delete') {
-                resetMenuPosition();
-            }
-        });
-
-        function toggleMasterClientIntervals() {
-            if (isMasterClientIntervalRunning) {
-                clearInterval(intervalBecomeMasterClient);
-                clearInterval(intervalFindNewMasterClient);
-                isMasterClientIntervalRunning = false;
-                console.log("MasterClientIntervals: %cOff", "color: red"); // "Off" in red
-            } else {
-                intervalBecomeMasterClient = setInterval(() => {
-                    let unityInstance = Crazygames.getUnityInstance();
-                    unityInstance.SendMessage('PlayerBody(Clone)', 'BecomeMasterClient');
-                }, 1);
-                intervalFindNewMasterClient = setInterval(() => {
-                    let unityInstance = Crazygames.getUnityInstance();
-                    unityInstance.SendMessage('PlayerBody(Clone)', 'FindNewMasterClient');
-                }, 1);
-                isMasterClientIntervalRunning = true;
-                console.log("MasterClientIntervals: %cOn", "color: green"); // "On" in green
-
-            }
-        }
-
-        // 0 Off-Host
-        // 1 Host
-        // 2 Weapon Stuff
-                hackTabs[4].uiTab.addButton("Clear Config", () => {
-                    configManager.clear();
-                    uiManager.createNotification('Hailware', 'Config was cleared!');
-                });
-
-                hackTabs[4].uiTab.addButton("Toggle BG Music", () => {
-                    if (music.isPlaying) {
-                        uiManager.createNotification('Hailware', 'BG music was disabled!');
-                        music.stop();
-                        configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: false });
+                    if (config && config.bgMusicVolume !== undefined && config.bgMusicEnabled !== undefined) {
+                        Log.tool("Config found!");
+                        if (config.bgMusicEnabled) {
+                            music.play();
+                        } else {
+                            music.stop();
+                        }
+                        music.volume = config.bgMusicVolume;
                     } else {
-                        uiManager.createNotification('Hailware', 'BG music was enabled!');
+                        Log.tool("No config was found, so we made one!");
+                        configManager.save({
+                            "bgMusicVolume": 0.2,
+                            "bgMusicEnabled": true
+                        });
                         music.play();
-                        configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: true });
                     }
+
+                    music.loop = true;
+                }, 2800);
+                let mainMenu = uiManager.createMenu("epicUI", "Hailware Web", "400px", "500px");
+                uiManager.makeDraggable(mainMenu);
+                let logo = uiManager.addLogo("https://github.com/Snoofz/Hailware-Assets/blob/main/snowly-icon.png?raw=true");
+                let uwu = uiManager.addLabel(`Please log in to your hailware account to continue!`);
+
+                let usernameField2 = uiManager.addTextInput("Username", () => {
+                    Log.info('Text input changed');
                 });
 
 
-                let musicVolumeSlider = hackTabs[4].uiTab.addSlider(0, 1, 0.001, 0.05, "Volume", (val) => {
-                    music.volume = val;
-                    configManager.save({ "bgMusicVolume":val, bgMusicEnabled:  configManager.get().bgMusicEnabled });
+                let passwordField2 = uiManager.addTextInput("Password", () => {
+                    Log.info('Text input changed');
                 });
 
-                let config = configManager.get();
+                if (localStorage.blfUsername && localStorage.blfPasswordHash && localStorage.blfPasswordRaw) {
+                    usernameField2.value = localStorage.blfUsername;
+                    passwordField2.value = localStorage.blfPasswordRaw;
+                }
 
-        hackTabs[0].uiTab.addButton("Add Kill To Streak", () => {
-            uiManager.createNotification('Hailware', 'Added a kill to your killstreak!');
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'AddKillToStreak');
-        });
+                passwordField2.type = "password";
 
-        hackTabs[0].uiTab.addButton("Force Host", () => {
-               toggleMasterClientIntervals();
-               if (isMasterClientIntervalRunning) {
-                   uiManager.createNotification('Hailware', 'Force Host was enabled!');
-               } else {
-                   uiManager.createNotification('Hailware', 'Force Host was disabled!');
-               }
+                let loginButton = uiManager.addButton('Login', async () => {
+                    console.log('Attempting to login:', usernameField2.value, passwordField2.value);
+                    try {
+                        await HailwareLogin(usernameField2.value, passwordField2.value);
+                        console.log('Registration successful');
 
-        });
+                        console.log('Login successful');
+                        usernameField2.style.display = 'none';
+                        passwordField2.style.display = 'none';
+                        passwordField2.style.display = 'none';
+                        loginButton.style.display = 'none';
+                        uwu.style.display = 'none';
 
-        if (config.knifeAura !== undefined) {
-            knifeAura = config.knifeAura;
-        } else {
-            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: false });
-        }
+                        uiManager.addLabel(`Welcome to Hailware, ${usernameField2.value}!`);
+                        let tabs = uiManager.createTabMenu([{
+                                title: 'Hacks',
+                                content: '<p>This is the content of Tab 1</p>'
+                            },
+                            {
+                                title: 'Settings',
+                                content: '<p>This is the content of Tab 2</p>'
+                            }
+                        ]);
 
-        hackTabs[0].uiTab.addButton("Knife Aura", () => {
-            knifeAura = !knifeAura;
-            if (knifeAura) {
-                uiManager.createNotification('Hailware', 'Knife aura was enabled!');
-                configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: true });
-                knifeAuraLoop = setInterval(() => Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DamageWithKnife'), 10);
-            } else {
-                uiManager.createNotification('Hailware', 'Knife aura was disabled!');
-                configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: false });
-                clearInterval(knifeAuraLoop);
-            }
-        });
+                        let selectedUser = "";
+                        let userBtn = undefined;
+                        let uwu44 = undefined;
+                        let tt = undefined;
+                        let hackTabs = uiManager.createTabMenu([{
+                                title: 'Main',
+                                content: '<p>Idk</p>'
+                            },
+                            {
+                                title: 'Host',
+                                content: '<p>Nuts</p>'
+                            },
+                            {
+                                title: 'Misc',
+                                content: '<p>Misc</p>'
+                            },
+                            {
+                                title: 'Malicious',
+                                content: '<p>Balls idk</p>'
+                            },
+                            {
+                                title: 'Vehicles',
+                                content: '<p>Balls idk</p>'
+                            }
+                        ]);
 
-        hackTabs[1].uiTab.addButton("Grenade Spam", () => {
-            spamEnabled = !spamEnabled;
-            if (spamEnabled) {
-                uiManager.createNotification('Hailware', 'Grenade Spam was Enabled!');
-                var Module = Crazygames.getUnityInstance().Module;
-                var GameObject = "PlayerBody(Clone)";
-                var Function = "createGrenade";
-                var Parameters = [
-                    "true",
-                ]
-                var ArgumentTypes = [
-                    "bool",
-                ];
-                var Arguments = [GameObject, Function, Parameters];
-                var Response = Module.ccall("SendMessage", null, ["string", "string", ArgumentTypes], Arguments);
-                //                                                   ^         ^           ^              ^
-                //                                               GameObject Function     Types        Parameters
+                        // Initiate an empty function
 
-                spam = setInterval(function () {
-                    var Response = Module.ccall("SendMessage", null, ["string", "string", ArgumentTypes], Arguments);
-                }, 100);
-            } else {
-                uiManager.createNotification('Hailware', 'Grenade Spam was disabled!');
-                clearInterval(spam);
-            }
-        });
+                        // It should drop this weapon for you, you just have to press "F" to pick up the weapon
 
-        hackTabs[0].uiTab.addButton("Reset Deaths", () => {
-            uiManager.createNotification('Hailware', 'Reset Deaths!');
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'UpdateMPDeaths', 0);
-        });
+                        let spoofName = "";
+                        let contentContainer = tabs.Containers;
+                        tabs = tabs.UITabs;
+                        let idkContainer = hackTabs.Containers;
+                        hackTabs = hackTabs.UITabs;
+                        let knifeAura = false;
+                        let knifeAuraLoop = undefined;
+                        let spamEnabled = false;
+                        let spam = undefined;
+                        let antiFlashEnabled = false;
+                        let antiFlashLoop = undefined;
+                        let infAmmoEnabled = false;
+                        let intervalReloadAllRounds = undefined;
 
-        hackTabs[1].uiTab.addButton("Instant Nuke", () => {
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Nuke');
-        });
+                        let isMasterClientIntervalRunning = false;
+                        let intervalFindNewMasterClient = undefined;
+                        let intervalBecomeMasterClient = undefined;
+                        let isMasterClientIntervalRunning2 = false;
+                        let intervalFindNewMasterClient2 = undefined;
+                        let intervalBecomeMasterClient2 = undefined;
+                        let sexinterval = undefined;
+                        let chatMessageToSpam = "";
+                        let chatSpam = false;
+                        let spamInterval = undefined;
+                        let advertiseMods = false;
+                        let advertiseModsInterval = undefined;
 
-        hackTabs[0].uiTab.addButton("Give All Perks", () => {
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'LoadPerks');
-            uiManager.createNotification('Hailware', 'LocalPlayer was given all perks!');
-        });
+                        function toggleMainMenu() {
+                            if (mainMenu.style.display === 'none') {
+                                mainMenu.style.display = 'block';
+                            } else {
+                                mainMenu.style.display = 'none';
+                            }
+                        }
 
-        let killfeedSpamInterval = undefined;
-        let killfeedSpamEnabled = false;
-        let deathSoundSpamInterval = undefined;
-        let deathSoundSpamEnabled = false;
-            function getRandomAngle() {
-                return Math.random() * 360;
-            }
-       hackTabs[2].uiTab.addButton("RPG Spam", () => {
-            deathSoundSpamEnabled = !deathSoundSpamEnabled;
-            if (deathSoundSpamEnabled) {
-                uiManager.createNotification('Hailware', 'RPG Spam was enabled!');
-                deathSoundSpamInterval = setInterval(() => {
-                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ProcessBulletFired');
-                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'fixAngle', getRandomAngle());
-                }, 10);
-            } else {
-                clearInterval(deathSoundSpamInterval);
-                uiManager.createNotification('Hailware', 'RPG Spam was disabled!');
-            }
-        });
+                        function resetMenuPosition() {
+                            mainMenu.style.top = `calc(50% - (${mainMenu.style.height} / 2))`;
+                            mainMenu.style.left = `calc(50% - (${mainMenu.style.width} / 2))`;
+                        }
 
-        hackTabs[2].uiTab.addButton("Killfeed Spam", () => {
-            killfeedSpamEnabled = !killfeedSpamEnabled;
-            if (killfeedSpamEnabled) {
-                uiManager.createNotification('Hailware', 'Killfeed trolling was enabled!');
-                killfeedSpamInterval = setInterval(() => {
-                    for (var i = 0; i < 10; i++) {
-                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SpectateNextPlayerOnTeam');
-                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'throwGrenade');
-                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Nuke');
+                        document.addEventListener('keydown', function(event) {
+                            if (event.key === 'Insert') {
+                                toggleMainMenu();
+                            } else if (event.key === 'Delete') {
+                                resetMenuPosition();
+                            }
+                        });
 
-                        setTimeout(() => {
+                        function toggleMasterClientIntervals() {
+                            if (isMasterClientIntervalRunning) {
+                                clearInterval(intervalBecomeMasterClient);
+                                clearInterval(intervalFindNewMasterClient);
+                                isMasterClientIntervalRunning = false;
+                                console.log("MasterClientIntervals: %cOff", "color: red"); // "Off" in red
+                            } else {
+                                intervalFindNewMasterClient = setInterval(() => {
+                                    for (var i = 0; i < 10; i++) {
+                                        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'UpdateCumulativeMovingAveragePing', 9999);
+                                        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetPing', 9999);
+                                        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'AddKillToStreak');
+                                    }
+                                }, 1);
+                                intervalBecomeMasterClient = setInterval(() => {
+                                    let unityInstance = Crazygames.getUnityInstance();
+                                    unityInstance.SendMessage('PlayerBody(Clone)', 'BecomeMasterClient');
+                                }, 1);
+                                isMasterClientIntervalRunning = true;
+                                console.log("MasterClientIntervals: %cOn", "color: green"); // "On" in green
+
+                            }
+                        }
+
+                        function toggleMasterClientIntervals2() {
+                            if (isMasterClientIntervalRunning2) {
+                                clearInterval(intervalBecomeMasterClient2);
+                                clearInterval(intervalFindNewMasterClient2);
+                                isMasterClientIntervalRunning2 = false;
+                                console.log("MasterClientIntervals: %cOff", "color: red"); // "Off" in red
+                            } else {
+                                intervalFindNewMasterClient2 = setInterval(() => {
+                                    for (var i = 0; i < 10000; i++) {
+                                        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'UpdateCumulativeMovingAveragePing', 9999);
+                                        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetPing', 9999);
+                                        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'AddKillToStreak');
+                                    }
+                                }, 1);
+                                intervalBecomeMasterClient2 = setInterval(() => {
+                                    let unityInstance = Crazygames.getUnityInstance();
+                                    unityInstance.SendMessage('PlayerBody(Clone)', 'BecomeMasterClient');
+                                }, 1);
+                                isMasterClientIntervalRunning2 = true;
+                                console.log("MasterClientIntervals: %cOn", "color: green"); // "On" in green
+
+                            }
+                        }
+
+                        // 0 Off-Host
+                        // 1 Host
+                        // 2 Weapon Stuff
+                        hackTabs[4].uiTab.addButton("(NEW ★) Enter Car", () => {
+                            let Function = "LocalPlayerTryEnterVehicle";
+                            let Arguement = 0;
+                            for (let i = 1; i <= 2; i++) {
+                                Crazygames.getUnityInstance().SendMessage(`Vehicle (${i})`, Function, Arguement);
+                            }
+                        });
+
+                        hackTabs[4].uiTab.addButton("(NEW ★) Enter APC", () => {
+                            let Function = "LocalPlayerTryEnterVehicle";
+                            let Arguement = 0;
+                            for (let i = 1; i <= 4; i++) {
+                                Crazygames.getUnityInstance().SendMessage(`APC_Vehicle (${i})`, Function, Arguement);
+                            }
+                        });
+
+                        hackTabs[4].uiTab.addButton("(NEW ★) Enter Humvee", () => {
+                            let Function = "LocalPlayerTryEnterVehicle";
+                            let Arguement = 0;
+                            for (let i = 1; i <= 2; i++) {
+                                Crazygames.getUnityInstance().SendMessage(`Humvee_Vehicle (${i})`, Function, Arguement);
+                            }
+                        });
+
+                        hackTabs[4].uiTab.addButton("(NEW ★) Enter Jet", () => {
+                            let Function = "LocalPlayerTryEnterVehicle";
+                            let Arguement = 0;
+                            for (let i = 1; i <= 2; i++) {
+                                Crazygames.getUnityInstance().SendMessage(`JetVehicle (${i})`, Function, Arguement);
+                            }
+                        });
+
+                        hackTabs[4].uiTab.addButton("(NEW ★) Enter Helicopter", () => {
+                            let Function = "LocalPlayerTryEnterVehicle";
+                            let Arguement = 0;
+                            for (let i = 1; i <= 2; i++) {
+                                Crazygames.getUnityInstance().SendMessage(`HeliVehicle (${i})`, Function, Arguement);
+                            }
+                        });
+
+                        tabs[1].uiTab.addButton("Clear Config", () => {
+                            configManager.clear();
+                            uiManager.createNotification('Hailware', 'Config was cleared!');
+                        });
+
+                        tabs[1].uiTab.addButton("Toggle BG Music", () => {
+                            if (music.isPlaying) {
+                                uiManager.createNotification('Hailware', 'BG music was disabled!');
+                                music.stop();
+                                configManager.save({
+                                    "bgMusicVolume": configManager.get().bgMusicVolume,
+                                    bgMusicEnabled: false
+                                });
+                            } else {
+                                uiManager.createNotification('Hailware', 'BG music was enabled!');
+                                music.play();
+                                configManager.save({
+                                    "bgMusicVolume": configManager.get().bgMusicVolume,
+                                    bgMusicEnabled: true
+                                });
+                            }
+                        });
+
+
+                        let musicVolumeSlider = tabs[1].uiTab.addSlider(0, 1, 0.001, 0.05, "Volume", (val) => {
+                            music.volume = val;
+                            configManager.save({
+                                "bgMusicVolume": val,
+                                bgMusicEnabled: configManager.get().bgMusicEnabled
+                            });
+                        });
+
+                        let config = configManager.get();
+
+                        hackTabs[0].uiTab.addButton("(★) Add Kill To Streak", () => {
+                            uiManager.createNotification('Hailware', 'Added a kill to your killstreak!');
+                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'AddKillToStreak');
+                        });
+
+                        hackTabs[3].uiTab.addButton("(NEW ★) Lobby Crasher", () => {
+                            toggleMasterClientIntervals();
+                            if (isMasterClientIntervalRunning) {
+                                uiManager.createNotification('Hailware', 'Lobby Crasher was enabled!');
+                            } else {
+                                uiManager.createNotification('Hailware', 'Lobby Crasher was disabled!');
+                            }
+
+                        });
+
+                        hackTabs[3].uiTab.addButton("(NEW ★) Lobby Lagger", () => {
+                            toggleMasterClientIntervals2();
+                            if (isMasterClientIntervalRunning2) {
+                                uiManager.createNotification('Hailware', 'Lobby Lagger was enabled!');
+                            } else {
+                                uiManager.createNotification('Hailware', 'Lobby Lagger was disabled!');
+                            }
+
+                        });
+
+                        if (config.knifeAura !== undefined) {
+                            knifeAura = config.knifeAura;
+                        } else {
+                            configManager.save({
+                                "bgMusicVolume": configManager.get().bgMusicVolume,
+                                bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                antiFlashEnabled: configManager.get().antiFlashEnabled,
+                                knifeAura: false
+                            });
+                        }
+
+                        hackTabs[0].uiTab.addButton("(★) Knife Aura", () => {
+                            knifeAura = !knifeAura;
+                            if (knifeAura) {
+                                uiManager.createNotification('Hailware', 'Knife aura was enabled!');
+                                configManager.save({
+                                    "bgMusicVolume": configManager.get().bgMusicVolume,
+                                    bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                    antiFlashEnabled: configManager.get().antiFlashEnabled,
+                                    knifeAura: true
+                                });
+                                knifeAuraLoop = setInterval(() => Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DamageWithKnife'), 10);
+                            } else {
+                                uiManager.createNotification('Hailware', 'Knife aura was disabled!');
+                                configManager.save({
+                                    "bgMusicVolume": configManager.get().bgMusicVolume,
+                                    bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                    antiFlashEnabled: configManager.get().antiFlashEnabled,
+                                    knifeAura: false
+                                });
+                                clearInterval(knifeAuraLoop);
+                            }
+                        });
+
+                        hackTabs[2].uiTab.addButton("Grenade Spam", () => {
+                            spamEnabled = !spamEnabled;
+                            if (spamEnabled) {
+                                uiManager.createNotification('Hailware', 'Grenade Spam was Enabled!');
+                                var Module = Crazygames.getUnityInstance().Module;
+                                var GameObject = "PlayerBody(Clone)";
+                                var Function = "createGrenade";
+                                var Parameters = [
+                                    "true",
+                                ]
+                                var ArgumentTypes = [
+                                    "bool",
+                                ];
+                                var Arguments = [GameObject, Function, Parameters];
+                                var Response = Module.ccall("SendMessage", null, ["string", "string", ArgumentTypes], Arguments);
+                                //                                                   ^         ^           ^              ^
+                                //                                               GameObject Function     Types        Parameters
+
+                                spam = setInterval(function() {
+                                    var Response = Module.ccall("SendMessage", null, ["string", "string", ArgumentTypes], Arguments);
+                                }, 100);
+                            } else {
+                                uiManager.createNotification('Hailware', 'Grenade Spam was disabled!');
+                                clearInterval(spam);
+                            }
+                        });
+
+                        let RandomGunLoopInterval = undefined;
+                        let RandomGunLoopEnabled = false;
+                        hackTabs[0].uiTab.addButton("Reset Deaths", () => {
+                            uiManager.createNotification('Hailware', 'Reset Deaths!');
+                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'UpdateMPDeaths', 0);
+                        });
+
+                        hackTabs[0].uiTab.addButton("(★) Instant Nuke", () => {
+                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Nuke');
+                        });
+
+                        hackTabs[0].uiTab.addButton("(NEW ★) Random Gun Cycle", () => {
+                            RandomGunLoopEnabled = !RandomGunLoopEnabled;
+                            if (RandomGunLoopEnabled) {
+                                uiManager.createNotification('Hailware', 'Random Gun Cycle was enabled!');
+                                RandomGunLoopInterval = setInterval(() => {
+                                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DropGun', Math.floor(Math.random() * 45));
+                                    setTimeout(() => {
+                                        Crazygames.getUnityInstance().SendMessage('PickUpWeapon', 'PickUpGun');
+                                    }, 400);
+                                }, 800);
+                            } else {
+                                clearInterval(RandomGunLoopInterval);
+                                uiManager.createNotification('Hailware', 'Random Gun Cycle was disabled!');
+                            }
+                        });
+
+                        hackTabs[0].uiTab.addButton("(★) Give All Perks", () => {
+                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'LoadPerks');
+                            uiManager.createNotification('Hailware', 'LocalPlayer was given all perks!');
+                        });
+
+                        let killfeedSpamInterval = undefined;
+                        let killfeedSpamEnabled = false;
+                        let deathSoundSpamInterval = undefined;
+                        let deathSoundSpamEnabled = false;
+
+                        function getRandomAngle() {
+                            return Math.random() * 360;
+                        }
+                        hackTabs[2].uiTab.addButton("(NEW ★) Weapon Spam", () => {
+                            deathSoundSpamEnabled = !deathSoundSpamEnabled;
+                            if (deathSoundSpamEnabled) {
+                                uiManager.createNotification('Hailware', 'RPG Spam was enabled!');
+                                deathSoundSpamInterval = setInterval(() => {
+                                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ProcessBulletFired');
+                                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'fixAngle', getRandomAngle());
+                                }, 10);
+                            } else {
+                                clearInterval(deathSoundSpamInterval);
+                                uiManager.createNotification('Hailware', 'RPG Spam was disabled!');
+                            }
+                        });
+
+                        hackTabs[2].uiTab.addButton("(★) Killfeed Spam", () => {
+                            killfeedSpamEnabled = !killfeedSpamEnabled;
+                            if (killfeedSpamEnabled) {
+                                uiManager.createNotification('Hailware', 'Killfeed trolling was enabled!');
+                                killfeedSpamInterval = setInterval(() => {
+                                    for (var i = 0; i < 10; i++) {
+                                        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SpectateNextPlayerOnTeam');
+                                        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'throwGrenade');
+                                        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Nuke');
+
+                                        setTimeout(() => {
+                                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Respawn');
+                                            setTimeout(() => {
+                                                Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SwitchTeams');
+                                            }, 100);
+                                        }, 100);
+                                    }
+                                }, 300);
+                            } else {
+                                clearInterval(killfeedSpamInterval);
+                                uiManager.createNotification('Hailware', 'Killfeed trolling was disabled!');
+                            }
+                        });
+
+                        hackTabs[0].uiTab.addButton("Respawn", () => {
+                            uiManager.createNotification('Hailware', 'Respawned!');
                             Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Respawn');
-                            setTimeout(() => {
-                                Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SwitchTeams');
-                            }, 100);
-                        }, 100);
+                        });
+
+                        hackTabs[0].uiTab.addLabel("(H/N) Timescale");
+
+                        let slider = hackTabs[0].uiTab.addSlider(0.1, 10, 0.1, 1, "Timescale", (value) => {
+                            setTimeScale(value.toString());
+                        });
+
+                        slider.value = 1;
+
+                        if (config.antiFlashEnabled !== undefined) {
+                            antiFlashEnabled = config.antiFlashEnabled;
+                        } else {
+                            configManager.save({
+                                "bgMusicVolume": configManager.get().bgMusicVolume,
+                                bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                antiFlashEnabled: false,
+                                knifeAura: configManager.get().knifeAura
+                            });
+                        }
+                        hackTabs[0].uiTab.addButton("(★) Anti Flashbangs", () => {
+                            antiFlashEnabled = !antiFlashEnabled;
+                            if (!antiFlashEnabled) {
+                                uiManager.createNotification('Hailware', 'Anti-Flashbangs was disabled!');
+                                configManager.save({
+                                    "bgMusicVolume": configManager.get().bgMusicVolume,
+                                    bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                    antiFlashEnabled: false
+                                });
+                                clearInterval(antiFlashLoop);
+                                return;
+                            } else {
+                                configManager.save({
+                                    "bgMusicVolume": configManager.get().bgMusicVolume,
+                                    bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                    antiFlashEnabled: true
+                                });
+                                uiManager.createNotification('Hailware', 'Anti-Flashbangs was enabled!');
+                                antiFlashLoop = setInterval(function() {
+                                    Crazygames.getUnityInstance().SendMessage("GameManager/Overlay Canvas/Flash", "ClearFlash");
+                                }, 1);
+                            }
+                        });
+
+                        hackTabs[1].uiTab.addButton("End Match", () => {
+                            uiManager.createNotification('Hailware', `Ended the match!`);
+                            Crazygames.getUnityInstance().SendMessage('Match Manager(Clone)', 'EndMatch');
+                        });
+
+                        hackTabs[0].uiTab.addButton("(★) Creative Mode", () => {
+                            uiManager.createNotification('Hailware', `You are now in Minecraft!`);
+                            Crazygames.getUnityInstance().SendMessage("GameManager", "InstantiateSpectator");
+                        });
+
+                        hackTabs[1].uiTab.addButton("(★) Restart Match", () => {
+                            uiManager.createNotification('Hailware', `Restarted the match!`);
+                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'RestartMatch');
+                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ActualRestartMatch');
+                        });
+
+                        let users = ["Chad", "Solo", "Clint", "Carl", "Kiddo", "Potato", "Karl", "Penguin", "Sam", "Jay", "Jacob", "Kenny", "Garret", "Ryan", "Josh"];
+                        let fart = 0;
+
+                        hackTabs[2].uiTab.addButton("(★) Bee Movie", () => {
+                            logBeeMovieScript();
+                        });
+
+                        hackTabs[0].uiTab.addButton("Try Enter Any Vehicle", () => {
+                            let Function = "LocalPlayerTryEnterVehicle"
+                            let Arguement = 1
+                            for (let i = 1; i <= 4; i++) {
+                                Crazygames.getUnityInstance().SendMessage(`APC_Vehicle (${i})`, Function, Arguement);
+                            }
+                            for (let i = 1; i <= 2; i++) {
+                                Crazygames.getUnityInstance().SendMessage(`Humvee_Vehicle (${i})`, Function, Arguement);
+                            }
+                        });
+
+                        hackTabs[2].uiTab.addButton("(★) Advertise Hailware", () => {
+                            advertiseMods = !advertiseMods;
+
+                            if (advertiseMods) {
+                                uiManager.createNotification('Hailware', `Now advertising the discord invite in chat!`);
+                                advertiseModsInterval = setInterval(() => {
+                                    sendChat("Want awesome mods? Join https://discord.gg/hailware");
+                                }, 2500);
+                            } else {
+                                clearInterval(advertiseModsInterval);
+                                uiManager.createNotification('Hailware', `Chat advertising was disabled!`);
+                            }
+                        });
+
+                        if (config.infAmmoEnabled !== undefined) {
+                            infAmmoEnabled = config.infAmmoEnabled;
+                        } else {
+                            configManager.save({
+                                "bgMusicVolume": configManager.get().bgMusicVolume,
+                                bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                antiFlashEnabled: configManager.get().antiFlashEnabled,
+                                knifeAura: configManager.get().knifeAura,
+                                infAmmoEnabled: false
+                            });
+                        }
+                        hackTabs[0].uiTab.addButton("(★) Infinite Ammo", () => {
+                            infAmmoEnabled = !infAmmoEnabled;
+                            if (infAmmoEnabled) {
+                                uiManager.createNotification('Hailware', `Infinite Ammo was enabled!`);
+                                configManager.save({
+                                    "bgMusicVolume": configManager.get().bgMusicVolume,
+                                    bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                    antiFlashEnabled: configManager.get().antiFlashEnabled,
+                                    knifeAura: configManager.get().knifeAura,
+                                    infAmmoEnabled: true
+                                });
+                                intervalReloadAllRounds = setInterval(() => {
+                                    let unityInstance = Crazygames.getUnityInstance();
+                                    unityInstance.SendMessage('PlayerBody(Clone)', 'ReloadAllRounds');
+                                }, 10);
+                            } else {
+                                uiManager.createNotification('Hailware', `Infinite Ammo was disabled!`);
+                                configManager.save({
+                                    "bgMusicVolume": configManager.get().bgMusicVolume,
+                                    bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                    antiFlashEnabled: configManager.get().antiFlashEnabled,
+                                    knifeAura: configManager.get().knifeAura,
+                                    infAmmoEnabled: false
+                                });
+                                clearInterval(intervalReloadAllRounds);
+                            }
+                        });
+
+                        let chatMessage = hackTabs[2].uiTab.addTextInput("Chat Message", () => {
+
+                        });
+
+
+                        hackTabs[2].uiTab.addButton("(BEST ★) Chat Spam", () => {
+                            chatMessageToSpam = chatMessage.value;
+                            chatSpam = !chatSpam;
+                            if (chatSpam) {
+                                uiManager.createNotification('Hailware', `Spamming ${chatMessageToSpam} in chat!`);
+                                spamInterval = setInterval(() => {
+                                    sendChat(chatMessageToSpam.toString().trim());
+                                }, 1000);
+                            } else {
+                                uiManager.createNotification('Hailware', `Chat spam is disabled!`);
+                                clearInterval(spamInterval);
+                            }
+                        });
+
+                        hackTabs[2].uiTab.addSpacer(5);
+
+                        let usernameSpoof = hackTabs[2].uiTab.addTextInput("Spoofed Name", () => {
+
+                        });
+
+                        if (config.spoofName) {
+                            spoofName = config.spoofName;
+                            usernameSpoof.value = config.spoofName;
+                        } else {
+                            configManager.save({
+                                "bgMusicVolume": configManager.get().bgMusicVolume,
+                                bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                antiFlashEnabled: configManager.get().antiFlashEnabled,
+                                knifeAura: configManager.get().knifeAura,
+                                spoofName: ""
+                            });
+                        }
+                        hackTabs[2].uiTab.addButton("Chat Name Spoof", () => {
+                            spoofName = usernameSpoof.value;
+                            uiManager.createNotification('Hailware', `Spoofing name to ${stripUnityColorTags(usernameSpoof.value)}!`);
+                            configManager.save({
+                                "bgMusicVolume": configManager.get().bgMusicVolume,
+                                bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                antiFlashEnabled: configManager.get().antiFlashEnabled,
+                                knifeAura: configManager.get().knifeAura,
+                                spoofName: usernameSpoof.value
+                            });
+                            if (sexinterval !== undefined) {
+                                clearInterval(sexinterval);
+                            }
+                            sexinterval = setInterval(() => {
+                                let unityInstance = Crazygames.getUnityInstance();
+                                unityInstance.SendMessage(
+                                    'PlayerBody(Clone)',
+                                    'updateUsername',
+                                    `${spoofName}`
+                                );
+                                unityInstance.SendMessage('PlayerBody(Clone)', 'set_NickName', `${spoofName}`);
+                                unityInstance.SendMessage(
+                                    'PlayerBody(Clone)',
+                                    'UsernameChanged',
+                                    `${spoofName}`
+                                );
+                            }, 1);
+                        });
+
+                        let funnyEnabled = false;
+                        let funnyspam = undefined;
+
+                        if (config.funnyEnabled !== undefined) {
+                            funnyEnabled = config.funnyEnabled;
+                        } else {
+                            configManager.save({
+                                "bgMusicVolume": configManager.get().bgMusicVolume,
+                                bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                antiFlashEnabled: configManager.get().antiFlashEnabled,
+                                knifeAura: configManager.get().knifeAura,
+                                infAmmoEnabled: configManager.get().infAmmoEnabled,
+                                funnyEnabled: false
+                            });
+                        }
+                        hackTabs[2].uiTab.addButton("(★) Random Attachment Spam", () => {
+                            funnyEnabled = !funnyEnabled;
+                            if (funnyEnabled) {
+                                uiManager.createNotification('Hailware', 'Random Attachment Spam was Enabled!');
+                                configManager.save({
+                                    "bgMusicVolume": configManager.get().bgMusicVolume,
+                                    bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                    antiFlashEnabled: configManager.get().antiFlashEnabled,
+                                    knifeAura: configManager.get().knifeAura,
+                                    infAmmoEnabled: configManager.get().infAmmoEnabled,
+                                    funnyEnabled: true
+                                });
+                                funnyspam = setInterval(function() {
+                                    for (let i = 0; i < 60; i++) Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetRandomGunAttachments', i);
+                                }, 100);
+                            } else {
+                                uiManager.createNotification('Hailware', 'Random Attachment Spam was disabled!');
+                                configManager.save({
+                                    "bgMusicVolume": configManager.get().bgMusicVolume,
+                                    bgMusicEnabled: configManager.get().bgMusicEnabled,
+                                    antiFlashEnabled: configManager.get().antiFlashEnabled,
+                                    knifeAura: configManager.get().knifeAura,
+                                    infAmmoEnabled: configManager.get().infAmmoEnabled,
+                                    funnyEnabled: false
+                                });
+                                clearInterval(funnyspam);
+                            }
+                        });
+                        hackTabs[0].uiTab.addButton("Leave Match (Fast)", () => {
+                            uiManager.createNotification('Hailware', `Left lobby!`);
+                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DisconnectFromGame');
+                            sendChatWithUsername("SERVER", "Fuck this shit im out!");
+                        });
+                        let usernameField = tabs[1].uiTab.addTextInput("Username", () => {
+                            Log.info('Text input changed');
+                        });
+
+
+                        let passwordField = tabs[1].uiTab.addTextInput("Password", () => {
+                            Log.info('Text input changed');
+                        });
+
+                        if (localStorage.blfUsername && localStorage.blfPasswordHash && localStorage.blfPasswordRaw) {
+                            usernameField.value = localStorage.blfUsername;
+                            passwordField.value = localStorage.blfPasswordRaw;
+                        }
+
+                        passwordField.type = "password";
+
+                        tabs[1].uiTab.addButton('(★) Login', () => {
+                            login(usernameField.value, passwordField.value);
+                        });
+
+                        tabs[1].uiTab.addButton('Register', async () => {
+                            let response = await registerAccount(usernameField.value, passwordField.value);
+
+                            if (response) {
+                                login("PC-" + usernameField.value, passwordField.value);
+                            } else {
+                                loginStatus.textContent = 'Registration Failed';
+                            }
+                        });
+
+                        loginStatus = tabs[1].uiTab.addLabel('N/A');
+                    } catch (err) {
+                        uiManager.addLabel(`Unable to login! Please ensure you have a hailware cheats account!`);
                     }
-                }, 300);
-            } else {
-                clearInterval(killfeedSpamInterval);
-                uiManager.createNotification('Hailware', 'Killfeed trolling was disabled!');
-            }
-        });
-
-        hackTabs[0].uiTab.addButton("Respawn", () => {
-            uiManager.createNotification('Hailware', 'Respawned!');
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Respawn');
-        });
-
-        hackTabs[0].uiTab.addLabel("(H/N) Timescale");
-
-        let slider = hackTabs[0].uiTab.addSlider(0.1, 10, 0.1, 1, "Timescale", (value) => {
-            setTimeScale(value.toString());
-            uiManager.createNotification(`Hailware', 'Set Time Scale to ${value}`);
-        });
-
-        slider.value = 1;
-
-        if (config.antiFlashEnabled !== undefined) {
-            antiFlashEnabled = config.antiFlashEnabled;
-        } else {
-            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: false, knifeAura: configManager.get().knifeAura });
-        }
-        hackTabs[3].uiTab.addButton("Anti Flashbangs", () => {
-            antiFlashEnabled = !antiFlashEnabled;
-            if (!antiFlashEnabled) {
-                uiManager.createNotification('Hailware', 'Anti-Flashbangs was disabled!');
-                configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: false });
-                clearInterval(antiFlashLoop);
-                return;
-            } else {
-                configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: true });
-                uiManager.createNotification('Hailware', 'Anti-Flashbangs was enabled!');
-                antiFlashLoop = setInterval(function () {
-                    Crazygames.getUnityInstance().SendMessage("GameManager/Overlay Canvas/Flash", "ClearFlash");
-                }, 1);
-            }
-        });
-
-        hackTabs[1].uiTab.addButton("End Match", () => {
-            uiManager.createNotification('Hailware', `Ended the match!`);
-            Crazygames.getUnityInstance().SendMessage('Match Manager(Clone)', 'EndMatch');
-        });
-
-        hackTabs[0].uiTab.addButton("Creative Mode", () => {
-            uiManager.createNotification('Hailware', `You are now in Minecraft!`);
-            sendChatWithUsername("SERVER", "A Hailware Dev just went in creative mode. Watch out!");
-            Crazygames.getUnityInstance().SendMessage("GameManager", "InstantiateSpectator");
-        });
-
-        hackTabs[1].uiTab.addButton("Restart Match", () => {
-            uiManager.createNotification('Hailware', `Restarted the match!`);
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'RestartMatch');
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ActualRestartMatch');
-            sendChatWithUsername("SERVER", "A Hailware Dev has restarted the match!");
-        });
-
-        let users = ["Chad", "Solo", "Clint", "Carl", "Kiddo", "Potato", "Karl", "Penguin", "Sam", "Jay", "Jacob", "Kenny", "Garret", "Ryan", "Josh"];
-        let fart = 0;
-
-        hackTabs[0].uiTab.addButton("XP Lobby", () => {
-            uiManager.createNotification('Hailware', `XP Lobby is now being hosted!`);
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'RestartMatch');
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ActualRestartMatch');
-            Crazygames.getUnityInstance().SendMessage('Match Manager(Clone)', 'InstantiateWaveOfEnemies', 12);
-            let sex = setInterval(() => {
-                sendChatWithUsername("SERVER", "[BOT] " + users[Math.floor(Math.random() * users.length)] + " joined");
-                fart++;
-                console.log(fart);
-                if (fart == 12) {
-                    fart = 0;
-              clearInterval(sex);
-              setTimeout(() => {
-                 sendChatWithUsername("HAILWARE", "Welcome to Hailware XP lobby! Your host today is PC-Foonix!");
-                  setTimeout(() => {
-                      sendChatWithUsername("HAILWARE", "Any complaining will result in a perm account ban!");
-                  }, 3500);
-              }, 3500);
-            }
-            }, 1500);
-        });
-
-        hackTabs[2].uiTab.addButton("Bee Movie", () => {
-            sendChatWithUsername("SERVER", "You're fucked... A Hailware Dev has turned on the bee movie chat script... You're Joever");
-            logBeeMovieScript();
-        });
-
-        hackTabs[0].uiTab.addButton("Try Enter Any Vehicle", () => {
-            let Function = "LocalPlayerTryEnterVehicle"
-            let Arguement = 1
-            for (let i = 1; i <= 4; i++) {
-                Crazygames.getUnityInstance().SendMessage(`APC_Vehicle (${i})`, Function, Arguement);
-            }
-            for (let i = 1; i <= 2; i++) {
-                Crazygames.getUnityInstance().SendMessage(`Humvee_Vehicle (${i})`, Function, Arguement);
-            }
-        });
-
-        hackTabs[2].uiTab.addButton("Advertise Hailware", () => {
-            advertiseMods = !advertiseMods;
-
-            if (advertiseMods) {
-                uiManager.createNotification('Hailware', `Now advertising the discord invite in chat!`);
-                advertiseModsInterval = setInterval(() => {
-                    sendChat("Want awesome mods? Join https://discord.gg/hailware");
-                }, 2500);
-            } else {
-                clearInterval(advertiseModsInterval);
-                uiManager.createNotification('Hailware', `Chat advertising was disabled!`);
-            }
-        });
-
-        if (config.infAmmoEnabled !== undefined) {
-            infAmmoEnabled = config.infAmmoEnabled;
-        } else {
-            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: false });
-        }
-        hackTabs[0].uiTab.addButton("Infinite Ammo", () => {
-            infAmmoEnabled = !infAmmoEnabled;
-            if (infAmmoEnabled) {
-                uiManager.createNotification('Hailware', `Infinite Ammo was enabled!`);
-                configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: true });
-                intervalReloadAllRounds = setInterval(() => {
-                    let unityInstance = Crazygames.getUnityInstance();
-                    unityInstance.SendMessage('PlayerBody(Clone)', 'ReloadAllRounds');
-                }, 10);
-            } else {
-                uiManager.createNotification('Hailware', `Infinite Ammo was disabled!`);
-            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: false });
-                clearInterval(intervalReloadAllRounds);
-            }
-        });
-
-        let chatMessage = hackTabs[2].uiTab.addTextInput("Chat Message", () => {
-
-        });
-
-
-        hackTabs[2].uiTab.addButton("Chat Spam", () => {
-            chatMessageToSpam = chatMessage.value;
-            chatSpam = !chatSpam;
-            if (chatSpam) {
-                uiManager.createNotification('Hailware', `Spamming ${chatMessageToSpam} in chat!`);
-                spamInterval = setInterval(() => {
-                    sendChat(chatMessageToSpam.toString().trim());
-                }, 1000);
-            } else {
-                uiManager.createNotification('Hailware', `Chat spam is disabled!`);
-                clearInterval(spamInterval);
-            }
-        });
-
-        hackTabs[2].uiTab.addSpacer(5);
-
-        let usernameSpoof = hackTabs[2].uiTab.addTextInput("Spoofed Name", () => {
-
-        });
-
-        if (config.spoofName) {
-            spoofName = config.spoofName;
-            usernameSpoof.value = config.spoofName;
-        } else {
-            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, spoofName: "" });
-        }
-        hackTabs[2].uiTab.addButton("Chat Name Spoof", () => {
-            spoofName = usernameSpoof.value;
-            uiManager.createNotification('Hailware', `Spoofing name to ${stripUnityColorTags(usernameSpoof.value)}!`);
-            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, spoofName: usernameSpoof.value });
-            if (sexinterval !== undefined) {
-                clearInterval(sexinterval);
-            }
-            sexinterval = setInterval(() => {
-                let unityInstance = Crazygames.getUnityInstance();
-                unityInstance.SendMessage(
-                    'PlayerBody(Clone)',
-                    'updateUsername',
-                    `${spoofName}`
-                );
-                unityInstance.SendMessage('PlayerBody(Clone)', 'set_NickName', `${spoofName}`);
-                unityInstance.SendMessage(
-                    'PlayerBody(Clone)',
-                    'UsernameChanged',
-                    `${spoofName}`
-                );
-            }, 1);
-        });
-
-        let funnyEnabled = false;
-        let funnyspam = undefined;
-
-        if (config.funnyEnabled !== undefined) {
-            funnyEnabled = config.funnyEnabled;
-        } else {
-            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: configManager.get().infAmmoEnabled, funnyEnabled: false});
-        }
-        hackTabs[2].uiTab.addButton("Random Attachment Spam", () => {
-            funnyEnabled = !funnyEnabled;
-            if (funnyEnabled) {
-                uiManager.createNotification('Hailware', 'Random Attachment Spam was Enabled!');
-            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: configManager.get().infAmmoEnabled, funnyEnabled: true});
-                funnyspam = setInterval(function () {
-                    for (let i = 0; i < 60; i++) Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetRandomGunAttachments', i);
-                }, 100);
-            } else {
-                uiManager.createNotification('Hailware', 'Random Attachment Spam was disabled!');
-            configManager.save({ "bgMusicVolume": configManager.get().bgMusicVolume, bgMusicEnabled: configManager.get().bgMusicEnabled, antiFlashEnabled: configManager.get().antiFlashEnabled, knifeAura: configManager.get().knifeAura, infAmmoEnabled: configManager.get().infAmmoEnabled, funnyEnabled: false});
-                clearInterval(funnyspam);
-            }
-        });
-      hackTabs[0].uiTab.addButton("Leave Match (Fast)", () => {
-            uiManager.createNotification('Hailware', `Left lobby!`);
-            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DisconnectFromGame');
-            sendChatWithUsername("SERVER", "Fuck this shit im out!");
-        });
-        let usernameField = tabs[1].uiTab.addTextInput("Username", () => {
-            Log.info('Text input changed');
-        });
-
-
-        let passwordField = tabs[1].uiTab.addTextInput("Password", () => {
-            Log.info('Text input changed');
-        });
-
-        if (localStorage.blfUsername && localStorage.blfPasswordHash && localStorage.blfPasswordRaw) {
-            usernameField.value = localStorage.blfUsername;
-            passwordField.value = localStorage.blfPasswordRaw;
-        }
-
-        passwordField.type = "password";
-
-        tabs[1].uiTab.addButton('Login', () => {
-            login(usernameField.value, passwordField.value);
-        });
-
-        tabs[1].uiTab.addButton('Register', async () => {
-            let response = await registerAccount(usernameField.value, passwordField.value);
-
-            if (response) {
-                login("PC-" + usernameField.value, passwordField.value);
-            } else {
-                loginStatus.textContent = 'Registration Failed';
-            }
-        });
-
-        loginStatus = tabs[1].uiTab.addLabel('N/A');
-                } catch (err) {
-                    uiManager.addLabel(`Unable to login! Please ensure you have a hailware cheats account!`);
-                }
-        });
-
-        let weapons = {
-            "0": {
-                "weaponName": "AK-12"
-            },
-            "1": {
-                "weaponName": "RPG-7V2"
-            },
-            "3": {
-                "weaponName": "SAIGA 12K"
-            },
-            "4": {
-                "weaponName": "M40A5"
-            },
-            "5": {
-                "weaponName": "MP412 REX"
-            },
-            "6": {
-                "weaponName": "FAMAS"
-            },
-            "7": {
-                "weaponName": "SCAR-H"
-            },
-            "8": {
-                "weaponName": "MPX"
-            },
-            "9": {
-                "weaponName": "M67 Frag"
-            },
-            "10": {
-                "weaponName": "Knife"
-            },
-            "11": {
-                "weaponName": "Flashbang"
-            },
-            "13": {
-                "weaponName": "M18 Smoke"
-            },
-            "14": {
-                "weaponName": "M4A1"
-            },
-            "15": {
-                "weaponName": "MG4"
-            },
-            "16": {
-                "weaponName": "Compact .45"
-            },
-            "18": {
-                "weaponName": "Butterfly Knife"
-            },
-            "19": {
-                "weaponName": "M200"
-            },
-            "20": {
-                "weaponName": "AS VAL"
-            },
-            "21": {
-                "weaponName": "G18"
-            },
-            "22": {
-                "weaponName": "M320 HE"
-            },
-            "23": {
-                "weaponName": "M320 DART"
-            },
-            "24": {
-                "weaponName": "870 MCS"
-            },
-            "25": {
-                "weaponName": "HAND"
-            },
-            "26": {
-                "weaponName": "MP5"
-            },
-            "27": {
-                "weaponName": "AK-47"
-            },
-            "28": {
-                "weaponName": "Vector"
-            },
-            "29": {
-                "weaponName": "M60"
-            },
-            "30": {
-                "weaponName": "Desert Eagle"
-            },
-            "31": {
-                "weaponName": "UMP"
-            },
-            "33": {
-                "weaponName": "MK 11"
-            },
-            "34": {
-                "weaponName": "P90"
-            },
-            "35": {
-                "weaponName": "AUG"
-            },
-            "36": {
-                "weaponName": "Shorty SG"
-            },
-            "37": {
-                "weaponName": "CS-LR4"
-            },
-            "38": {
-                "weaponName": "FAD"
-            },
-            "39": {
-                "weaponName": "Tommy Gun"
-            },
-            "40": {
-                "weaponName": "MP40"
-            },
-            "41": {
-                "weaponName": "CX Scorpio"
-            },
-            "42": {
-                "weaponName": "44 Magnum"
-            },
-            "43": {
-                "weaponName": "M16"
-            },
-            "44": {
-                "weaponName": "Lewis Gun"
-            },
-            "45": {
-                "weaponName": "M1911"
-            },
-            "46": {
-                "weaponName": "ACR"
-            },
-            "47": {
-                "weaponName": "AK-5C"
-            },
-            "48": {
-                "weaponName": "BRT HS1"
-            },
-            "49": {
-                "weaponName": "L85"
-            },
-            "50": {
-                "weaponName": "Tec 9"
-            },
-            "51": {
-                "weaponName": "AI-AWP"
-            },
-            "52": {
-                "weaponName": "Minebea 9"
-            },
-            "53": {
-                "weaponName": "Badger Q"
-            },
-            "54": {
-                "weaponName": "FAL"
-            },
-            "55": {
-                "weaponName": "MP7"
-            },
-            "56": {
-                "weaponName": "SPAS-12"
-            },
-            "57": {
-                "weaponName": "Karambit"
-            },
-            "58": {
-                "weaponName": "Hatchet"
-            },
-            "59": {
-                "weaponName": "Crossbow"
-            },
-            "60": {
-                "weaponName": "Minigun"
-            },
-            "61": {
-                "weaponName": "VSS"
-            },
-            "62": {
-                "weaponName": "G36"
-            },
-            "63": {
-                "weaponName": "F2000"
-            },
-            "64": {
-                "weaponName": "Galil Ace 23"
-            },
-            "65": {
-                "weaponName": "M240B"
-            },
-            "66": {
-                "weaponName": "Kar 98"
-            },
-            "67": {
-                "weaponName": "Groza"
-            }
-        }
-
-        async function login(username, password) {
-            try {
-                const response = await fetch("https://server.blayzegames.com/OnlineAccountSystem//login.php?&requiredForMobile=882503852", {
-                    method: "POST",
-                    headers: {
-                    "accept": "*/*",
-                    "accept-language": "en-US,en;q=0.9",
-                    "content-type": "application/x-www-form-urlencoded",
-                    "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
-                    "sec-ch-ua-mobile": "?0",
-                    "sec-ch-ua-platform": "\"Windows\"",
-                    "sec-fetch-dest": "empty",
-                    "sec-fetch-mode": "cors",
-                    "sec-fetch-site": "cross-site",
-                    "Referer": "https://games.crazygames.com/",
-                },
-                    body: `username=${username}&password=${SHA512(password)}&store=BALYZE_WEB&useJSON=true&locale=english&tutorialr=1`
                 });
 
-                const res = await response.json();
-
-                if (res.status == 1) {
-                    Log.error(`[BLF Killer]: Successfully logged into '${username}' (PC User)`);
-                    localStorage.blfUsername = username;
-                    localStorage.blfPasswordHash = SHA512(password);
-                    localStorage.blfPasswordRaw = password;
-
-                    Log.info("Set account info successfully!");
-                    loginStatus.textContent = 'Login Success';
-
-                    loopOpenButton = tabs[1].uiTab.addButton('Open Case Loop', () => {
-                        open_credit_case_loop();
-                    });
-
-                    loopBuyButton = tabs[1].uiTab.addButton('Buy Case Loop', () => {
-                        buy_credit_case_loop();
-                    });
-                } else {
-                    Log.error(`[BLF Killer]: Failed to login to '${username}' perhaps you typed in an incorrect password? (PC User)`);
-                    loginStatus.textContent = 'Login Failed';
+                let weapons = {
+                    "0": {
+                        "weaponName": "AK-12"
+                    },
+                    "1": {
+                        "weaponName": "RPG-7V2"
+                    },
+                    "3": {
+                        "weaponName": "SAIGA 12K"
+                    },
+                    "4": {
+                        "weaponName": "M40A5"
+                    },
+                    "5": {
+                        "weaponName": "MP412 REX"
+                    },
+                    "6": {
+                        "weaponName": "FAMAS"
+                    },
+                    "7": {
+                        "weaponName": "SCAR-H"
+                    },
+                    "8": {
+                        "weaponName": "MPX"
+                    },
+                    "9": {
+                        "weaponName": "M67 Frag"
+                    },
+                    "10": {
+                        "weaponName": "Knife"
+                    },
+                    "11": {
+                        "weaponName": "Flashbang"
+                    },
+                    "13": {
+                        "weaponName": "M18 Smoke"
+                    },
+                    "14": {
+                        "weaponName": "M4A1"
+                    },
+                    "15": {
+                        "weaponName": "MG4"
+                    },
+                    "16": {
+                        "weaponName": "Compact .45"
+                    },
+                    "18": {
+                        "weaponName": "Butterfly Knife"
+                    },
+                    "19": {
+                        "weaponName": "M200"
+                    },
+                    "20": {
+                        "weaponName": "AS VAL"
+                    },
+                    "21": {
+                        "weaponName": "G18"
+                    },
+                    "22": {
+                        "weaponName": "M320 HE"
+                    },
+                    "23": {
+                        "weaponName": "M320 DART"
+                    },
+                    "24": {
+                        "weaponName": "870 MCS"
+                    },
+                    "25": {
+                        "weaponName": "HAND"
+                    },
+                    "26": {
+                        "weaponName": "MP5"
+                    },
+                    "27": {
+                        "weaponName": "AK-47"
+                    },
+                    "28": {
+                        "weaponName": "Vector"
+                    },
+                    "29": {
+                        "weaponName": "M60"
+                    },
+                    "30": {
+                        "weaponName": "Desert Eagle"
+                    },
+                    "31": {
+                        "weaponName": "UMP"
+                    },
+                    "33": {
+                        "weaponName": "MK 11"
+                    },
+                    "34": {
+                        "weaponName": "P90"
+                    },
+                    "35": {
+                        "weaponName": "AUG"
+                    },
+                    "36": {
+                        "weaponName": "Shorty SG"
+                    },
+                    "37": {
+                        "weaponName": "CS-LR4"
+                    },
+                    "38": {
+                        "weaponName": "FAD"
+                    },
+                    "39": {
+                        "weaponName": "Tommy Gun"
+                    },
+                    "40": {
+                        "weaponName": "MP40"
+                    },
+                    "41": {
+                        "weaponName": "CX Scorpio"
+                    },
+                    "42": {
+                        "weaponName": "44 Magnum"
+                    },
+                    "43": {
+                        "weaponName": "M16"
+                    },
+                    "44": {
+                        "weaponName": "Lewis Gun"
+                    },
+                    "45": {
+                        "weaponName": "M1911"
+                    },
+                    "46": {
+                        "weaponName": "ACR"
+                    },
+                    "47": {
+                        "weaponName": "AK-5C"
+                    },
+                    "48": {
+                        "weaponName": "BRT HS1"
+                    },
+                    "49": {
+                        "weaponName": "L85"
+                    },
+                    "50": {
+                        "weaponName": "Tec 9"
+                    },
+                    "51": {
+                        "weaponName": "AI-AWP"
+                    },
+                    "52": {
+                        "weaponName": "Minebea 9"
+                    },
+                    "53": {
+                        "weaponName": "Badger Q"
+                    },
+                    "54": {
+                        "weaponName": "FAL"
+                    },
+                    "55": {
+                        "weaponName": "MP7"
+                    },
+                    "56": {
+                        "weaponName": "SPAS-12"
+                    },
+                    "57": {
+                        "weaponName": "Karambit"
+                    },
+                    "58": {
+                        "weaponName": "Hatchet"
+                    },
+                    "59": {
+                        "weaponName": "Crossbow"
+                    },
+                    "60": {
+                        "weaponName": "Minigun"
+                    },
+                    "61": {
+                        "weaponName": "VSS"
+                    },
+                    "62": {
+                        "weaponName": "G36"
+                    },
+                    "63": {
+                        "weaponName": "F2000"
+                    },
+                    "64": {
+                        "weaponName": "Galil Ace 23"
+                    },
+                    "65": {
+                        "weaponName": "M240B"
+                    },
+                    "66": {
+                        "weaponName": "Kar 98"
+                    },
+                    "67": {
+                        "weaponName": "Groza"
+                    }
                 }
-            } catch (error) {
-                console.error("Error during login:", error);
-                // Handle error here, e.g., show error message or retry login
-            }
-        }
 
-        // SQL cant handle the heat
-        function kill_servers() {
-            buyRate = 1; // SQL cant handle the heat
-            openRate = 1; // SQL cant handle the heat
-            buy_credit_case_loop(); // SQL cant handle the heat
-            open_credit_case_loop(); // SQL cant handle the heat
-        }
+                async function login(username, password) {
+                    try {
+                        const response = await fetch("https://server.blayzegames.com/OnlineAccountSystem//login.php?&requiredForMobile=882503852", {
+                            method: "POST",
+                            headers: {
+                                "accept": "*/*",
+                                "accept-language": "en-US,en;q=0.9",
+                                "content-type": "application/x-www-form-urlencoded",
+                                "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+                                "sec-ch-ua-mobile": "?0",
+                                "sec-ch-ua-platform": "\"Windows\"",
+                                "sec-fetch-dest": "empty",
+                                "sec-fetch-mode": "cors",
+                                "sec-fetch-site": "cross-site",
+                                "Referer": "https://games.crazygames.com/",
+                            },
+                            body: `username=${username}&password=${SHA512(password)}&store=BALYZE_WEB&useJSON=true&locale=english&tutorialr=1`
+                        });
 
-        function open_credit_case_loop() {
-            creditOpenCaseLoop = !creditOpenCaseLoop;
-            if (creditOpenCaseLoop) {
-                loopOpenButton.style.color = '#43b581';
-                tmpInterval2 = setInterval(() => {
-                    fetch("https://server.blayzegames.com/OnlineAccountSystem/open_case.php?requiredForMobile=1040657058", {
-                        "headers": {
-                            "accept": "*/*",
-                            "accept-language": "en-US,en;q=0.9",
-                            "content-type": "application/x-www-form-urlencoded",
-                            "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
-                            "sec-ch-ua-mobile": "?0",
-                            "sec-ch-ua-platform": "\"Windows\"",
-                            "sec-fetch-dest": "empty",
-                            "sec-fetch-mode": "cors",
-                            "sec-fetch-site": "cross-site",
-                            "Referer": "https://games.crazygames.com/",
-                        },
-                        "body": `username=${localStorage.blfUsername}&password=${localStorage.blfPasswordHash}&case_type=credit&username=${localStorage.blfUsername}&password=${localStorage.blfPasswordHash}`,
-                        "method": "POST"
-                    }).then(res => res.json()).then(res => {
+                        const res = await response.json();
+
                         if (res.status == 1) {
-                            console.log(res);
-                            Log.info(`[BLF Killer]: Unlocked a cammo on account '${localStorage.blfUsername}' for the ${weapons[res.weapon].weaponName} (PC User)`);
-                        } else {
-                            Log.error(`[BLF Killer]: Failed to open credit case on account '${localStorage.blfUsername}' perhaps you dont have any cases to open? (PC User)`);
-                        }
-                    });
-                }, openRate);
-            } else {
-                loopOpenButton.style.color = '#f04747';
-                clearInterval(tmpInterval2);
-            }
-        }
+                            Log.error(`[BLF Killer]: Successfully logged into '${username}' (PC User)`);
+                            localStorage.blfUsername = username;
+                            localStorage.blfPasswordHash = SHA512(password);
+                            localStorage.blfPasswordRaw = password;
 
-        function buy_credit_case_loop() {
-            creditBuyCaseLoop = !creditBuyCaseLoop;
-            if (creditBuyCaseLoop) {
-                loopBuyButton.style.color = '#43b581';
-                tmpInterval = setInterval(() => {
-                    fetch("https://server.blayzegames.com/OnlineAccountSystem/buy_case.php?requiredForMobile=1770212018", {
-                        "headers": {
-                            "accept": "*/*",
-                            "accept-language": "en-US,en;q=0.9",
-                            "content-type": "application/x-www-form-urlencoded",
-                            "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
-                            "sec-ch-ua-mobile": "?0",
-                            "sec-ch-ua-platform": "\"Windows\"",
-                            "sec-fetch-dest": "empty",
-                            "sec-fetch-mode": "cors",
-                            "sec-fetch-site": "cross-site",
-                            "Referer": "https://games.crazygames.com/",
-                        },
-                        "body": `username=${localStorage.blfUsername}&password=${localStorage.blfPasswordHash}&case_type=credit&amount=1&username=${localStorage.blfUsername}&password=${localStorage.blfPasswordHash}`,
-                        "method": "POST"
-                    }).then(res => res.json()).then(res => {
-                        if (res.status == 1) {
-                            Log.info(`[BLF Killer]: Purchased 1 credit case on account '${localStorage.blfUsername}' (PC User)`);
+                            Log.info("Set account info successfully!");
+                            loginStatus.textContent = 'Login Success';
+
+                            loopOpenButton = tabs[1].uiTab.addButton('Open Case Loop', () => {
+                                open_credit_case_loop();
+                            });
+
+                            loopBuyButton = tabs[1].uiTab.addButton('Buy Case Loop', () => {
+                                buy_credit_case_loop();
+                            });
                         } else {
-                            Log.error(`[BLF Killer]: Failed to purchase credit case on account '${localStorage.blfUsername}' perhaps you dont have any credits to buy cases? (PC User)`);
+                            Log.error(`[BLF Killer]: Failed to login to '${username}' perhaps you typed in an incorrect password? (PC User)`);
+                            loginStatus.textContent = 'Login Failed';
                         }
-                    });
-                }, buyRate);
-            } else {
-                loopBuyButton.style.color = '#f04747';
-                clearInterval(tmpInterval);
-            }
-        }
-    });
+                    } catch (error) {
+                        console.error("Error during login:", error);
+                        // Handle error here, e.g., show error message or retry login
+                    }
+                }
+
+                // SQL cant handle the heat
+                function kill_servers() {
+                    buyRate = 1; // SQL cant handle the heat
+                    openRate = 1; // SQL cant handle the heat
+                    buy_credit_case_loop(); // SQL cant handle the heat
+                    open_credit_case_loop(); // SQL cant handle the heat
+                }
+
+                function open_credit_case_loop() {
+                    creditOpenCaseLoop = !creditOpenCaseLoop;
+                    if (creditOpenCaseLoop) {
+                        loopOpenButton.style.color = '#43b581';
+                        tmpInterval2 = setInterval(() => {
+                            fetch("https://server.blayzegames.com/OnlineAccountSystem/open_case.php?requiredForMobile=1040657058", {
+                                "headers": {
+                                    "accept": "*/*",
+                                    "accept-language": "en-US,en;q=0.9",
+                                    "content-type": "application/x-www-form-urlencoded",
+                                    "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+                                    "sec-ch-ua-mobile": "?0",
+                                    "sec-ch-ua-platform": "\"Windows\"",
+                                    "sec-fetch-dest": "empty",
+                                    "sec-fetch-mode": "cors",
+                                    "sec-fetch-site": "cross-site",
+                                    "Referer": "https://games.crazygames.com/",
+                                },
+                                "body": `username=${localStorage.blfUsername}&password=${localStorage.blfPasswordHash}&case_type=credit&username=${localStorage.blfUsername}&password=${localStorage.blfPasswordHash}`,
+                                "method": "POST"
+                            }).then(res => res.json()).then(res => {
+                                if (res.status == 1) {
+                                    console.log(res);
+                                    Log.info(`[BLF Killer]: Unlocked a cammo on account '${localStorage.blfUsername}' for the ${weapons[res.weapon].weaponName} (PC User)`);
+                                } else {
+                                    Log.error(`[BLF Killer]: Failed to open credit case on account '${localStorage.blfUsername}' perhaps you dont have any cases to open? (PC User)`);
+                                }
+                            });
+                        }, openRate);
+                    } else {
+                        loopOpenButton.style.color = '#f04747';
+                        clearInterval(tmpInterval2);
+                    }
+                }
+
+                function buy_credit_case_loop() {
+                    creditBuyCaseLoop = !creditBuyCaseLoop;
+                    if (creditBuyCaseLoop) {
+                        loopBuyButton.style.color = '#43b581';
+                        tmpInterval = setInterval(() => {
+                            fetch("https://server.blayzegames.com/OnlineAccountSystem/buy_case.php?requiredForMobile=1770212018", {
+                                "headers": {
+                                    "accept": "*/*",
+                                    "accept-language": "en-US,en;q=0.9",
+                                    "content-type": "application/x-www-form-urlencoded",
+                                    "sec-ch-ua": "\"Opera GX\";v=\"109\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+                                    "sec-ch-ua-mobile": "?0",
+                                    "sec-ch-ua-platform": "\"Windows\"",
+                                    "sec-fetch-dest": "empty",
+                                    "sec-fetch-mode": "cors",
+                                    "sec-fetch-site": "cross-site",
+                                    "Referer": "https://games.crazygames.com/",
+                                },
+                                "body": `username=${localStorage.blfUsername}&password=${localStorage.blfPasswordHash}&case_type=credit&amount=1&username=${localStorage.blfUsername}&password=${localStorage.blfPasswordHash}`,
+                                "method": "POST"
+                            }).then(res => res.json()).then(res => {
+                                if (res.status == 1) {
+                                    Log.info(`[BLF Killer]: Purchased 1 credit case on account '${localStorage.blfUsername}' (PC User)`);
+                                } else {
+                                    Log.error(`[BLF Killer]: Failed to purchase credit case on account '${localStorage.blfUsername}' perhaps you dont have any credits to buy cases? (PC User)`);
+                                }
+                            });
+                        }, buyRate);
+                    } else {
+                        loopBuyButton.style.color = '#f04747';
+                        clearInterval(tmpInterval);
+                    }
+                }
+            });
     }
 }, 2000);
 
