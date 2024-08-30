@@ -1,9 +1,8 @@
 // ==UserScript==
 // @name         Hailware Web v0.3-Beta
-// @namespace    http://tampermonkey.net/
 // @version      2024-06-10
-// @description  Made by Foonix and Yellowberry
-// @author       You
+// @description  Made by Foonix, Yellowberry, Hackery and Liamriley101
+// @author       Foonix
 // @grant        GM_info
 // @grant        GM_getResourceText
 // @grant        GM_getResourceURL
@@ -36,7 +35,6 @@ class Log {
     }
 }
 
-
 let loopBuyButton = null;
 let loopOpenButton = null;
 let openRate = 250;
@@ -55,9 +53,9 @@ class UIManager {
         this.UIContext = null;
         this.UIMenus = [];
         this.tabs = [];
-        this.notificationStack = []; // Track notifications for stacking
-        this.notificationHeight = 100; // Default notification height
-        this.notificationMargin = 10; // Margin between notifications
+        this.notificationStack = [];
+        this.notificationHeight = 100;
+        this.notificationMargin = 10;
     }
 
     getAllTabs() {
@@ -71,12 +69,12 @@ class UIManager {
         notificationContainer.style.left = '10px';
         notificationContainer.style.bottom = this.calculateNotificationBottom() + 'px';
         notificationContainer.style.transform = 'translateY(100%)';
-        notificationContainer.style.backgroundColor = '#0e0e0e'; // Dark red background
-        notificationContainer.style.color = '#ffffff'; // White text color
+        notificationContainer.style.backgroundColor = '#0e0e0e';
+        notificationContainer.style.color = '#ffffff';
         notificationContainer.style.width = '300px';
         notificationContainer.style.padding = '20px';
         notificationContainer.style.borderRadius = '8px';
-        notificationContainer.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.5)'; // Darker shadow
+        notificationContainer.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.5)';
         notificationContainer.style.zIndex = '9999';
         notificationContainer.style.transition = 'transform 0.3s ease-in-out';
 
@@ -85,13 +83,13 @@ class UIManager {
         title.style.fontSize = '22px';
         title.style.textAlign = 'center';
         title.style.marginBottom = '10px';
-        title.classList.add('rainbow-animation'); // Add rainbow animation class
+        title.classList.add('rainbow-animation');
 
         const description = document.createElement('p');
         description.textContent = descriptionText;
         description.style.fontSize = '16px';
         description.style.textAlign = 'center';
-        description.classList.add('rainbow-animation'); // Add rainbow animation class
+        description.classList.add('rainbow-animation');
 
         notificationContainer.appendChild(title);
         notificationContainer.appendChild(description);
@@ -143,10 +141,10 @@ class UIManager {
         const container = document.createElement('div');
         container.id = elementId;
         container.style.position = 'fixed';
-        container.style.backgroundColor = '#0e0e0e'; // Darker red background
+        container.style.backgroundColor = '#0e0e0e';
         container.style.borderRadius = '8px';
         container.style.padding = '20px';
-        container.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.5)'; // Darker shadow
+        container.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.5)';
         container.style.zIndex = '9999';
         container.style.width = width;
         container.style.height = height;
@@ -161,7 +159,7 @@ class UIManager {
 
         const title = document.createElement('h2');
         title.textContent = titleText;
-        title.style.color = '#ffffff'; // White text color
+        title.style.color = '#ffffff';
         title.style.marginBottom = '20px';
         title.style.fontSize = '22px';
         title.style.textAlign = 'center';
@@ -181,14 +179,13 @@ class UIManager {
         let offsetX, offsetY;
 
         function handleMouseDown(event) {
-            event.preventDefault(); // Prevent default behavior (e.g., text selection)
+            event.preventDefault();
             const boundingRect = element.getBoundingClientRect();
             offsetX = event.clientX - boundingRect.left;
             offsetY = event.clientY - boundingRect.top;
 
             console.log(`x: ${event.clientX}, y: ${event.clientY}, Offsetx: ${offsetX}, Offsety: ${offsetY}`)
 
-            // Add event listeners for mouse move and mouse up events
             document.addEventListener('mousemove', handleMouseMove);
             document.addEventListener('mouseup', handleMouseUp);
         }
@@ -218,18 +215,17 @@ class UIManager {
         const titleBar = element.querySelector('h2');
         titleBar.addEventListener('mousedown', handleMouseDown);
 
-        // CSS to ensure smooth dragging and prevent text selection
         element.style.position = 'absolute';
         titleBar.style.cursor = 'move';
-        titleBar.style.userSelect = 'none'; // Prevent text selection on title bar
+        titleBar.style.userSelect = 'none';
     }
 
     addButton(buttonText, buttonAction) {
         const button = document.createElement('button');
         button.style.width = '100%';
         button.style.padding = '10px';
-        button.style.backgroundColor = '#1c1c1c'; // Bright red background
-        button.style.color = '#ffffff'; // White text color
+        button.style.backgroundColor = '#1c1c1c';
+        button.style.color = '#ffffff';
         button.style.border = 'none';
         button.style.borderRadius = '5px';
         button.style.cursor = 'pointer';
@@ -237,7 +233,7 @@ class UIManager {
         button.style.fontWeight = 'bold';
         button.style.fontSize = '16px';
         button.addEventListener('click', buttonAction);
-        button.classList.add('rainbow-animation'); // Add rainbow animation class
+        button.classList.add('rainbow-animation');
 
         const buttonTextSpan = document.createElement('span');
         buttonTextSpan.textContent = buttonText;
@@ -251,11 +247,11 @@ class UIManager {
     addLabel(labelText) {
         const label = document.createElement('h3');
         label.textContent = labelText;
-        label.style.color = '#ffffff'; // White text color
+        label.style.color = '#ffffff';
         label.style.marginBottom = '20px';
         label.style.fontSize = '18px';
         label.style.textAlign = 'center';
-        label.classList.add('rainbow-animation'); // Add rainbow animation class
+        label.classList.add('rainbow-animation');
 
         this.UIContext.appendChild(label);
 
@@ -282,8 +278,8 @@ class UIManager {
         input.style.marginBottom = '20px';
         input.style.borderRadius = '5px';
         input.addEventListener('input', valueChangeAction);
-        input.style.backgroundColor = '#0e0e0e'; // White text color
-        input.classList.add('rainbow-animation'); // Add rainbow animation class
+        input.style.backgroundColor = '#0e0e0e';
+        input.classList.add('rainbow-animation');
         input.focus();
 
         this.UIContext.appendChild(input);
@@ -346,8 +342,8 @@ class UIManager {
         bubble.style.backgroundColor = '#181818';
         bubble.style.whiteSpace = 'nowrap';
         bubble.style.minWidth = '100px';
-        bubble.style.transition = 'opacity 0.5s'; // Add transition for fade effect
-        bubble.style.opacity = 0; // Initially hidden
+        bubble.style.transition = 'opacity 0.5s';
+        bubble.style.opacity = 0;
         bubble.textContent = `${customText}: ${currentValue}`;
         textBubble = bubble;
 
@@ -375,7 +371,7 @@ class UIManager {
     createTabMenu(tabs) {
         const tabContainer = document.createElement('div');
         tabContainer.style.display = 'flex';
-        tabContainer.style.borderBottom = '1px solid #cc0000'; // Bright red border
+        tabContainer.style.borderBottom = '1px solid #cc0000';
         tabContainer.style.marginBottom = '20px';
         tabContainer.classList.add('rainbow-animation')
 
@@ -386,13 +382,13 @@ class UIManager {
             tabButton.textContent = tab.title;
             tabButton.style.flex = '1';
             tabButton.style.padding = '10px';
-            tabButton.style.backgroundColor = '#1c1c1c'; // Dark red background
-            tabButton.style.color = '#ffffff'; // White text color
+            tabButton.style.backgroundColor = '#1c1c1c';
+            tabButton.style.color = '#ffffff';
             tabButton.style.border = 'none';
             tabButton.style.cursor = 'pointer';
             tabButton.style.fontWeight = 'bold';
             tabButton.style.fontSize = '16px';
-            tabButton.classList.add('rainbow-animation'); // Add rainbow animation class
+            tabButton.classList.add('rainbow-animation');
 
             tabButton.addEventListener('click', () => {
                 contentContainers.forEach((container, idx) => {
@@ -436,13 +432,13 @@ class UIManager {
             tabButton.textContent = tab.title;
             tabButton.style.flex = '1';
             tabButton.style.padding = '10px';
-            tabButton.style.backgroundColor = '#1c1c1c'; // Dark red background
-            tabButton.style.color = '#ffffff'; // White text color
+            tabButton.style.backgroundColor = '#1c1c1c';
+            tabButton.style.color = '#ffffff';
             tabButton.style.border = 'none';
             tabButton.style.cursor = 'pointer';
             tabButton.style.fontWeight = 'bold';
             tabButton.style.fontSize = '16px';
-            tabButton.classList.add('rainbow-animation'); // Add rainbow animation class
+            tabButton.classList.add('rainbow-animation');
 
             tabButton.addEventListener('click', () => {
                 contentContainers.forEach((container, idx) => {
@@ -478,7 +474,7 @@ class UIManager {
 
         const content = document.createElement('div');
         content.innerHTML = tabs[index].content;
-        content.style.color = '#ffffff'; // White text color
+        content.style.color = '#ffffff';
         content.style.fontSize = '16px';
         contentContainer.appendChild(content);
 
@@ -502,8 +498,8 @@ class UITab {
         const button = document.createElement('button');
         button.style.width = '100%';
         button.style.padding = '10px';
-        button.style.backgroundColor = '#1c1c1c'; // Bright red background
-        button.style.color = '#ffffff'; // White text color
+        button.style.backgroundColor = '#1c1c1c';
+        button.style.color = '#ffffff';
         button.style.border = 'none';
         button.style.borderRadius = '5px';
         button.style.cursor = 'pointer';
@@ -511,7 +507,7 @@ class UITab {
         button.style.fontWeight = 'bold';
         button.style.fontSize = '16px';
         button.addEventListener('click', buttonAction);
-        button.classList.add('rainbow-animation'); // Add rainbow animation class
+        button.classList.add('rainbow-animation');
 
         const buttonTextSpan = document.createElement('span');
         buttonTextSpan.textContent = buttonText;
@@ -525,11 +521,11 @@ class UITab {
     addLabel(labelText) {
         const label = document.createElement('h3');
         label.innerHTML = labelText;
-        label.style.color = '#ffffff'; // White text color
+        label.style.color = '#ffffff';
         label.style.marginBottom = '20px';
         label.style.fontSize = '18px';
         label.style.textAlign = 'center';
-        label.classList.add('rainbow-animation'); // Add rainbow animation class
+        label.classList.add('rainbow-animation');
 
         this.contentContainer.appendChild(label);
 
@@ -545,8 +541,8 @@ class UITab {
         input.style.marginBottom = '20px';
         input.style.borderRadius = '5px';
         input.addEventListener('input', valueChangeAction);
-        input.style.backgroundColor = '#0e0e0e'; // White text color
-        input.classList.add('rainbow-animation'); // Add rainbow animation class
+        input.style.backgroundColor = '#0e0e0e';
+        input.classList.add('rainbow-animation');
         input.focus();
         this.contentContainer.appendChild(input);
         input.focus();
@@ -618,8 +614,8 @@ class UITab {
         bubble.style.backgroundColor = '#181818';
         bubble.style.whiteSpace = 'nowrap';
         bubble.style.minWidth = '100px';
-        bubble.style.transition = 'opacity 0.5s'; // Add transition for fade effect
-        bubble.style.opacity = 0; // Initially hidden
+        bubble.style.transition = 'opacity 0.5s';
+        bubble.style.opacity = 0;
         bubble.textContent = `${customText}: ${currentValue}`;
         textBubble = bubble;
 
@@ -728,7 +724,6 @@ async function HailwareRegister(username, password) {
     }
 }
 
-
 async function HailwareLogin(username, password) {
 
 }
@@ -744,7 +739,6 @@ function waitForUnityInstance(callback) {
         }
     }, 1000);
 }
-
 
 class ConfigManager {
     constructor() {
@@ -1061,7 +1055,6 @@ if ((window.location.href.includes("multiplayerpiano") && window.location.href.i
     let mainMenu = uiManager.createMenu("epicUI", "Hailware Web", "400px", "500px");
     uiManager.makeDraggable(mainMenu);
 
-
     let tabs = uiManager.createTabMenu([{
             title: 'Scripts',
             content: '<p>This is the content of Tab 1</p>'
@@ -1175,7 +1168,6 @@ async function logBeeMovieScript() {
     }
 }
 
-
 function GetWeapon() {}
 let weaponMap = undefined;
 
@@ -1184,7 +1176,6 @@ fetch('https://raw.githubusercontent.com/Snoofz/Hailware-Assets/main/weaponmap.j
     .then(data => {
         weaponMap = data;
 
-        // Override the empty function with new idk
         GetWeapon = function(partialName) {
             const weapon = weaponMap.find(weapon => weapon.WeaponType.toLowerCase().includes(partialName.toLowerCase()));
             if (weapon) {
@@ -1195,9 +1186,80 @@ fetch('https://raw.githubusercontent.com/Snoofz/Hailware-Assets/main/weaponmap.j
         }
     }).catch(error => console.error('Error fetching JSON:', error));
 
+
+const guns = [
+    { gunName: "AK-12", sdkID: 0 },
+    { gunName: "RPG", sdkID: 1 },
+    { gunName: "MPREX", sdkID: 2 },
+    { gunName: "FAMAS", sdkID: 3 },
+    { gunName: "SAIGA 12K", sdkID: 4 },
+    { gunName: "M4OA5", sdkID: 5 },
+    { gunName: "SCAR-H", sdkID: 6 },
+    { gunName: "MPX", sdkID: 7 },
+    { gunName: "M4A1", sdkID: 8 },
+    { gunName: "MG4", sdkID: 9 },
+    { gunName: "Compact .45", sdkID: 10 },
+    { gunName: "Butterfly Knife", sdkID: 11 },
+    { gunName: "M200", sdkID: 12 },
+    { gunName: "AS VAL", sdkID: 13 },
+    { gunName: "G18", sdkID: 14 },
+    { gunName: "M320 HE", sdkID: 15 },
+    { gunName: "M320 DART", sdkID: 16 },
+    { gunName: "870 MCS", sdkID: 17 },
+    { gunName: "HAND", sdkID: 18 },
+    { gunName: "MP5", sdkID: 19 },
+    { gunName: "AK-47", sdkID: 20 },
+    { gunName: "Vector", sdkID: 21 },
+    { gunName: "M60", sdkID: 22 },
+    { gunName: "Desert Eagle", sdkID: 23 },
+    { gunName: "UMP", sdkID: 24 },
+    { gunName: "MK11", sdkID: 25 },
+    { gunName: "P90", sdkID: 26 },
+    { gunName: "AUG", sdkID: 27 },
+    { gunName: "Shorty SG", sdkID: 28 },
+    { gunName: "CS-LR4", sdkID: 29 },
+    { gunName: "FAD", sdkID: 30 },
+    { gunName: "Tommy Gun", sdkID: 31 },
+    { gunName: "MP40", sdkID: 32 },
+    { gunName: "CX Scorpio", sdkID: 33 },
+    { gunName: "44 Magnum", sdkID: 34 },
+    { gunName: "M16", sdkID: 35 },
+    { gunName: "Lewis Gun", sdkID: 36 },
+    { gunName: "M1911", sdkID: 37 },
+    { gunName: "ACR", sdkID: 38 },
+    { gunName: "AK-5C", sdkID: 39 },
+    { gunName: "BRT HS1", sdkID: 40 },
+    { gunName: "L85", sdkID: 41 },
+    { gunName: "TEC 9", sdkID: 42 },
+    { gunName: "AI-AWP", sdkID: 43 },
+    { gunName: "Minebea 9", sdkID: 44 },
+    { gunName: "Badger Q", sdkID: 45 },
+    { gunName: "Fal", sdkID: 46 },
+    { gunName: "MP7", sdkID: 47 },
+    { gunName: "Spas-12", sdkID: 48 },
+    { gunName: "Karambit", sdkID: 49 },
+    { gunName: "Hatchet", sdkID: 50 },
+    { gunName: "Crossbow", sdkID: 51 },
+    { gunName: "Minigun", sdkID: 52 },
+    { gunName: "VSS", sdkID: 53 },
+    { gunName: "G36", sdkID: 54 },
+    { gunName: "F2000", sdkID: 55 },
+    { gunName: "Galil ACE 23", sdkID: 56 },
+    { gunName: "M240B", sdkID: 57 },
+    { gunName: "Groza", sdkID: 58 },
+    { gunName: "Kar 98", sdkID: 59 }
+];
+
 function dropWeapon(weaponName) {
-    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DropGun', GetWeapon(weaponName).weaponId);
+    const weapon = guns.find(gun => gun.gunName === weaponName);
+
+    if (weapon) {
+        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DropGun', weapon.sdkID);
+    } else {
+        console.log(`Weapon with name ${weaponName} not found.`);
+    }
 }
+
 
 function checkForPlayerBodyAsync() {
     return new Promise((resolve) => {
@@ -1619,9 +1681,9 @@ waitForUnityInstance(() => {
 }
 
 .hue-shift-animation {
-    animation: hue-shift 10s linear infinite; /* Adjust timing and animation as needed */
+    animation: hue-shift 10s linear infinite;
 }
-            /* Custom rainbow  */
+
 @keyframes rainbow {
     0% { color: #ff0000; scrollbar-color: #ff0000 #0e0e0e; border-bottom-color: #ff0000; }
     14% { color: #ff7700; scrollbar-color: #ff7700 #0e0e0e; border-bottom-color: #ff7700; }
@@ -1637,14 +1699,12 @@ waitForUnityInstance(() => {
     animation: rainbow 4s linear infinite;
 }
 
-        /* Custom scrollbar styles */
         .custom-scrollbar {
             overflow-y: auto;
             scrollbar-width: thin;
             animation: rainbow 4s linear infinite;
         }
 
-        /* For Webkit browsers */
         .custom-scrollbar::-webkit-scrollbar {
             width: 12px;
         }
@@ -1717,7 +1777,6 @@ waitForUnityInstance(() => {
                     Log.info('Text input changed');
                 });
 
-
                 let passwordField2 = uiManager.addTextInput("Password", () => {
                     Log.info('Text input changed');
                 });
@@ -1762,26 +1821,22 @@ waitForUnityInstance(() => {
                                 content: '<p>Idk</p>'
                             },
                             {
-                                title: 'Host',
+                                title: 'Weapon',
                                 content: '<p>Nuts</p>'
                             },
                             {
-                                title: 'Misc',
+                                title: 'Fun',
                                 content: '<p>Misc</p>'
                             },
                             {
-                                title: 'Malicious',
+                                title: 'Crasher',
                                 content: '<p>Balls idk</p>'
                             },
                             {
-                                title: 'Vehicles',
+                                title: 'Vehicle',
                                 content: '<p>Balls idk</p>'
                             }
                         ]);
-
-                        // Initiate an empty function
-
-                        // It should drop this weapon for you, you just have to press "F" to pick up the weapon
 
                         let spoofName = "";
                         let contentContainer = tabs.Containers;
@@ -1836,7 +1891,7 @@ waitForUnityInstance(() => {
                                 clearInterval(intervalBecomeMasterClient);
                                 clearInterval(intervalFindNewMasterClient);
                                 isMasterClientIntervalRunning = false;
-                                console.log("MasterClientIntervals: %cOff", "color: red"); // "Off" in red
+                                console.log("MasterClientIntervals: %cOff", "color: red");
                             } else {
                                 intervalFindNewMasterClient = setInterval(() => {
                                     for (var i = 0; i < 10; i++) {
@@ -1850,7 +1905,7 @@ waitForUnityInstance(() => {
                                     unityInstance.SendMessage('PlayerBody(Clone)', 'BecomeMasterClient');
                                 }, 1);
                                 isMasterClientIntervalRunning = true;
-                                console.log("MasterClientIntervals: %cOn", "color: green"); // "On" in green
+                                console.log("MasterClientIntervals: %cOn", "color: green");
 
                             }
                         }
@@ -1860,7 +1915,7 @@ waitForUnityInstance(() => {
                                 clearInterval(intervalBecomeMasterClient2);
                                 clearInterval(intervalFindNewMasterClient2);
                                 isMasterClientIntervalRunning2 = false;
-                                console.log("MasterClientIntervals: %cOff", "color: red"); // "Off" in red
+                                console.log("MasterClientIntervals: %cOff", "color: red");
                             } else {
                                 intervalFindNewMasterClient2 = setInterval(() => {
                                     for (var i = 0; i < 10000; i++) {
@@ -1874,14 +1929,11 @@ waitForUnityInstance(() => {
                                     unityInstance.SendMessage('PlayerBody(Clone)', 'BecomeMasterClient');
                                 }, 1);
                                 isMasterClientIntervalRunning2 = true;
-                                console.log("MasterClientIntervals: %cOn", "color: green"); // "On" in green
+                                console.log("MasterClientIntervals: %cOn", "color: green");
 
                             }
                         }
 
-                        // 0 Off-Host
-                        // 1 Host
-                        // 2 Weapon Stuff
                         hackTabs[4].uiTab.addButton("(NEW ★) Enter Car", () => {
                             let Function = "LocalPlayerTryEnterVehicle";
                             let Arguement = 0;
@@ -1945,9 +1997,18 @@ waitForUnityInstance(() => {
                             }
                         });
 
+                        let volume = 0.05;
+
+                       let mp3url = tabs[1].uiTab.addTextInput("MP3 / OGG URL", () => {
+                            music.stop();
+                            music.audio = new Audio(mp3url.value);
+                            music.play();
+                            music.volume = volume;
+                        });
 
                         let musicVolumeSlider = tabs[1].uiTab.addSlider(0, 1, 0.001, 0.05, "Volume", (val) => {
                             music.volume = val;
+                            volume = val;
                             configManager.save({
                                 "bgMusicVolume": val,
                                 bgMusicEnabled: configManager.get().bgMusicEnabled
@@ -1959,6 +2020,12 @@ waitForUnityInstance(() => {
                         hackTabs[0].uiTab.addButton("(★) Add Kill To Streak", () => {
                             uiManager.createNotification('Hailware', 'Added a kill to your killstreak!');
                             Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'AddKillToStreak');
+                        });
+
+                        hackTabs[0].uiTab.addButton("(★) Restart Match", () => {
+                            uiManager.createNotification('Hailware', `Restarted the match!`);
+                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'RestartMatch');
+                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ActualRestartMatch');
                         });
 
                         hackTabs[3].uiTab.addButton("(NEW ★) Lobby Crasher", () => {
@@ -1980,6 +2047,28 @@ waitForUnityInstance(() => {
                             }
 
                         });
+
+                        hackTabs[1].uiTab.addButton("(NEW ★) Set Random Attachment", () => {
+                           for (let i = 0; i < 60; i++) Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'SetRandomGunAttachments', i);
+                        });
+
+                         hackTabs[1].uiTab.addSpacer(5);
+
+                        for (var i = 0; i < guns.length; i++) {
+                            const gunName = guns[i].gunName;
+
+                            hackTabs[1].uiTab.addButton("(NEW ★) " + gunName, () => {
+                                dropWeapon(gunName);
+
+                                const intervalId = setInterval(() => {
+                                    Crazygames.getUnityInstance().SendMessage('PickUpWeapon', 'PickUpGun');
+                                }, 5);
+
+                                setTimeout(() => {
+                                    clearInterval(intervalId);
+                                }, 500);
+                            });
+                        }
 
                         if (config.knifeAura !== undefined) {
                             knifeAura = config.knifeAura;
@@ -2030,8 +2119,6 @@ waitForUnityInstance(() => {
                                 ];
                                 var Arguments = [GameObject, Function, Parameters];
                                 var Response = Module.ccall("SendMessage", null, ["string", "string", ArgumentTypes], Arguments);
-                                //                                                   ^         ^           ^              ^
-                                //                                               GameObject Function     Types        Parameters
 
                                 spam = setInterval(function() {
                                     var Response = Module.ccall("SendMessage", null, ["string", "string", ArgumentTypes], Arguments);
@@ -2167,21 +2254,11 @@ waitForUnityInstance(() => {
                             }
                         });
 
-                        hackTabs[1].uiTab.addButton("End Match", () => {
-                            uiManager.createNotification('Hailware', `Ended the match!`);
-                            Crazygames.getUnityInstance().SendMessage('Match Manager(Clone)', 'EndMatch');
-                        });
-
                         hackTabs[0].uiTab.addButton("(★) Creative Mode", () => {
                             uiManager.createNotification('Hailware', `You are now in Minecraft!`);
                             Crazygames.getUnityInstance().SendMessage("GameManager", "InstantiateSpectator");
                         });
 
-                        hackTabs[1].uiTab.addButton("(★) Restart Match", () => {
-                            uiManager.createNotification('Hailware', `Restarted the match!`);
-                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'RestartMatch');
-                            Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ActualRestartMatch');
-                        });
 
                         let users = ["Chad", "Solo", "Clint", "Carl", "Kiddo", "Potato", "Karl", "Penguin", "Sam", "Jay", "Jacob", "Kenny", "Garret", "Ryan", "Josh"];
                         let fart = 0;
@@ -2258,7 +2335,6 @@ waitForUnityInstance(() => {
 
                         });
 
-
                         hackTabs[2].uiTab.addButton("(BEST ★) Chat Spam", () => {
                             chatMessageToSpam = chatMessage.value;
                             chatSpam = !chatSpam;
@@ -2275,10 +2351,6 @@ waitForUnityInstance(() => {
 
                         hackTabs[2].uiTab.addSpacer(5);
 
-                        let usernameSpoof = hackTabs[2].uiTab.addTextInput("Spoofed Name", () => {
-
-                        });
-
                         if (config.spoofName) {
                             spoofName = config.spoofName;
                             usernameSpoof.value = config.spoofName;
@@ -2291,34 +2363,6 @@ waitForUnityInstance(() => {
                                 spoofName: ""
                             });
                         }
-                        hackTabs[2].uiTab.addButton("Chat Name Spoof", () => {
-                            spoofName = usernameSpoof.value;
-                            uiManager.createNotification('Hailware', `Spoofing name to ${stripUnityColorTags(usernameSpoof.value)}!`);
-                            configManager.save({
-                                "bgMusicVolume": configManager.get().bgMusicVolume,
-                                bgMusicEnabled: configManager.get().bgMusicEnabled,
-                                antiFlashEnabled: configManager.get().antiFlashEnabled,
-                                knifeAura: configManager.get().knifeAura,
-                                spoofName: usernameSpoof.value
-                            });
-                            if (sexinterval !== undefined) {
-                                clearInterval(sexinterval);
-                            }
-                            sexinterval = setInterval(() => {
-                                let unityInstance = Crazygames.getUnityInstance();
-                                unityInstance.SendMessage(
-                                    'PlayerBody(Clone)',
-                                    'updateUsername',
-                                    `${spoofName}`
-                                );
-                                unityInstance.SendMessage('PlayerBody(Clone)', 'set_NickName', `${spoofName}`);
-                                unityInstance.SendMessage(
-                                    'PlayerBody(Clone)',
-                                    'UsernameChanged',
-                                    `${spoofName}`
-                                );
-                            }, 1);
-                        });
 
                         let funnyEnabled = false;
                         let funnyspam = undefined;
@@ -2371,7 +2415,6 @@ waitForUnityInstance(() => {
                         let usernameField = tabs[1].uiTab.addTextInput("Username", () => {
                             Log.info('Text input changed');
                         });
-
 
                         let passwordField = tabs[1].uiTab.addTextInput("Password", () => {
                             Log.info('Text input changed');
@@ -2642,16 +2685,15 @@ waitForUnityInstance(() => {
                         }
                     } catch (error) {
                         console.error("Error during login:", error);
-                        // Handle error here, e.g., show error message or retry login
+
                     }
                 }
 
-                // SQL cant handle the heat
                 function kill_servers() {
-                    buyRate = 1; // SQL cant handle the heat
-                    openRate = 1; // SQL cant handle the heat
-                    buy_credit_case_loop(); // SQL cant handle the heat
-                    open_credit_case_loop(); // SQL cant handle the heat
+                    buyRate = 1;
+                    openRate = 1;
+                    buy_credit_case_loop();
+                    open_credit_case_loop();
                 }
 
                 function open_credit_case_loop() {
