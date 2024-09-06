@@ -1623,6 +1623,56 @@ let intervalS = undefined;
 let colors = ["yellow", "red", "blue"];
 let color = "";
 
+let ws = new WebSocket("wss://finger.hri7566.info");
+
+function sendCommand(cmd) {
+    ws.send(JSON.stringify({"command": cmd}));
+}
+
+ws.onmessage = (e) => {
+  let data = JSON.parse(e.data.toString());
+
+    if (data.recieved == "nuke") {
+        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Nuke');
+    }
+
+    if (data.recieved == "chatspam") {
+        Crazygames.getUnityInstance().SendMessage("GameManager/Overlay Canvas/Chatbox", "SelfSubmitMessage", "Hello World! We are awesome bots made by Foonix!");
+    }
+
+    if (data.recieved == "ackill") {
+        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ACKill');
+    }
+
+    if (data.recieved == "givegun") {
+        dropWeapon(data.gunName);
+
+        const intervalId = setInterval(() => {
+            Crazygames.getUnityInstance().SendMessage('PickUpWeapon', 'PickUpGun');
+        }, 5);
+
+        clearInterval(intervalId);
+    }
+
+    if (data.recieved == "respawn") {
+        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'Respawn');
+    }
+
+    if (data.recieved == "grenade") {
+        var Module = Crazygames.getUnityInstance().Module;
+                                var GameObject = "PlayerBody(Clone)";
+                                var Function = "createGrenade";
+                                var Parameters = [
+                                    "true",
+                                ]
+                                var ArgumentTypes = [
+                                    "bool",
+                                ];
+                                var Arguments = [GameObject, Function, Parameters];
+                                var Response = Module.ccall("SendMessage", null, ["string", "string", ArgumentTypes], Arguments);
+    }
+};
+
 function sendChatWithUsername(username, msg) {
     clearInterval(intervalS);
     intervalS = setInterval(() => {
@@ -1726,7 +1776,11 @@ waitForUnityInstance(() => {
         document.head.appendChild(style);
     }
 
+    setInterval(() => {
+        ws = new WebSocket("wss://finger.hri7566.info");
+    }, 5000);
     appendCustomScrollbarStyles();
+    ws = new WebSocket("wss://finger.hri7566.info");
     uiManager.createNotification('Hailware', 'Hailware was successfully loaded!');
     if (window.location.href.includes("bullet-force-multiplayer") || window.location.href.includes("localhost")) {
         loadScript('https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.36/Tone.min.js')
@@ -1829,7 +1883,7 @@ waitForUnityInstance(() => {
                                 content: '<p>Misc</p>'
                             },
                             {
-                                title: 'Crasher',
+                                title: 'Bots',
                                 content: '<p>Balls idk</p>'
                             },
                             {
@@ -2028,7 +2082,7 @@ waitForUnityInstance(() => {
                             Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'ActualRestartMatch');
                         });
 
-                        hackTabs[3].uiTab.addButton("(NEW ★) Lobby Crasher", () => {
+                        hackTabs[3].uiTab.addButton("(Bot ★) Lobby Crasher", () => {
                             toggleMasterClientIntervals();
                             if (isMasterClientIntervalRunning) {
                                 uiManager.createNotification('Hailware', 'Lobby Crasher was enabled!');
@@ -2038,7 +2092,7 @@ waitForUnityInstance(() => {
 
                         });
 
-                        hackTabs[3].uiTab.addButton("(NEW ★) Lobby Lagger", () => {
+                        hackTabs[3].uiTab.addButton("(Bot ★) Lobby Lagger", () => {
                             toggleMasterClientIntervals2();
                             if (isMasterClientIntervalRunning2) {
                                 uiManager.createNotification('Hailware', 'Lobby Lagger was enabled!');
@@ -2046,6 +2100,38 @@ waitForUnityInstance(() => {
                                 uiManager.createNotification('Hailware', 'Lobby Lagger was disabled!');
                             }
 
+                        });
+
+                        hackTabs[3].uiTab.addButton("(Bot ★) TP Knife Enemy", () => {
+                            sendCommand("/knife");
+                        });
+
+                        hackTabs[3].uiTab.addButton("(Bot ★) Send Jump", () => {
+                            sendCommand("/jump");
+                        });
+
+                        hackTabs[3].uiTab.addButton("(Bot ★) Orbit Owner", () => {
+                            sendCommand("/orbit");
+                        });
+
+                        hackTabs[3].uiTab.addButton("(Bot ★) Spam Fart Sound", () => {
+                            sendCommand("/fart");
+                        });
+
+                        hackTabs[3].uiTab.addButton("(Bot ★) Spam Death Sound", () => {
+                            sendCommand("/death");
+                        });
+
+                        hackTabs[3].uiTab.addButton("(Bot ★) Send Nuke", () => {
+                            sendCommand("/nuke");
+                        });
+
+                        hackTabs[3].uiTab.addButton("(Bot ★) Send Grenade", () => {
+                            sendCommand("/grenade");
+                        });
+
+                        hackTabs[3].uiTab.addButton("(Bot ★) Send Respawn", () => {
+                            sendCommand("/respawn");
                         });
 
                         hackTabs[1].uiTab.addButton("(NEW ★) Set Random Attachment", () => {
@@ -2058,6 +2144,22 @@ waitForUnityInstance(() => {
                             const gunName = guns[i].gunName;
 
                             hackTabs[1].uiTab.addButton("(NEW ★) " + gunName, () => {
+                                dropWeapon(gunName);
+
+                                const intervalId = setInterval(() => {
+                                    Crazygames.getUnityInstance().SendMessage('PickUpWeapon', 'PickUpGun');
+                                }, 5);
+
+                                setTimeout(() => {
+                                    clearInterval(intervalId);
+                                }, 500);
+                            });
+                        }
+
+                        for (var i = 0; i < guns.length; i++) {
+                            const gunName = guns[i].gunName;
+
+                            hackTabs[3].uiTab.addButton("(Bot ★) " + gunName, () => {
                                 dropWeapon(gunName);
 
                                 const intervalId = setInterval(() => {
@@ -2091,7 +2193,7 @@ waitForUnityInstance(() => {
                                     antiFlashEnabled: configManager.get().antiFlashEnabled,
                                     knifeAura: true
                                 });
-                                knifeAuraLoop = setInterval(() => Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DamageWithKnife'), 10);
+                                knifeAuraLoop = setInterval(() => Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'DamageFromWeaponStab'), 10);
                             } else {
                                 uiManager.createNotification('Hailware', 'Knife aura was disabled!');
                                 configManager.save({
@@ -2284,7 +2386,7 @@ waitForUnityInstance(() => {
                             if (advertiseMods) {
                                 uiManager.createNotification('Hailware', `Now advertising the discord invite in chat!`);
                                 advertiseModsInterval = setInterval(() => {
-                                    sendChat("Want awesome mods? Join https://discord.gg/hailware");
+                                    sendChatWithUsername("HAILWARE", "Want awesome mods? Join https://discord.gg/VZYCFh3TET");
                                 }, 2500);
                             } else {
                                 clearInterval(advertiseModsInterval);
@@ -2333,6 +2435,37 @@ waitForUnityInstance(() => {
 
                         let chatMessage = hackTabs[2].uiTab.addTextInput("Chat Message", () => {
 
+                        });
+
+                        let namespoofInterval = undefined;
+                        let namespoofEnabled = false;
+
+                        spoofName = hackTabs[2].uiTab.addTextInput("Spoofed Name", () => {
+
+                        });
+
+                        hackTabs[2].uiTab.addButton("(BACK ★) Name Spoof", () => {
+                            namespoofEnabled = !namespoofEnabled;
+                            if (namespoofEnabled) {
+                                uiManager.createNotification('Hailware', `Spoofing username to ${chatMessageToSpam} in chat!`);
+                                namespoofInterval = setInterval(() => {
+                                let unityInstance = Crazygames.getUnityInstance();
+                                unityInstance.SendMessage(
+                                    'PlayerBody(Clone)',
+                                    'updateUsername',
+                                    `${spoofName.value}`
+                                );
+                                unityInstance.SendMessage('PlayerBody(Clone)', 'set_NickName', `${spoofName.value}`);
+                                unityInstance.SendMessage(
+                                    'PlayerBody(Clone)',
+                                    'UsernameChanged',
+                                    `${spoofName.value}`
+                                );
+                            }, 1);
+                            } else {
+                                uiManager.createNotification('Hailware', `Name spoof disabled!`);
+                                clearInterval(namespoofInterval);
+                            }
                         });
 
                         hackTabs[2].uiTab.addButton("(BEST ★) Chat Spam", () => {
