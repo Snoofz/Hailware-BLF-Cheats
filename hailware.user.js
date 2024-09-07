@@ -2964,3 +2964,4 @@ async function registerAccount(username, password) {
 
     return response;
 }
+
