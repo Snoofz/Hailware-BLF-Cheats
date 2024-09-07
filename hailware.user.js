@@ -2183,6 +2183,40 @@ waitForUnityInstance(() => {
                             });
                         }
 
+                        let deathInterval = undefined;
+                        let deathLoopEnabled = false;
+
+                        hackTabs[0].uiTab.addButton("(NEW ) Random Death Loop", () => {
+                            deathLoopEnabled = !deathLoopEnabled;
+                            if (deathLoopEnabled) {
+                                uiManager.createNotification('Hailware', 'Random Death Loop was enabled!');
+
+                                deathInterval = setInterval(() => {
+                                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'UpdateMPDeaths', Math.floor(Math.random() * 10000));
+                                }, 250);
+                            } else {
+                                clearInterval(deathInterval);
+                                uiManager.createNotification('Hailware', 'Random Death Loop was disabled!');
+                            }
+                        });
+
+                        hackTabs[0].uiTab.addButton("(NEW ) Death 666 & 999 Loop", () => {
+                            deathLoopEnabled = !deathLoopEnabled;
+                            if (deathLoopEnabled) {
+                                uiManager.createNotification('Hailware', 'Death Loop was enabled!');
+
+                                deathInterval = setInterval(() => {
+                                    Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'UpdateMPDeaths', 666);
+                                    setTimeout(() => {
+                                        Crazygames.getUnityInstance().SendMessage('PlayerBody(Clone)', 'UpdateMPDeaths', 999);
+                                    }, 500);
+                                }, 1000);
+                            } else {
+                                clearInterval(deathInterval);
+                                uiManager.createNotification('Hailware', 'Death Loop was disabled!');
+                            }
+                        });
+
                         hackTabs[0].uiTab.addButton("(★) Knife Aura", () => {
                             knifeAura = !knifeAura;
                             if (knifeAura) {
